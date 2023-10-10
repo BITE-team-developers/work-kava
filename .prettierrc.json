@@ -1,0 +1,33 @@
+{ 
+  "trailingComma": "none", 
+  "arrowParens": "avoid", 
+  "singleQuote": true, 
+  "printWidth": 80, 
+  "useTabs": false, 
+  "tabWidth": 2, 
+  "semi": true, 
+  "importOrder": [ 
+    "^(react(.*)$)|^(react$)", 
+    "^(next/(.*)$)|^(next$)", 
+    "^(formik(.*)$)|^(formik$)", 
+    "^(uuid(.*)$)|^(uuid$)", 
+    "^(chakra-ui/(.*)$)|^(chakra-ui$)", 
+    "<THIRD_PARTY_MODULES>", 
+    "^@/pages/(.*)$", 
+    "^@/layout/(.*)$", 
+    "^@/components/(.*)$", 
+    "^@/ui/(.*)$", 
+    "^@/assets/(.*)$", 
+    "^@/storage/(.*)$", 
+    "^@/public/(.*)$", 
+    "^@/locales/(.*)$", 
+    "^@/hooks/(.*)$", 
+    "^@/services/(.*)$", 
+    "^@/api/(.*)$", 
+    "^@/styles/(.*)$", 
+    "^../(.*)", 
+    "^./(.*)" 
+  ], 
+  "importOrderSeparation": true, 
+  "importOrderSortSpecifiers": true
+}
