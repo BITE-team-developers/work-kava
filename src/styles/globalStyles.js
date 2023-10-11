@@ -1,16 +1,35 @@
 import { css } from '@emotion/react';
 import { theme } from './theme';
 
+import ttfRegular from '../fonts/Inter-Regular.ttf';
+import ttfBold from '../fonts/Inter-Bold.ttf';
+
 export const GlobalStyles = css`
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-style: normal;
+    src: url('${ttfRegular}') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-style: normal;
+    src: url('${ttfBold}') format('truetype');
+  }
+
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
 
   body {
-    margin: 0;
     min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
+    font-weight: 400;
     font-size: 30px;
     line-height: 1.2;
     background-color: ${theme.colors.white};
