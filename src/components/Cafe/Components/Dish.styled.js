@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const DishItem = styled.li`
-  outline: 1px solid red;
   position: relative;
   display: flex;
   ${props => (props.isEven ? 'row-reverse' : 'row')};
@@ -15,42 +14,44 @@ export const DishItem = styled.li`
         flex-direction: row;
         padding: 15px 0 35px 35px;
       `};
-`;
-
-export const ImageBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 178px;
-  height: 170px;
-  position: relative;
-  z-index: 1;
-  border-radius: ${props =>
-    props.isEven ? '0px 85px 85px 0px' : '85px 0px 0px 85px'};
-  background-color: ${props => props.theme.colors.white};
   &::after {
     content: '';
     position: absolute;
-    z-index: -1;
-    border-radius: 150px;
-    top: -15px;
-    left: -15px;
-
-    width: calc(100% + 30px);
-    height: calc(100% + 30px);
-    background-color: ${props => props.theme.colors.accent};
+    z-index: 1;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    ${props =>
+      props.isEven
+        ? `
+      border-bottom: 4px solid ${
+        props.styles !== 'dark'
+          ? props.theme.colors.accent
+          : props.theme.colors.lightBlue
+      };
+    border-right: 4px solid ${
+      props.styles !== 'dark'
+        ? props.theme.colors.accent
+        : props.theme.colors.lightBlue
+    };
+    border-radius: 0 0 160px 0;
+      `
+        : `
+        border-bottom: 4px solid ${
+          props.styles !== 'dark'
+            ? props.theme.colors.accent
+            : props.theme.colors.lightBlue
+        };
+    border-left: 4px solid ${
+      props.styles !== 'dark'
+        ? props.theme.colors.accent
+        : props.theme.colors.lightBlue
+    };
+    border-radius: 0px 0px 0px 160px;
+      `};
   }
-`;
-
-export const Picture = styled.picture`
-  position: relative;
-  display: block;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  border-radius: ${props =>
-    props.isEven ? '0px 85px 85px 0px' : '85px 0px 0px 85px'};
-  background-color: ${props => props.theme.colors.white};
 `;
 
 export const DishItemBox = styled.div`
@@ -58,7 +59,11 @@ export const DishItemBox = styled.div`
   z-index: 1;
   flex-grow: 999;
   padding-top: 10px;
-  background-color: ${props => props.theme.colors.white};
+
+  ${props =>
+    props.styles !== 'dark'
+      ? `background-color: ${props.theme.colors.white}`
+      : `background-color: ${props.theme.colors.accent}`};
 
   &::after {
     content: '';
@@ -68,7 +73,10 @@ export const DishItemBox = styled.div`
 
     width: 100%;
     height: 100%;
-    background-color: ${props => props.theme.colors.white};
+    ${props =>
+      props.styles !== 'dark'
+        ? `background-color: ${props.theme.colors.white}`
+        : `background-color: ${props.theme.colors.accent}`};
   }
 `;
 
@@ -86,6 +94,7 @@ export const IngredientsList = styled.ul`
   font-family: Inter;
   font-size: 18px;
   line-height: 1.5;
+  height: 81px;
   ${props =>
     props.isEven
       ? `
@@ -112,8 +121,10 @@ export const Price = styled.p`
   font-size: 70px;
   font-weight: 700;
   line-height: 1;
-  background-color: ${props => props.theme.colors.accent};
-  color: ${props => props.theme.colors.primary};
+  ${props =>
+    props.styles === 'dark'
+      ? `background-color: ${props.theme.colors.lightBlue}; color: ${props.theme.colors.accent};`
+      : `background-color: ${props.theme.colors.accent}; color: ${props.theme.colors.lightBlue};`};
 
   &::after {
     content: '';
@@ -123,7 +134,10 @@ export const Price = styled.p`
 
     width: 100%;
     height: 100%;
-    background-color: ${props => props.theme.colors.accent};
+    ${props =>
+      props.styles === 'dark'
+        ? `background-color: ${props.theme.colors.lightBlue}`
+        : `background-color: ${props.theme.colors.accent}`};
   }
 `;
 
@@ -133,24 +147,75 @@ export const Currency = styled.span`
   line-height: 35px;
 `;
 
+export const IngredientItem = styled.li`
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  width: 100%;
+  max-width: 153px;
+`;
+
 export const Dots = styled.span`
   white-space: nowrap;
   overflow: hidden;
 `;
 
-export const IngredientItem = styled.li`
-  display: flex;
-  white-space: nowrap;
-  align-items: center;
-  max-width: 153px;
-`;
-
-export const Img = styled.img`
-  display: block;
-  width: 100%;
-  height: 100%;
-`;
-
 export const Amount = styled.span`
   min-width: 54px;
+`;
+
+export const ImageBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 178px;
+  height: 170px;
+  position: relative;
+  z-index: 1;
+  border-radius: ${props =>
+    props.isEven ? '0px 85px 85px 0px' : '85px 0px 0px 85px'};
+  ${props =>
+    props.styles === 'dark'
+      ? `background-color: ${props.theme.colors.white}`
+      : `background-color: ${props.theme.colors.accent}`};
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    top: -15px;
+    left: -15px;
+
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    ${props =>
+      props.styles === 'dark'
+        ? `background-color: ${props.theme.colors.lightBlue}`
+        : `background-color: ${props.theme.colors.accent}`};
+  }
+`;
+
+export const Picture = styled.picture`
+  position: relative;
+  display: flex;
+  z-index: 1;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: ${props =>
+    props.isEven ? '0px 50% 50% 0px' : '50% 0px 0px 50%'};
+  ${props =>
+    props.styles !== 'dark'
+      ? `background-color: ${props.theme.colors.white}`
+      : `background-color: ${props.theme.colors.accent}`};
+`;
+export const Img = styled.img`
+  display: block;
+  ${props =>
+    props.title === 'Desserts'
+      ? 'width: 148px; height: 140px;'
+      : `width: 100%;
+  height: 100%;`};
 `;

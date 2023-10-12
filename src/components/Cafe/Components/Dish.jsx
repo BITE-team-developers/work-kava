@@ -10,14 +10,14 @@ import {
 } from './Dish.styled';
 import Ingredients from './Ingredients';
 
-const Dish = ({ data: { name, ingredients, price }, index }) => {
+const Dish = ({ data: { name, ingredients, price }, index, title, styles }) => {
   const imageName = name.toLowerCase().replace(/ /g, '-');
   const isEven = index % 2 === 0;
 
   return (
-    <DishItem isEven={isEven}>
-      <ImageBox isEven={isEven}>
-        <Picture isEven={isEven}>
+    <DishItem isEven={isEven} styles={styles}>
+      <ImageBox isEven={isEven} styles={styles}>
+        <Picture isEven={isEven} styles={styles}>
           <source
             srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}.png 1x,
                         https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}@2x.png 2x`}
@@ -35,18 +35,19 @@ const Dish = ({ data: { name, ingredients, price }, index }) => {
           />
 
           <Img
+            title={title}
             src={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}.png`}
             alt={name}
           />
         </Picture>
       </ImageBox>
 
-      <DishItemBox isEven={isEven}>
+      <DishItemBox isEven={isEven} styles={styles}>
         <DishName>{name}</DishName>
         <Ingredients isEven={isEven} ingredients={ingredients} />
       </DishItemBox>
 
-      <Price isEven={isEven}>
+      <Price isEven={isEven} styles={styles}>
         {price}
         <Currency>₴</Currency>
       </Price>
