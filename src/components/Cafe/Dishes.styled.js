@@ -9,11 +9,11 @@ export const Title = styled.h2`
   font-weight: 700;
   line-height: 1;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (${props => props.theme.devices.tablet}) {
     font-size: 60px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (${props => props.theme.devices.desktop}) {
     margin-bottom: 100px;
     font-size: 70px;
   }
@@ -51,17 +51,23 @@ export const Title = styled.h2`
 `;
 
 export const Wrapper = styled.section`
-padding: 40px;
+  padding: 24px;
+  overflow: hidden;
   background: ${props => {
-    switch (props.name) {
-      case 'Coffee classic':
-        return 'radial-gradient(92.89% 118.32% at 0% -1.02%, #1b253f 0%, #3c4f82 100%)';
-      case 'Coffee with milk':
-        return 'radial-gradient(148.54% 120.77% at 100% 0%, #656b7d 0%, #857661 100%)';
-      case 'Desserts':
-        return 'radial-gradient(258.19% 141.42% at 0% 0%, #e2d0ae 0%, rgba(226, 208, 174, 0) 100%)';
-      default:
-        return 'background-color: #fff;';
+    if (props.name === 'Coffee classic') {
+      return props.theme.blueRadialGradient;
+    } else if (props.name === 'Coffee with milk') {
+      return props.theme.beigeRadialGradient;
+    } else if (props.name === 'Desserts') {
+      return props.theme.lightBeigeRadialGradient;
+    } else {
+      return '#fff';
     }
   }};
+`;
+
+export const DishesList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 `;
