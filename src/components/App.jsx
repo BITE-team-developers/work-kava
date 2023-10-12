@@ -1,4 +1,5 @@
-import { Button } from './Button/Button';
+import { ButtonBlue } from './miniComponents/ButtonBlue/ButtonBlue';
+import { ButtonWhite } from './miniComponents/ButtonWhite/ButtonWhite';
 
 const App = () => {
   const handleClick = () => {
@@ -7,7 +8,12 @@ const App = () => {
   return (
     <>
       <h1>Hello BITE developers!</h1>
-      <Button action={handleClick} />
+      <div
+        style={{ width: '600px', height: '150px', backgroundColor: 'black' }}
+      >
+        <ButtonWhite action={handleClick} />
+      </div>
+      <ButtonBlue action={handleClick} />
     </>
   );
 };

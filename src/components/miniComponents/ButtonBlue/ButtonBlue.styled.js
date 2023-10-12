@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const StyledButton = styled.button`
+export const StyledButtonBlue = styled.button`
   width: 318px;
   height: 80px;
 
@@ -9,4 +9,9 @@ export const StyledButton = styled.button`
 
   border-radius: 8px;
   background-color: ${props => props.theme.colors.primary};
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    width: 400px;
+    height: 80px;
+  }
 `;
