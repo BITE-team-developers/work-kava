@@ -1,11 +1,18 @@
-import Dish from "./Components/Dish";
+import Dish from './Components/Dish';
+import { Title, Wrapper } from './Dishes.styled';
 
-const Dishes = ({ title, dishes }) => {
-   return (
-    <div className="container">
-      <h2>{title}</h2>
-      <ul>{dishes.map(dish => <Dish data={dish} key={dish.id}/>)}</ul>
-    </div>
+const Dishes = ({ title, dishes, styles }) => {
+  return (
+    <Wrapper name={title}>
+      <div className="container">
+        <Title styles={styles}>{title}</Title>
+        <ul>
+          {dishes.map(dish => (
+            <Dish data={dish} key={dish.id} />
+          ))}
+        </ul>
+      </div>
+    </Wrapper>
   );
 };
 
