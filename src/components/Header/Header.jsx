@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Item, List, StyledHeader, StyledNav, Wrapper } from './Header.styled';
 
 export const Header = () => {
@@ -11,15 +12,21 @@ export const Header = () => {
         <Wrapper>
           <StyledNav>
             <List>
-              <Item>Home</Item>
-              <Item>Cafe</Item>
-              <Item>Fastfood</Item>
-              <Item>Coworking</Item>
+              <Item key="1">
+                <Link>Home</Link>
+              </Item>
+              <Item key="2">
+                <Link>Cafe</Link>
+              </Item>
+              <Item key="3">
+                <Link>Fastfood</Link>
+              </Item>
+              <Item key="4">
+                <Link>Coworking</Link>
+              </Item>
             </List>
           </StyledNav>
-          <p class="mobile-menu__tell" href="tel:+380970000000">
-            097-000-00-00
-          </p>
+          <p href="tel:+380970000000">097-000-00-00</p>
         </Wrapper>
       ) : (
         <p>button</p>
