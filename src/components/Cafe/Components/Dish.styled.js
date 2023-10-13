@@ -14,6 +14,10 @@ export const DishItem = styled.li`
         flex-direction: row;
         padding: 15px 0 35px 35px;
       `};
+  @media screen and (${props => props.theme.devices.tablet}) {
+    gap: 30px;
+    align-items: center;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -51,6 +55,13 @@ export const DishItem = styled.li`
     };
     border-radius: 0px 0px 0px 160px;
       `};
+
+    @media screen and (${props => props.theme.devices.tablet}) {
+      ${props =>
+        props.isEven
+          ? `border-radius: 0px 0px 170px 0px;`
+          : `border-radius: 0px 0px 0px 170px;`}
+    }
   }
 `;
 
@@ -65,36 +76,52 @@ export const DishItemBox = styled.div`
       ? `background-color: ${props.theme.colors.white}`
       : `background-color: ${props.theme.colors.accent}`};
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    ${props => (props.isEven ? 'left: -100%;' : 'right: -100%;')}
+  @media screen and (${props => props.theme.devices.tablet}) {
+    background-color: transparent;
+  }
 
-    width: 100%;
-    height: 100%;
-    ${props =>
-      props.styles !== 'dark'
-        ? `background-color: ${props.theme.colors.white}`
-        : `background-color: ${props.theme.colors.accent}`};
+  @media screen and (${props => props.theme.devices.onlymobile}) {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      ${props => (props.isEven ? 'left: -100%;' : 'right: -100%;')}
+
+      width: 100%;
+      height: 100%;
+      ${props =>
+        props.styles !== 'dark'
+          ? `background-color: ${props.theme.colors.white}`
+          : `background-color: ${props.theme.colors.accent}`};
+    }
   }
 `;
 
 export const DishName = styled.h3`
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   font-family: Inter;
   font-size: 26px;
   font-weight: 400;
   line-height: 1;
 
   color: ${props => props.theme.colors.primary};
+  @media screen and (${props => props.theme.devices.tablet}) {
+    margin-bottom: 40px;
+    font-size: 40px;
+    ${props =>
+      props.styles !== 'dark'
+        ? `color: ${props.theme.colors.white}`
+        : `color: ${props.theme.colors.accent}`};
+  }
 `;
 
 export const IngredientsList = styled.ul`
+  width: 100%;
+  max-width: 153px;
+  height: 81px;
   font-family: Inter;
   font-size: 18px;
   line-height: 1.5;
-  height: 81px;
   ${props =>
     props.isEven
       ? `
@@ -106,6 +133,16 @@ export const IngredientsList = styled.ul`
         padding-left: 15px;
       `};
   color: ${props => props.theme.colors.primary};
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    max-width: none;
+    font-size: 24px;
+    height: 171px;
+    ${props =>
+      props.styles !== 'dark'
+        ? `color: ${props.theme.colors.white}; border-color: ${props.theme.colors.white}`
+        : `color: ${props.theme.colors.accent}; border-color: ${props.theme.colors.accent}`};
+  }
 `;
 
 export const Price = styled.p`
@@ -124,20 +161,40 @@ export const Price = styled.p`
   ${props =>
     props.styles === 'dark'
       ? `background-color: ${props.theme.colors.lightBlue}; color: ${props.theme.colors.accent};`
-      : `background-color: ${props.theme.colors.accent}; color: ${props.theme.colors.lightBlue};`};
+      : `background-color: ${props.theme.colors.accent}; color: ${props.theme.colors.primary};`};
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    ${props => (props.isEven ? 'left: -100%;' : 'right: -100%;')}
-
-    width: 100%;
-    height: 100%;
+  @media screen and (${props => props.theme.devices.tablet}) {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    height: 240px;
+    padding: 50px 45px;
     ${props =>
-      props.styles === 'dark'
-        ? `background-color: ${props.theme.colors.lightBlue}`
-        : `background-color: ${props.theme.colors.accent}`};
+      props.styles !== 'dark'
+        ? `border: 20px solid ${props.theme.colors.white}; `
+        : `border: 20px solid ${props.theme.colors.accent}; `}
+        
+        ${props =>
+          props.isEven
+            ? 'border-left: none; border-radius: 0px 120px 120px 0px;'
+            : 'border-right: none; border-radius: 120px 0px 0px 120px;'}
+
+  @media screen and (${props => props.theme.devices.onlymobile}) {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      ${props => (props.isEven ? 'left: -100%;' : 'right: -100%;')}
+
+      width: 100%;
+      height: 100%;
+      ${props =>
+        props.styles === 'dark'
+          ? `background-color: ${props.theme.colors.lightBlue}`
+          : `background-color: ${props.theme.colors.accent}`};
+    }
   }
 `;
 
@@ -151,24 +208,30 @@ export const IngredientItem = styled.li`
   display: flex;
   white-space: nowrap;
   align-items: center;
-  width: 100%;
-  max-width: 153px;
+  @media screen and (${props => props.theme.devices.tablet}) {
+    max-width: 218px;
+  }
 `;
 
 export const Dots = styled.span`
+  flex-grow: 0;
   white-space: nowrap;
   overflow: hidden;
 `;
 
 export const Amount = styled.span`
   min-width: 54px;
+  @media screen and (${props => props.theme.devices.tablet}) {
+    min-width: 74px;
+  }
 `;
 
 export const ImageBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 178px;
+  width: 100%;
+  max-width: 178px;
   height: 170px;
   position: relative;
   z-index: 1;
@@ -176,18 +239,49 @@ export const ImageBox = styled.div`
     props.isEven ? '0px 85px 85px 0px' : '85px 0px 0px 85px'};
   ${props =>
     props.styles === 'dark'
-      ? `background-color: ${props.theme.colors.white}`
-      : `background-color: ${props.theme.colors.accent}`};
+      ? `background-color: ${props.theme.colors.accent}`
+      : `background-color: ${props.theme.colors.white}`};
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    max-width: none;
+    width: 350px;
+    height: 260px;
+    border-radius: ${props =>
+      props.isEven ? '0px 130px 130px 0px' : '130px 0px 0px 130px'};
+    justify-content: ${props => (props.isEven ? 'flex-end' : 'flex-start')};
+  }
+
   &::after {
     content: '';
+
     position: absolute;
     z-index: -1;
     border-radius: 50%;
-    top: -15px;
-    left: -15px;
+    @media screen and (${props => props.theme.devices.onlymobile}) {
+      top: -15px;
+      left: -15px;
+    }
 
     width: calc(100% + 30px);
     height: calc(100% + 30px);
+
+    @media screen and (${props => props.theme.devices.tablet}) {
+      width: 300px;
+      height: 300px;
+
+      ${props =>
+        props.isEven
+          ? `
+       top: -20px;
+       left: none;
+      right: -20px;
+      `
+          : `
+       top: -20px;
+      left: -20px;
+      `};
+    }
+
     ${props =>
       props.styles === 'dark'
         ? `background-color: ${props.theme.colors.lightBlue}`
@@ -198,7 +292,7 @@ export const ImageBox = styled.div`
 export const Picture = styled.picture`
   position: relative;
   display: flex;
-  z-index: 1;
+  z-index: 0;
   padding: 15px;
   align-items: center;
   justify-content: center;
@@ -210,12 +304,44 @@ export const Picture = styled.picture`
     props.styles !== 'dark'
       ? `background-color: ${props.theme.colors.white}`
       : `background-color: ${props.theme.colors.accent}`};
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    width: 100%;
+    height: 260px;
+    padding: 0;
+    border-radius: ${props =>
+      props.isEven ? '0px 130px 130px 0px' : '130px 0px 0px 130px'};
+    justify-content: ${props =>
+      props.isEven
+        ? props.title === 'Desserts'
+          ? 'flex-start'
+          : 'flex-end'
+        : props.title === 'Desserts'
+        ? 'flex-end'
+        : 'flex-start'};
+  }
 `;
 export const Img = styled.img`
   display: block;
   ${props =>
     props.title === 'Desserts'
       ? 'width: 148px; height: 140px;'
-      : `width: 100%;
+      : `width: 170px;
   height: 100%;`};
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    ${props =>
+      props.title === 'Desserts'
+        ? 'width: 329px; height: 220px;'
+        : `width: 274px;
+  height: 100%;`};
+  }
 `;
+
+/* @media screen and (${props => props.theme.devices.tablet}) {
+
+ } */
+
+// @media screen and (${props => props.theme.devices.desktop}) {
+
+// }

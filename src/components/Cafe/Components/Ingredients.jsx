@@ -1,14 +1,15 @@
 import React from 'react';
 import { IngredientsList, Dots, IngredientItem, Amount } from './Dish.styled';
 
-const Ingredients = ({ ingredients, isEven }) => {
+const Ingredients = ({ ingredients, isEven, styles }) => {
   const ingredientArray = Object.entries(ingredients);
 
   return (
-    <IngredientsList isEven={isEven}>
+    <IngredientsList isEven={isEven} styles={styles}>
       {ingredientArray.map(([ingredient, amount]) => (
         <IngredientItem key={ingredient}>
-          {ingredient} <Dots>..........</Dots> <Amount>{amount}</Amount>
+          <span>{ingredient}</span> {amount !== '' && <Dots>..........</Dots>}
+          <Amount>{amount}</Amount>
         </IngredientItem>
       ))}
     </IngredientsList>

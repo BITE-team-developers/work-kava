@@ -17,7 +17,7 @@ const Dish = ({ data: { name, ingredients, price }, index, title, styles }) => {
   return (
     <DishItem isEven={isEven} styles={styles}>
       <ImageBox isEven={isEven} styles={styles}>
-        <Picture isEven={isEven} styles={styles}>
+        <Picture isEven={isEven} styles={styles} title={title}>
           <source
             srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}.png 1x,
                         https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}@2x.png 2x`}
@@ -43,8 +43,12 @@ const Dish = ({ data: { name, ingredients, price }, index, title, styles }) => {
       </ImageBox>
 
       <DishItemBox isEven={isEven} styles={styles}>
-        <DishName>{name}</DishName>
-        <Ingredients isEven={isEven} ingredients={ingredients} />
+        <DishName styles={styles}>{name}</DishName>
+        <Ingredients
+          isEven={isEven}
+          ingredients={ingredients}
+          styles={styles}
+        />
       </DishItemBox>
 
       <Price isEven={isEven} styles={styles}>
