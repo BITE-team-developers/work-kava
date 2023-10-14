@@ -7,7 +7,7 @@ const Button = styled.button`
   border-radius: 8px;
 
   @media screen and (${props => props.theme.devices.tablet}) {
-    padding: 25px 170px;
+    padding: 25px 171px;
   }
 `;
 
