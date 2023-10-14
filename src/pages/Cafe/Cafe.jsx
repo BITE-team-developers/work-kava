@@ -81,7 +81,7 @@ const Desserts = [
 
 const Cafe = () => {
   return (
-    <div>
+    <>
       <Dishes
         title="Coffee classic"
         dishes={CoffeeClassicMenu}
@@ -89,7 +89,7 @@ const Cafe = () => {
       />
       <Dishes title="Coffee with milk" dishes={CoffeeWithMilk} styles="light" />
       <Dishes title="Desserts" dishes={Desserts} styles="dark" />
-    </div>
+    </>
   );
 };
 

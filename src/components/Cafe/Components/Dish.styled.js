@@ -17,7 +17,28 @@ export const DishItem = styled.li`
   @media screen and (${props => props.theme.devices.tablet}) {
     gap: 30px;
     align-items: center;
+
+    ${props =>
+      props.isEven
+        ? `
+        padding: 20px 40px 40px 0;
+      `
+        : `
+        padding: 20px 0 40px 40px;
+      `};
   }
+
+  @media screen and (${props => props.theme.devices.desktop}) {
+    ${props =>
+      props.isEven
+        ? `
+        padding: 20px 44px 44px 0;
+      `
+        : `
+        padding: 20px 0 44px 44px;
+      `};
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -61,6 +82,12 @@ export const DishItem = styled.li`
         props.isEven
           ? `border-radius: 0px 0px 170px 0px;`
           : `border-radius: 0px 0px 0px 170px;`}
+    }
+    @media screen and (${props => props.theme.devices.desktop}) {
+      ${props =>
+        props.isEven
+          ? `border-radius: 0px 0px 194px 0px;`
+          : `border-radius: 0px 0px 0px 194px;`}
     }
   }
 `;
@@ -113,6 +140,10 @@ export const DishName = styled.h3`
         ? `color: ${props.theme.colors.white}`
         : `color: ${props.theme.colors.accent}`};
   }
+  @media screen and (${props => props.theme.devices.desktop}) {
+    margin-bottom: 36px;
+    font-size: 48px;
+  }
 `;
 
 export const IngredientsList = styled.ul`
@@ -143,6 +174,10 @@ export const IngredientsList = styled.ul`
         ? `color: ${props.theme.colors.white}; border-color: ${props.theme.colors.white}`
         : `color: ${props.theme.colors.accent}; border-color: ${props.theme.colors.accent}`};
   }
+  @media screen and (${props => props.theme.devices.desktop}) {
+    height: 210px;
+    font-size: 30px;
+  }
 `;
 
 export const Price = styled.p`
@@ -168,18 +203,30 @@ export const Price = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 100px;
     height: 240px;
+    font-size: 100px;
     padding: 50px 45px;
     ${props =>
       props.styles !== 'dark'
         ? `border: 20px solid ${props.theme.colors.white}; `
         : `border: 20px solid ${props.theme.colors.accent}; `}
-        
-        ${props =>
-          props.isEven
-            ? 'border-left: none; border-radius: 0px 120px 120px 0px;'
-            : 'border-right: none; border-radius: 120px 0px 0px 120px;'}
+
+    ${props =>
+      props.isEven
+        ? 'border-left: none; border-radius: 0px 120px 120px 0px;'
+        : 'border-right: none; border-radius: 120px 0px 0px 120px;'}
+  }
+
+  @media screen and (${props => props.theme.devices.desktop}) {
+    height: 280px;
+    font-size: 120px;
+    padding: 60px 45px;
+
+    ${props =>
+      props.isEven
+        ? 'border-left: none; border-radius: 0px 140px 140px 0px;'
+        : 'border-right: none; border-radius: 140px 0px 0px 140px;'}
+  }
 
   @media screen and (${props => props.theme.devices.onlymobile}) {
     &::after {
@@ -251,6 +298,13 @@ export const ImageBox = styled.div`
     justify-content: ${props => (props.isEven ? 'flex-end' : 'flex-start')};
   }
 
+  @media screen and (${props => props.theme.devices.desktop}) {
+    width: 410px;
+    height: 300px;
+    border-radius: ${props =>
+      props.isEven ? '0px 150px 150px 0px' : '150px 0px 0px 150px'};
+  }
+
   &::after {
     content: '';
 
@@ -286,6 +340,10 @@ export const ImageBox = styled.div`
       props.styles === 'dark'
         ? `background-color: ${props.theme.colors.lightBlue}`
         : `background-color: ${props.theme.colors.accent}`};
+    @media screen and (${props => props.theme.devices.desktop}) {
+      width: 340px;
+      height: 340px;
+    }
   }
 `;
 
@@ -319,6 +377,11 @@ export const Picture = styled.picture`
         : props.title === 'Desserts'
         ? 'flex-end'
         : 'flex-start'};
+  }
+  @media screen and (${props => props.theme.devices.desktop}) {
+    height: 300px;
+    border-radius: ${props =>
+      props.isEven ? '0px 150px 150px 0px' : '150px 0px 0px 150px'};
   }
 `;
 export const Img = styled.img`
