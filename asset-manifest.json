@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/work-kava/static/css/main.7cda0caf.css",
-    "main.js": "/work-kava/static/js/main.f5eb42ca.js",
+    "main.js": "/work-kava/static/js/main.fcba0610.js",
     "static/media/Inter-Bold.ttf": "/work-kava/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
     "static/media/Inter-Regular.ttf": "/work-kava/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
     "index.html": "/work-kava/index.html",
     "main.7cda0caf.css.map": "/work-kava/static/css/main.7cda0caf.css.map",
-    "main.f5eb42ca.js.map": "/work-kava/static/js/main.f5eb42ca.js.map"
+    "main.fcba0610.js.map": "/work-kava/static/js/main.fcba0610.js.map"
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.f5eb42ca.js"
+    "static/js/main.fcba0610.js"
   ]
 }
