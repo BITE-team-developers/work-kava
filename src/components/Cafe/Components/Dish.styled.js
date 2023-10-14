@@ -112,9 +112,9 @@ export const DishItemBox = styled.div`
       content: '';
       position: absolute;
       top: 0;
-      ${props => (props.isEven ? 'left: -100%;' : 'right: -100%;')}
+      ${props => (props.isEven ? 'left: -1000%;' : 'right: -1000%;')}
 
-      width: 100%;
+      width: 1000%;
       height: 100%;
       ${props =>
         props.styles !== 'dark'
@@ -126,7 +126,6 @@ export const DishItemBox = styled.div`
 
 export const DishName = styled.h3`
   margin-bottom: 10px;
-  font-family: Inter;
   font-size: 26px;
   font-weight: 400;
   line-height: 1;
@@ -150,7 +149,6 @@ export const IngredientsList = styled.ul`
   width: 100%;
   max-width: 153px;
   height: 81px;
-  font-family: Inter;
   font-size: 18px;
   line-height: 1.5;
   ${props =>
@@ -189,7 +187,6 @@ export const Price = styled.p`
       ? 'left: 0; padding-right: 29px; border-radius: 0px 35px 0px 0px;'
       : 'right: 0; padding-left: 29px; border-radius: 35px 0px 0px 0px;'}
 
-  font-family: Inter;
   font-size: 70px;
   font-weight: 700;
   line-height: 1;
@@ -233,9 +230,9 @@ export const Price = styled.p`
       content: '';
       position: absolute;
       top: 0;
-      ${props => (props.isEven ? 'left: -100%;' : 'right: -100%;')}
+      ${props => (props.isEven ? 'left: -1000%;' : 'right: -1000%;')}
 
-      width: 100%;
+      width: 1000%;
       height: 100%;
       ${props =>
         props.styles === 'dark'
@@ -277,7 +274,7 @@ export const ImageBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 170px;
   max-width: 178px;
   height: 170px;
   position: relative;

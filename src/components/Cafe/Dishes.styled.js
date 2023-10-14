@@ -8,6 +8,7 @@ export const Title = styled.h2`
   font-size: 40px;
   font-weight: 700;
   line-height: 1;
+  text-align: left;
 
   @media screen and (${props => props.theme.devices.tablet}) {
     font-size: 60px;
@@ -50,8 +51,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const Wrapper = styled.section`
-  padding: 24px;
+export const Wrapper = styled.div`
   overflow: hidden;
   background: ${props => {
     if (props.name === 'Coffee classic') {
@@ -70,4 +70,5 @@ export const DishesList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 50px;
+  text-align: left;
 `;
