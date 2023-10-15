@@ -4,10 +4,11 @@ import FastfoodList from './FastfoodList';
 import { FastfoodSection } from './FastfoodCategories.styled';
 
 const FastfoodCategories = ({ data }) => {
+  console.log(data);
   return (
     <>
-      {data.map(({ category, id }) => (
-        <FastfoodSection key={id}>
+      {data.map(({ category, id, backgroundImage }) => (
+        <FastfoodSection key={id} bgImage={backgroundImage}>
           <Container>
             <h2>{category}</h2>
             {/* <Svg></Svg> */}
