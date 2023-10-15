@@ -4,8 +4,6 @@ import fourZigzags from '../../images/fourZigzags.svg';
 import points from '../../images/points.svg';
 
 const getUrl = (imageName, type = '') => {
-  console.log(imageName);
-
   return `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${imageName}${type}.jpg`;
 };
 

@@ -4,7 +4,7 @@ const FastfoodList = ({ items }) => {
   return (
     <ul>
       {items.map(fastfood => (
-        <li>
+        <li key={fastfood.id}>
           <FastfoodItem item={fastfood} />
         </li>
       ))}
