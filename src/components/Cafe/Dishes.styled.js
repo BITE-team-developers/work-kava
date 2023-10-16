@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+
 export const Title = styled.h2`
   position: relative;
   z-index: 2;
@@ -38,7 +39,7 @@ export const Title = styled.h2`
   &::before {
     content: '';
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     right: calc(100% - 0.75em);
     width: 100%;
     height: 1em;
@@ -52,6 +53,7 @@ export const Title = styled.h2`
 `;
 
 export const Wrapper = styled.div`
+  position: relative;
   overflow: hidden;
   background: ${props => {
     if (props.name === 'Coffee classic') {
@@ -67,8 +69,11 @@ export const Wrapper = styled.div`
 `;
 
 export const DishesList = styled.ul`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 50px;
   text-align: left;
+   
 `;
+
