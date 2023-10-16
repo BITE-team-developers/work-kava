@@ -55,5 +55,7 @@ export const theme = Object.freeze({
   beigeRadialGradient:
     'radial-gradient(148.54% 120.77% at 100% 0%, #656b7d 0%, #857661 100%)', // cafe page
   lightBeigeRadialGradient:
-    'radial-gradient(258.19% 141.42% at 0% 0%, #e2d0ae 0%, rgba(226, 208, 174, 0) 100%)' // cafe page
+    'radial-gradient(258.19% 141.42% at 0% 0%, #e2d0ae 0%, rgba(226, 208, 174, 0) 100%)', // cafe page
+  darklinerGradient: 'rgba(27, 37, 63,0.80), rgba(27, 37, 63, 0.80)',
+  lightlinerGradient: 'rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)'
 });
