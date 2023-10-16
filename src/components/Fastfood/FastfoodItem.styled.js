@@ -42,8 +42,10 @@ export const DishTitle = styled.h3`
   }
 `;
 
-export const DishImage = styled.img`
-  z-index: 3;
+export const ImageWrapper = styled.div`
+  position: relative;
+  z-index: 2;
+  min-height: 186px;
   margin-bottom: 24px;
 
   @media screen and (${props => props.theme.devices.tablet}) {
@@ -52,7 +54,12 @@ export const DishImage = styled.img`
 
   @media screen and (${props => props.theme.devices.desktop}) {
     margin-bottom: 8px;
+    min-height: 246px;
   }
+`;
+
+export const DishImage = styled.img`
+  position: absolute;
 `;
 export const PriceWrapper = styled.div`
   position: relative;
@@ -67,7 +74,7 @@ export const PriceWrapper = styled.div`
     bottom: 0;
     z-index: 1;
     width: 100%;
-    height: 150%;
+    height: 155%;
     border: 4px solid ${props => props.theme.colors.primary};
     border-bottom-right-radius: 80px;
   }

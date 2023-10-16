@@ -33,7 +33,6 @@ export const ItemsList = styled.ul`
 
 export const Item = styled.li`
   padding: 31px;
-  min-width: 366px;
   background-color: ${props => props.theme.colors.accent};
   border-top-left-radius: 80px;
   border-bottom-right-radius: 80px;
