@@ -1,4 +1,12 @@
-import { DishTitle } from './FastfoodItem.styled';
+import {
+  Currency,
+  DishImage,
+  DishTitle,
+  Price,
+  PriceColumn,
+  PriceText,
+  PriceWrapper
+} from './FastfoodItem.styled';
 
 const FastfoodItem = ({
   item: {
@@ -32,18 +40,24 @@ const FastfoodItem = ({
           media="(max-width: 1024px)"
         />
 
-        <img
+        <DishImage
           title={title}
           src={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${image}.png`}
           alt={name}
         />
       </picture>
-      <p>{smallSize}</p>
-      <p>{smallPrice}</p>
-      <span>{currency}</span>
-      <p>{bigSize}</p>
-      <p>{bigPrice}</p>
-      <span>{currency}</span>
+      <PriceWrapper>
+        <PriceColumn>
+          <PriceText>{smallSize}</PriceText>
+          <Price>{smallPrice}</Price>
+          <Currency>{currency}</Currency>
+        </PriceColumn>
+        <PriceColumn>
+          <PriceText>{bigSize}</PriceText>
+          <Price>{bigPrice}</Price>
+          <Currency>{currency}</Currency>
+        </PriceColumn>
+      </PriceWrapper>
     </>
   );
 };
