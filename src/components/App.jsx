@@ -1,55 +1,23 @@
-import {
-  BlueButton,
-  CoworkingBlueButton,
-  CoworkingWhiteButton,
-  FooterButton,
-  FormButton,
-  WhiteButton
-} from 'styles/buttonStyles';
-import { DarkSection, Section } from './App.styled';
-import { Header } from './Header/Header';
+import { lazy } from 'react';
+import { Navigate, Route, Routes } from 'react-router';
+import { Layout } from './Layout';
+
+const MainPage = lazy(() => import('pages/Main/Main.jsx'));
+const CafePage = lazy(() => import('pages/Cafe/Cafe.jsx'));
+const FastfoodPage = lazy(() => import('pages/Fastfood/Fastfood.jsx'));
+const CoworkingPage = lazy(() => import('pages/Coworking/Coworking.jsx'));
 
 const App = () => {
   return (
-    <>
-      <Section>
-        <Header />
-        <BlueButton type="button" onClick={console.log(123)}>
-          Details
-        </BlueButton>
-        <CoworkingBlueButton type="button" onClick={console.log(123)}>
-          Book now
-        </CoworkingBlueButton>
-        <FormButton
-          type="submit"
-          onClick={() => {
-            console.log(123);
-            return false;
-          }}
-        >
-          Book now
-        </FormButton>
-      </Section>
-
-      <DarkSection>
-        <WhiteButton type="button" onClick={console.log(123)}>
-          Details
-        </WhiteButton>
-        <CoworkingWhiteButton type="button" onClick={console.log(123)}>
-          Book now
-        </CoworkingWhiteButton>
-        <FooterButton
-          type="submit"
-          onClick={() => {
-            console.log(123);
-            return false;
-          }}
-        >
-          Subscribe
-        </FooterButton>
-      </DarkSection>
-      <h1>Hello BITE developers!</h1>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<MainPage />} />
+        <Route path="/cafe" element={<CafePage />} />
+        <Route path="/fastfood" element={<FastfoodPage />} />
+        <Route path="/coworking" element={<CoworkingPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Route>
+    </Routes>
   );
 };
 
