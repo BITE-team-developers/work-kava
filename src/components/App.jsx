@@ -52,10 +52,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-// import Cafe from "pages/Cafe/Cafe";
-// <Cafe />
