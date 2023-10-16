@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkwork_kava=self.webpackChunkwork_kava||[]).push([[415],{415:function(a,n,e){e.r(n);var k=e(184);n.default=function(){return(0,k.jsx)("div",{children:"Main"})}}}]);
+//# sourceMappingURL=415.4c94bd0a.chunk.js.map
