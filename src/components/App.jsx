@@ -1,31 +1,52 @@
-import { Header } from './Header/Header';
-import { ButtonBlue } from './miniComponents/ButtonBlue/ButtonBlue';
-import { ButtonWhite } from './miniComponents/ButtonWhite/ButtonWhite';
+import {
+  BlueButton,
+  CoworkingBlueButton,
+  CoworkingWhiteButton,
+  FooterButton,
+  FormButton,
+  WhiteButton
+} from 'styles/buttonStyles';
+import { DarkSection, Section } from './App.styled';
 
 const App = () => {
-  const handleClick = () => {
-    console.log('button test');
-  };
   return (
     <>
-      <Header />
+      <Section>
+        <BlueButton type="button" onClick={console.log(123)}>
+          Details
+        </BlueButton>
+        <CoworkingBlueButton type="button" onClick={console.log(123)}>
+          Book now
+        </CoworkingBlueButton>
+        <FormButton
+          type="submit"
+          onClick={() => {
+            console.log(123);
+            return false;
+          }}
+        >
+          Book now
+        </FormButton>
+      </Section>
+
+      <DarkSection>
+        <WhiteButton type="button" onClick={console.log(123)}>
+          Details
+        </WhiteButton>
+        <CoworkingWhiteButton type="button" onClick={console.log(123)}>
+          Book now
+        </CoworkingWhiteButton>
+        <FooterButton
+          type="submit"
+          onClick={() => {
+            console.log(123);
+            return false;
+          }}
+        >
+          Subscribe
+        </FooterButton>
+      </DarkSection>
       <h1>Hello BITE developers!</h1>
-      <div
-        style={{ width: '600px', height: '150px', backgroundColor: 'black' }}
-      >
-        <ButtonWhite action={handleClick} title="width 400" />
-        <ButtonWhite
-          action={handleClick}
-          style={{ width: '444px' }}
-          title="width 444"
-        />
-      </div>
-      <ButtonBlue action={handleClick} title="width 400" />
-      <ButtonBlue
-        action={handleClick}
-        style={{ width: '444px' }}
-        title="width 444"
-      />
     </>
   );
 };
