@@ -1,3 +1,5 @@
+import { ContentHolder } from './FastfoodItem.styled';
+
 const FastfoodItem = ({
   item: {
     name,
@@ -11,7 +13,7 @@ const FastfoodItem = ({
   }
 }) => {
   return (
-    <>
+    <ContentHolder>
       <h3>{name}</h3>
       <picture>
         <source
@@ -42,7 +44,7 @@ const FastfoodItem = ({
       <p>{bigSize}</p>
       <p>{bigPrice}</p>
       <span>{currency}</span>
-    </>
+    </ContentHolder>
   );
 };
 

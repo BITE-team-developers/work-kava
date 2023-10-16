@@ -44,6 +44,7 @@ export const FastfoodSection = styled(Section)`
       position: absolute;
       top: 50px;
       right: 4px;
+      z-index: -1;
       width: 202px;
       height: 202px;
     }

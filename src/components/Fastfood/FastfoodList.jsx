@@ -1,14 +1,15 @@
 import FastfoodItem from './FastfoodItem';
+import { ItemsList } from './FastfoodList.styled';
 
 const FastfoodList = ({ items }) => {
   return (
-    <ul>
+    <ItemsList>
       {items.map(fastfood => (
         <li key={fastfood.id}>
           <FastfoodItem item={fastfood} />
         </li>
       ))}
-    </ul>
+    </ItemsList>
   );
 };
 
