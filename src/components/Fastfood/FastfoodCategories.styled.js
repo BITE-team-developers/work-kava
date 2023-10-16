@@ -141,6 +141,5 @@ export const Title = styled.h2`
     width: 100%;
     height: 1em;
     background-color: ${props => props.theme.colors.accent};
-    overflow: hidden;
   }
 `;

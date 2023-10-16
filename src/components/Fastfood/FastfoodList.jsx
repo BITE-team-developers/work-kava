@@ -1,13 +1,13 @@
 import FastfoodItem from './FastfoodItem';
-import { ItemsList } from './FastfoodList.styled';
+import { Item, ItemsList } from './FastfoodList.styled';
 
 const FastfoodList = ({ items }) => {
   return (
     <ItemsList>
       {items.map(fastfood => (
-        <li key={fastfood.id}>
+        <Item key={fastfood.id}>
           <FastfoodItem item={fastfood} />
-        </li>
+        </Item>
       ))}
     </ItemsList>
   );

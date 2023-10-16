@@ -15,3 +15,9 @@ export const ItemsList = styled.ul`
     gap: 46px;
   }
 `;
+
+export const Item = styled.li`
+  padding: 31px;
+  background-color: ${props => props.theme.colors.accent};
+  border-radius: 80px 0px;
+`;

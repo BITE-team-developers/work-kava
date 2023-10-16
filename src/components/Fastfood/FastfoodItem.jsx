@@ -1,4 +1,4 @@
-import { ContentHolder } from './FastfoodItem.styled';
+import { DishTitle } from './FastfoodItem.styled';
 
 const FastfoodItem = ({
   item: {
@@ -13,8 +13,8 @@ const FastfoodItem = ({
   }
 }) => {
   return (
-    <ContentHolder>
-      <h3>{name}</h3>
+    <>
+      <DishTitle>{name}</DishTitle>
       <picture>
         <source
           srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${image}.png 1x,
@@ -44,7 +44,7 @@ const FastfoodItem = ({
       <p>{bigSize}</p>
       <p>{bigPrice}</p>
       <span>{currency}</span>
-    </ContentHolder>
+    </>
   );
 };
 
