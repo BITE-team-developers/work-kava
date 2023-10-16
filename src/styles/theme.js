@@ -50,8 +50,10 @@ export const theme = Object.freeze({
 
   heroLinerGradient:
     '90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0.00) 100%',
-  blueRadialGradient: '92.89% 118.32% at 0% -1.02%, #1B253F 0%, #3C4F82 100%', // cafe page
-  beigeRadialGradient: '148.54% 120.77% at 100% 0%, #656B7D 0%, #857661 100%', // cafe page
+  blueRadialGradient:
+    'radial-gradient(92.89% 118.32% at 0% -1.02%, #1b253f 0%, #3c4f82 100%)', // cafe page
+  beigeRadialGradient:
+    'radial-gradient(148.54% 120.77% at 100% 0%, #656b7d 0%, #857661 100%)', // cafe page
   lightBeigeRadialGradient:
-    '258.19% 141.42% at 0% 0%, #E2D0AE 0%, rgba(226, 208, 174, 0.00) 100%' // cafe page
+    'radial-gradient(258.19% 141.42% at 0% 0%, #e2d0ae 0%, rgba(226, 208, 174, 0) 100%)' // cafe page
 });
