@@ -7,11 +7,13 @@ import {
   WhiteButton
 } from 'styles/buttonStyles';
 import { DarkSection, Section } from './App.styled';
+import { Header } from './Header/Header';
 
 const App = () => {
   return (
     <>
       <Section>
+        <Header />
         <BlueButton type="button" onClick={console.log(123)}>
           Details
         </BlueButton>
