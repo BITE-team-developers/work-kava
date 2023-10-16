@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 import {
   Accent,
@@ -12,6 +13,12 @@ import {
 import { HoursSelector } from './HoursSelector';
 
 export const BookForm = ({ action }) => {
+  const defaultPrice = 50;
+  const [price, setPrice] = useState(defaultPrice);
+
+  const updatePrice = hours => {
+    setPrice(hours * defaultPrice);
+  };
   const {
     register,
     handleSubmit,
@@ -22,7 +29,7 @@ export const BookForm = ({ action }) => {
     // <FormHolder>
     <Form
       onSubmit={handleSubmit(data => {
-        console.log(data);
+        console.log({ ...data, price });
         // action();
       })}
     >
@@ -54,7 +61,8 @@ export const BookForm = ({ action }) => {
         {errors.phone?.message && (
           <ErrorText>{errors.phone?.message}</ErrorText>
         )}
-        <HoursSelector />
+        <HoursSelector onHoursChanges={updatePrice} />
+        <p>Price: {price} ₴</p>
       </ContentWrapper>
       <button type="submit">Book now</button>
     </Form>

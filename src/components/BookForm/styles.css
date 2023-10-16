@@ -34,6 +34,7 @@
 }
 .dropdown-content .item {
   padding: 10px;
+  background: white;
   cursor: pointer;
 }
 .dropdown-content .item:hover {
