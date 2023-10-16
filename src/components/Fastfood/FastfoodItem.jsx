@@ -36,6 +36,12 @@ const FastfoodItem = ({
           alt={name}
         />
       </picture>
+      <p>{smallSize}</p>
+      <p>{smallPrice}</p>
+      <span>{currency}</span>
+      <p>{bigSize}</p>
+      <p>{bigPrice}</p>
+      <span>{currency}</span>
     </>
   );
 };
