@@ -41,11 +41,11 @@ export const FastfoodSection = styled(Section)`
   @media screen and (${props => props.theme.devices.tablet}) {
     &::after {
       content: url(${fourZigzags});
-      width: 202px;
-      height: 202px;
+      position: absolute;
       top: 50px;
       right: 4px;
-      position: absolute;
+      width: 202px;
+      height: 202px;
     }
 
     background-image: linear-gradient(${props => props.theme.darklinerGradient}),
