@@ -3,7 +3,6 @@ import { DarkSection } from 'components/App.styled';
 
 export const SectionHero = styled(DarkSection)`
   padding-top: 180px;
-
   background-image: linear-gradient(
       90deg,
       rgba(27, 37, 63, 0.67) 56.77%,
@@ -12,6 +11,7 @@ export const SectionHero = styled(DarkSection)`
     url('https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/home/hero-mobil.png');
   background-repeat: no-repeat;
   background-color: #1b253f;
+  background-position: 50% top;
 
   @media screen and (${props => props.theme.devices.tablet}) {
     padding-top: 130px;
@@ -55,11 +55,6 @@ export const TextContainer = styled.div`
   @media screen and (${props => props.theme.devices.desktop}) {
     width: 764px;
     padding: 52px 52px 52px 138px;
-    margin-bottom: 69px;
-    background-color: rgba(27, 37, 63, 0.67);
-  }
-
-  @media screen and (${props => props.theme.devices.desktop}) {
     margin-bottom: 134px;
   }
 `;
