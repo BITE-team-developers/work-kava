@@ -397,59 +397,6 @@ export const Img = styled.img`
   }
 `;
 
-export const DecorBox = styled.div`
-  position: absolute;
-  z-index: index 1;
-  right: 0;
-  top: 0;
-  transform: rotate(180deg);
-
-  ${props => {
-    if (props.name === 'Coffee classic') {
-      return ` width: 125px; height: 88px; fill: ${props.theme.colors.darkBeige}`;
-    } else if (props.name === 'Coffee with milk') {
-      return ` width: 125px; height: 88px; fill: ${props.theme.colors.beige}`;
-    } else if (props.name === 'Desserts') {
-      return ` width: 130px; height: 130px;   right: 0; top: 50px; fill: ${props.theme.colors.darkBeige}`;
-    } else {
-      return;
-    }
-  }};
-
-  @media screen and (${props => props.theme.devices.tablet}) {
-    ${props => {
-      if (props.name === 'Coffee classic') {
-        return ` width: 220px; height: 170px; top: -30px; `;
-      } else if (props.name === 'Coffee with milk') {
-        return ` width: 220px; height: 170px; top: -30px;`;
-      } else if (props.name === 'Desserts') {
-        return ` width: 190px; height: 190px;  top: 30px; right: 30px;`;
-      } else {
-        return;
-      }
-    }};
-  }
-
-  @media screen and (${props => props.theme.devices.desktop}) {
-    ${props => {
-      if (props.name === 'Coffee classic') {
-        return ` width: 380px; height: 225px; top: -30px; `;
-      } else if (props.name === 'Coffee with milk') {
-        return ` width: 380px; height: 225px; top: -30px; `;
-      } else if (props.name === 'Desserts') {
-        return ` width: 250px; height: 250px;  top: 30px; right: 30px;`;
-      } else {
-        return;
-      }
-    }};
-  }
-`;
-
-export const Svg = styled.svg`
-  width: 100%;
-  height: 100%;
-`;
-
 // @media screen and (${props => props.theme.devices.tablet}) {
 
 //  }

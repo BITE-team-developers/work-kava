@@ -1,15 +1,13 @@
 import { Container, Section } from 'components/App.styled';
 import Dish from './Components/Dish';
 import { Title, Wrapper, DishesList } from './Dishes.styled';
-import Decor from './Components/Decor';
 
 const Dishes = ({ title, dishes, styles }) => {
   return (
     <Wrapper name={title}>
       <Section>
         <Container>
-          <Decor name={title} />
-          <Title styles={styles}>{title}</Title>
+         <Title styles={styles}>{title}</Title>
           <DishesList>
             {dishes.map(dish => (
               <Dish
