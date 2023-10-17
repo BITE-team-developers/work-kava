@@ -7,6 +7,7 @@ const CafePage = lazy(() => import('pages/Cafe/Cafe.jsx'));
 const FastfoodPage = lazy(() => import('pages/Fastfood/Fastfood.jsx'));
 const CoworkingPage = lazy(() => import('pages/Coworking/Coworking.jsx'));
 
+
 const App = () => {
   return (
     <Routes>

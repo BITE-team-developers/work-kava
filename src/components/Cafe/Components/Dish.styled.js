@@ -95,7 +95,6 @@ export const DishItem = styled.li`
 export const DishItemBox = styled.div`
   position: relative;
   z-index: 1;
-  flex-grow: 999;
   padding-top: 10px;
 
   ${props =>
@@ -146,11 +145,14 @@ export const DishName = styled.h3`
 `;
 
 export const IngredientsList = styled.ul`
-  width: 100%;
-  max-width: 153px;
+  width: 153px;
   height: 81px;
+  display: grid;
+  grid-template-columns: calc(100% - 56px) 56px;
+  grid-template-rows: 33%;
   font-size: 18px;
   line-height: 1.5;
+
   ${props =>
     props.isEven
       ? `
@@ -164,15 +166,17 @@ export const IngredientsList = styled.ul`
   color: ${props => props.theme.colors.primary};
 
   @media screen and (${props => props.theme.devices.tablet}) {
-    max-width: none;
+    width: 100%;
     font-size: 24px;
     height: 171px;
+    grid-template-columns: calc(100% - 76px) 76px;
     ${props =>
       props.styles !== 'dark'
         ? `color: ${props.theme.colors.white}; border-color: ${props.theme.colors.white}`
         : `color: ${props.theme.colors.accent}; border-color: ${props.theme.colors.accent}`};
   }
   @media screen and (${props => props.theme.devices.desktop}) {
+    grid-template-columns: calc(100% - 95px) 95px;
     height: 210px;
     font-size: 30px;
   }
@@ -248,33 +252,27 @@ export const Currency = styled.span`
   line-height: 35px;
 `;
 
-export const IngredientItem = styled.li`
-  display: flex;
+export const IngredientItem = styled.div`
   white-space: nowrap;
-  align-items: center;
-  @media screen and (${props => props.theme.devices.tablet}) {
-    max-width: 218px;
-  }
+  overflow: hidden;
 `;
 
 export const Dots = styled.span`
-  flex-grow: 0;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
 `;
 
 export const Amount = styled.span`
-  min-width: 54px;
-  @media screen and (${props => props.theme.devices.tablet}) {
-    min-width: 74px;
-  }
+  padding-left: 2px;
 `;
 
 export const ImageBox = styled.div`
   display: flex;
+  flex-shrink: 1;
   align-items: center;
   justify-content: center;
-  width: 170px;
+  width: 100%;
   max-width: 178px;
   height: 170px;
   position: relative;
@@ -381,6 +379,7 @@ export const Picture = styled.picture`
       props.isEven ? '0px 150px 150px 0px' : '150px 0px 0px 150px'};
   }
 `;
+
 export const Img = styled.img`
   display: block;
   ${props =>
@@ -398,10 +397,10 @@ export const Img = styled.img`
   }
 `;
 
-/* @media screen and (${props => props.theme.devices.tablet}) {
+// @media screen and (${props => props.theme.devices.tablet}) {
 
- } */
+//  }
 
 // @media screen and (${props => props.theme.devices.desktop}) {
 
-// }
+//  }
