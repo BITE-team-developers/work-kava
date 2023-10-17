@@ -6,5 +6,9 @@ export const Links = styled.ul`
 `;
 
 export const LinkItem = styled.li`
+  display: flex;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   background-color: ${props => props.theme.colors.primary};
 `;

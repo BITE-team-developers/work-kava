@@ -13,10 +13,7 @@ const Hero = () => {
     <SectionHero>
       <HeroContainer>
         <TextContainer>
-          <MainText>
-            Work & comfort? <br />
-            It's easy!
-          </MainText>
+          <MainText>Work & comfort? It's easy!</MainText>
           <DescrText>
             Creative coffee shop <br />
             Work Kava is a cozy <br />
