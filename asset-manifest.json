@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/work-kava/static/css/main.7cda0caf.css",
-    "main.js": "/work-kava/static/js/main.a8a7f56b.js",
+    "main.js": "/work-kava/static/js/main.1f7bcdda.js",
     "static/js/415.4c94bd0a.chunk.js": "/work-kava/static/js/415.4c94bd0a.chunk.js",
-    "static/js/513.a220cbd4.chunk.js": "/work-kava/static/js/513.a220cbd4.chunk.js",
+    "static/js/513.7a9243a5.chunk.js": "/work-kava/static/js/513.7a9243a5.chunk.js",
     "static/js/414.81407e88.chunk.js": "/work-kava/static/js/414.81407e88.chunk.js",
     "static/js/938.80c2e9c9.chunk.js": "/work-kava/static/js/938.80c2e9c9.chunk.js",
     "static/media/Inter-Bold.ttf": "/work-kava/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
@@ -12,14 +12,14 @@
     "static/media/fourZigzags.svg": "/work-kava/static/media/fourZigzags.bf5bb311117dcdbea87a0e5e1e1e0064.svg",
     "index.html": "/work-kava/index.html",
     "main.7cda0caf.css.map": "/work-kava/static/css/main.7cda0caf.css.map",
-    "main.a8a7f56b.js.map": "/work-kava/static/js/main.a8a7f56b.js.map",
+    "main.1f7bcdda.js.map": "/work-kava/static/js/main.1f7bcdda.js.map",
     "415.4c94bd0a.chunk.js.map": "/work-kava/static/js/415.4c94bd0a.chunk.js.map",
-    "513.a220cbd4.chunk.js.map": "/work-kava/static/js/513.a220cbd4.chunk.js.map",
+    "513.7a9243a5.chunk.js.map": "/work-kava/static/js/513.7a9243a5.chunk.js.map",
     "414.81407e88.chunk.js.map": "/work-kava/static/js/414.81407e88.chunk.js.map",
     "938.80c2e9c9.chunk.js.map": "/work-kava/static/js/938.80c2e9c9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.a8a7f56b.js"
+    "static/js/main.1f7bcdda.js"
   ]
 }
