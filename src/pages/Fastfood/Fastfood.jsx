@@ -1,5 +1,4 @@
 import FastfoodCategories from 'components/Fastfood/FastfoodCategories';
-import { theme } from 'styles';
 
 const data = [
   {
