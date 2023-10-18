@@ -1,5 +1,5 @@
 import { Container } from 'components/App.styled';
-import LinkList from 'components/LinkList';
+import SocialLinksList from 'components/SocialLinksList';
 import {
   SectionHero,
   MainText,
@@ -29,7 +29,7 @@ const Hero = ({ page }) => {
 
         {page === 'home' && (
           <Container>
-            <LinkList />
+            <SocialLinksList />
           </Container>
         )}
       </HeroContainer>
