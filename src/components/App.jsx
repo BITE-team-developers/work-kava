@@ -2,7 +2,9 @@ import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import { Layout } from './Layout';
 import { Modal } from './Modal/Modal';
+import { useModal } from 'hooks/useModal';
 import { CoworkingBlueButton, FormButton } from 'styles/buttonStyles';
+import { BookForm } from './BookForm/BookForm';
 
 const MainPage = lazy(() => import('pages/Main/Main.jsx'));
 const CafePage = lazy(() => import('pages/Cafe/Cafe.jsx'));
@@ -24,12 +26,13 @@ const CoworkingPage = lazy(() => import('pages/Coworking/Coworking.jsx'));
 // };
 
 const App = () => {
+  const { isModalOpen, openModal, closeModal } = useModal();
   return (
     <>
-      <CoworkingBlueButton type="button" onClick={console.log(123)}>
+      <CoworkingBlueButton type="button" onClick={openModal}>
         Book now
       </CoworkingBlueButton>
-      <FormButton
+      {/* <FormButton
         type="submit"
         onClick={() => {
           console.log(123);
@@ -37,8 +40,12 @@ const App = () => {
         }}
       >
         Book now
-      </FormButton>
-      {/* <Modal></Modal> */}
+      </FormButton> */}
+      {isModalOpen && (
+        <Modal onClose={closeModal}>
+          <BookForm action={closeModal} />
+        </Modal>
+      )}
     </>
   );
 };
