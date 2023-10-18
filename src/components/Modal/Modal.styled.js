@@ -18,9 +18,13 @@ export const ModalContent = styled.div`
   width: calc(100vw - 48px);
   background: ${props => props.theme.colors.mainBackground};
   transform: translate(-50%, -50%);
-  border-radius: 15px;
+  border-radius: 10px;
 
   @media screen and (${props => props.theme.devices.mobile}) {
-    width: 311px;
+    width: 366px;
+  }
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    width: 500px;
   }
 `;
