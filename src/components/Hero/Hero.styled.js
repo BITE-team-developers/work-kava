@@ -3,24 +3,22 @@ import { DarkSection } from 'components/App.styled';
 
 export const SectionHero = styled(DarkSection)`
   padding-top: 180px;
-  background-image: linear-gradient(
-      90deg,
-      rgba(27, 37, 63, 0.67) 56.77%,
-      rgba(27, 37, 63, 0) 100%
-    ),
-    url('https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/home/hero-mobil.png');
   background-repeat: no-repeat;
   background-color: #1b253f;
   background-position: 50% top;
+  background-image: ${props =>
+    `linear-gradient(90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0) 100%), url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/${props.page}/hero-mobil.png)`};
 
   @media screen and (${props => props.theme.devices.tablet}) {
     padding-top: 130px;
-    background-image: url('https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012581/WorkKava/home/hero-table.png');
+    background-image: ${props =>
+      `linear-gradient(90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0) 100%), url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/${props.page}/hero-table.png)`};
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
     padding-top: 180px;
-    background-image: url('https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012565/WorkKava/home/hero.png');
+    background-image: ${props =>
+      `linear-gradient(90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0) 100%), url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/${props.page}/hero.png)`};
   }
 `;
 

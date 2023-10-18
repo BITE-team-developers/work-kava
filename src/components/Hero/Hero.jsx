@@ -8,13 +8,17 @@ import {
   HeroContainer
 } from './Hero.styled';
 
-const Hero = () => {
+const Hero = ({ page }) => {
   return (
-    <SectionHero>
+    <SectionHero page={page}>
       <HeroContainer>
         <TextContainer>
-          <MainText>Work & comfort? It's easy!</MainText>
-          <DescrText>
+          <MainText>
+            {page === 'home'
+              ? `Work & comfort? It's easy!`
+              : 'Work for an hour or for the whole day?'}
+          </MainText>
+          <DescrText page={page}>
             Creative coffee shop <br />
             Work Kava is a cozy <br />
             location for individual <br />
@@ -23,9 +27,11 @@ const Hero = () => {
           </DescrText>
         </TextContainer>
 
-        <Container>
-          <LinkList />
-        </Container>
+        {page === 'home' && (
+          <Container>
+            <LinkList />
+          </Container>
+        )}
       </HeroContainer>
     </SectionHero>
   );
