@@ -17,7 +17,7 @@ export const FormTitle = styled.p`
   text-align: center;
 
   @media screen and (${props => props.theme.devices.tablet}) {
-    font-size: 30px;
+    font-size: 38px;
   }
 `;
 
@@ -73,6 +73,6 @@ export const CloseButton = styled.button`
 
   &:hover,
   &:focus {
-    fill: ${props => props.theme.colors.darkButtonHover};
+    fill: ${props => props.theme.colors.accent};
   }
 `;

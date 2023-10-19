@@ -2,10 +2,11 @@ import styled from '@emotion/styled';
 
 export const DropdownInput = styled.div`
   position: relative;
-  margin: 0 auto;
   z-index: 10000;
-
+  display: flex;
+  align-items: center;
   width: 100%;
+  min-height: 68px;
   font-size: 28px;
   line-height: 1;
   color: ${props => props.theme.colors.darkGray};
@@ -33,6 +34,10 @@ export const DropdownContent = styled.ul`
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border: 1.5px solid ${props => props.theme.colors.primary};
+
+  &.hidden {
+    display: none;
+  }
 `;
 
 export const DropdownItem = styled.li`
@@ -59,7 +64,7 @@ export const DropdownItem = styled.li`
 export const DropdownButton = styled.span`
   position: absolute;
   right: 16px;
-  top: 16px;
+  top: 20px;
   fill: ${props => props.theme.colors.primary};
   transition: fill ${props => props.theme.baseTransition};
   cursor: pointer;

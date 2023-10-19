@@ -55,10 +55,7 @@ export const HoursSelector = ({ onHoursChanges }) => {
       >
         <Svg w={28} h={28} icon="arrow" />
       </DropdownButton>
-      <DropdownContent
-        // className="dropdown-content"
-        style={{ display: isActive ? 'block' : 'none' }}
-      >
+      <DropdownContent className={isActive ? '' : 'hidden'}>
         {dataSource.map(({ value, text }) => (
           <DropdownItem
             key={value}
