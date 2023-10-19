@@ -12,18 +12,15 @@ const Hero = ({ page }) => {
   return (
     <SectionHero page={page}>
       <HeroContainer>
-        <TextContainer>
-          <MainText>
+        <TextContainer page={page}>
+          <MainText page={page}>
             {page === 'home'
               ? `Work & comfort? It's easy!`
               : 'Work for an hour or for the whole day?'}
           </MainText>
           <DescrText page={page}>
-            Creative coffee shop <br />
-            Work Kava is a cozy <br />
-            location for individual <br />
-            work, meetings, master <br />
-            classes and much more.
+            Creative coffee shop Work Kava is a cozy location for individual
+            work, meetings, master classes and much more.
           </DescrText>
         </TextContainer>
 
