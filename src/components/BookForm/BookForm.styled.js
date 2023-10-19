@@ -1,12 +1,5 @@
 import styled from '@emotion/styled';
-// import { ModalContent } from 'components/Modal/Modal.styled';
 import { theme } from 'styles';
-
-// export const FormHolder = styled(ModalContent)`
-//   @media screen and (${theme.devices.tablet}) {
-//     width: 517px;
-//   }
-// `;
 
 export const Form = styled.form`
   padding: 50px 24px;
@@ -80,6 +73,6 @@ export const CloseButton = styled.button`
 
   &:hover,
   &:focus {
-    fill: ${props => props.theme.colors.accent};
+    fill: ${props => props.theme.colors.darkButtonHover};
   }
 `;

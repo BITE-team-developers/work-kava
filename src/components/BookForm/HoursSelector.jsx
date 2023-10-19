@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import './styles.css';
+import { Svg } from 'components/SvgIcon/SvgIcon';
+
+import {
+  DropdownButton,
+  DropdownContent,
+  DropdownInput,
+  DropdownItem
+} from './HoursSelector.styled';
 
 const dataSource = [
   {
@@ -31,9 +38,6 @@ const dataSource = [
 export const HoursSelector = ({ onHoursChanges }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setIsSelected] = useState(dataSource[0]);
-  //   function handleBlur(e) {
-  //     console.log(e);
-  //   }
 
   const handleHoursChanges = e => {
     const selectedValue = parseInt(e.target.dataset.value);
@@ -42,37 +46,33 @@ export const HoursSelector = ({ onHoursChanges }) => {
     onHoursChanges(selectedValue);
   };
   return (
-    <div className="App">
-      <div className="dropdown">
-        <div
-          onClick={e => {
-            setIsActive(!isActive);
-          }}
-          className="dropdown-btn"
-        >
-          {selected.text}
-          <span
-            className={isActive ? 'fas fa-caret-up' : 'fas fa-caret-down'}
-          />
-        </div>
-        <div
-          className="dropdown-content"
-          style={{ display: isActive ? 'block' : 'none' }}
-        >
-          {dataSource.map(({ value, text }) => (
-            <div
-              key={value}
-              data-value={value}
-              onClick={e => {
-                handleHoursChanges(e);
-              }}
-              className="item"
-            >
-              {text}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <DropdownInput>
+      {selected.text}
+      <DropdownButton
+        onClick={e => {
+          setIsActive(!isActive);
+        }}
+      >
+        <Svg w={28} h={28} icon="arrow" />
+      </DropdownButton>
+      <DropdownContent
+        // className="dropdown-content"
+        style={{ display: isActive ? 'block' : 'none' }}
+      >
+        {dataSource.map(({ value, text }) => (
+          <DropdownItem
+            key={value}
+            data-value={value}
+            onClick={e => {
+              handleHoursChanges(e);
+            }}
+            selected={value === selected.value}
+            className={value === selected.value ? 'selected' : ''}
+          >
+            {text}
+          </DropdownItem>
+        ))}
+      </DropdownContent>
+    </DropdownInput>
   );
 };
