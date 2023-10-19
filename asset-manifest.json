@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/work-kava/static/css/main.7cda0caf.css",
-    "main.js": "/work-kava/static/js/main.4003a6e6.js",
-    "static/js/677.0ad58f91.chunk.js": "/work-kava/static/js/677.0ad58f91.chunk.js",
+    "main.js": "/work-kava/static/js/main.e474cf7f.js",
+    "static/js/415.a756a34c.chunk.js": "/work-kava/static/js/415.a756a34c.chunk.js",
     "static/js/513.a3a7652c.chunk.js": "/work-kava/static/js/513.a3a7652c.chunk.js",
     "static/js/414.ee779abe.chunk.js": "/work-kava/static/js/414.ee779abe.chunk.js",
-    "static/js/938.80c2e9c9.chunk.js": "/work-kava/static/js/938.80c2e9c9.chunk.js",
+    "static/js/938.c8002588.chunk.js": "/work-kava/static/js/938.c8002588.chunk.js",
+    "static/js/202.fff8c87f.chunk.js": "/work-kava/static/js/202.fff8c87f.chunk.js",
     "static/media/Inter-Bold.ttf": "/work-kava/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
     "static/media/Inter-Regular.ttf": "/work-kava/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
     "static/media/sprite.svg": "/work-kava/static/media/sprite.7a2b3b9a8c792b5a1499d09c2e0ef442.svg",
@@ -13,14 +14,15 @@
     "static/media/fourZigzags.svg": "/work-kava/static/media/fourZigzags.bf5bb311117dcdbea87a0e5e1e1e0064.svg",
     "index.html": "/work-kava/index.html",
     "main.7cda0caf.css.map": "/work-kava/static/css/main.7cda0caf.css.map",
-    "main.4003a6e6.js.map": "/work-kava/static/js/main.4003a6e6.js.map",
-    "677.0ad58f91.chunk.js.map": "/work-kava/static/js/677.0ad58f91.chunk.js.map",
+    "main.e474cf7f.js.map": "/work-kava/static/js/main.e474cf7f.js.map",
+    "415.a756a34c.chunk.js.map": "/work-kava/static/js/415.a756a34c.chunk.js.map",
     "513.a3a7652c.chunk.js.map": "/work-kava/static/js/513.a3a7652c.chunk.js.map",
     "414.ee779abe.chunk.js.map": "/work-kava/static/js/414.ee779abe.chunk.js.map",
-    "938.80c2e9c9.chunk.js.map": "/work-kava/static/js/938.80c2e9c9.chunk.js.map"
+    "938.c8002588.chunk.js.map": "/work-kava/static/js/938.c8002588.chunk.js.map",
+    "202.fff8c87f.chunk.js.map": "/work-kava/static/js/202.fff8c87f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.4003a6e6.js"
+    "static/js/main.e474cf7f.js"
   ]
 }

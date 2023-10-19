@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/938.80c2e9c9.chunk.js","mappings":"8HAIA,UAJkB,WAChB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,aACd,C","sources":["pages/Coworking/Coworking.jsx"],"sourcesContent":["const Coworking = () => {\n  return <div>Coworking</div>;\n};\n\nexport default Coworking;\n"],"names":["_jsx","children"],"sourceRoot":""}
