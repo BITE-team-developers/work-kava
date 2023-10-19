@@ -2,16 +2,16 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 
 import {
-  Accent,
   ContentWrapper,
   ErrorText,
   Form,
-  FormHolder,
   FormTitle,
-  Input
+  Input,
+  PriceText
 } from './BookForm.styled';
 import { HoursSelector } from './HoursSelector';
 import { ModalContent } from 'components/Modal/Modal.styled';
+import { FormButton } from 'styles/buttonStyles';
 
 export const BookForm = ({ action }) => {
   const defaultPrice = 50;
@@ -33,6 +33,7 @@ export const BookForm = ({ action }) => {
           console.log({ ...data, price });
           action();
         })}
+        autoComplete="off"
       >
         <FormTitle>Book a workplace</FormTitle>
         <ContentWrapper>
@@ -65,9 +66,10 @@ export const BookForm = ({ action }) => {
             <ErrorText>{errors.phone?.message}</ErrorText>
           )}
           <HoursSelector onHoursChanges={updatePrice} />
-          <p>Price: {price} ₴</p>
         </ContentWrapper>
-        <button type="submit">Book now</button>
+        <PriceText>Price: {price} ₴</PriceText>
+
+        <FormButton type="submit">Book now</FormButton>
       </Form>
     </ModalContent>
   );

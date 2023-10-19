@@ -32,15 +32,7 @@ const App = () => {
       <CoworkingBlueButton type="button" onClick={openModal}>
         Book now
       </CoworkingBlueButton>
-      {/* <FormButton
-        type="submit"
-        onClick={() => {
-          console.log(123);
-          return false;
-        }}
-      >
-        Book now
-      </FormButton> */}
+
       {isModalOpen && (
         <Modal onClose={closeModal}>
           <BookForm action={closeModal} />
