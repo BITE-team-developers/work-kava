@@ -7,7 +7,7 @@ const Dishes = ({ title, dishes, styles }) => {
     <Wrapper name={title}>
       <Section>
         <Container>
-          <Title styles={styles}>{title}</Title>
+         <Title styles={styles}>{title}</Title>
           <DishesList>
             {dishes.map(dish => (
               <Dish
