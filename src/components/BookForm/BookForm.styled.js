@@ -56,6 +56,7 @@ export const PriceText = styled.p`
 `;
 
 export const ErrorText = styled.p`
+  font-size: 20px;
   color: ${props => props.theme.colors.validationError};
 `;
 

@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { Svg } from 'components/SvgIcon/SvgIcon';
 import { HoursSelector } from './HoursSelector';
+import { BookType, GetBookPrice } from 'utils/commonUtils';
 
 import {
   CloseButton,
@@ -16,9 +17,26 @@ import {
 import { ModalContent } from 'components/Modal/Modal.styled';
 import { FormButton } from 'styles/buttonStyles';
 
-export const BookForm = ({ action }) => {
-  const defaultPrice = 50;
+export const BookForm = ({ action, bookType }) => {
+  let title = '';
+
+  switch (bookType) {
+    case BookType.Workplace:
+      title = 'Book a workplace';
+      break;
+    case BookType.MeetingRoom:
+      title = 'Book a meeting room';
+      break;
+    case BookType.BigHall:
+      title = 'Book a big hall';
+      break;
+    default:
+      throw new Error('Not supported book type');
+  }
+
+  const defaultPrice = GetBookPrice(bookType);
   const [price, setPrice] = useState(defaultPrice);
+  console.log(defaultPrice);
 
   const updatePrice = hours => {
     setPrice(hours * defaultPrice);
@@ -32,7 +50,7 @@ export const BookForm = ({ action }) => {
   return (
     <ModalContent>
       <CloseButton type="button" onClick={action}>
-        <Svg w={32} h={32} icon="close" />
+        <Svg w={36} h={36} icon="close" />
       </CloseButton>
       <Form
         onSubmit={handleSubmit(data => {
@@ -41,7 +59,7 @@ export const BookForm = ({ action }) => {
         })}
         autoComplete="off"
       >
-        <FormTitle>Book a workplace</FormTitle>
+        <FormTitle>{title}</FormTitle>
         <ContentWrapper>
           <Input
             type="text"
@@ -71,7 +89,10 @@ export const BookForm = ({ action }) => {
           {errors.phone?.message && (
             <ErrorText>{errors.phone?.message}</ErrorText>
           )}
-          <HoursSelector onHoursChanges={updatePrice} />
+          <HoursSelector
+            bookType={BookType.MeetingRoom}
+            onHoursChanges={updatePrice}
+          />
         </ContentWrapper>
         <PriceText>Price: {price} ₴</PriceText>
 

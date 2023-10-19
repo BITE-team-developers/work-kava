@@ -5,6 +5,7 @@ import { Modal } from './Modal/Modal';
 import { useModal } from 'hooks/useModal';
 import { CoworkingBlueButton, FormButton } from 'styles/buttonStyles';
 import { BookForm } from './BookForm/BookForm';
+import { BookType } from 'utils/commonUtils';
 
 const MainPage = lazy(() => import('pages/Main/Main.jsx'));
 const CafePage = lazy(() => import('pages/Cafe/Cafe.jsx'));
@@ -35,7 +36,7 @@ const App = () => {
 
       {isModalOpen && (
         <Modal onClose={closeModal}>
-          <BookForm action={closeModal} />
+          <BookForm action={closeModal} bookType={BookType.BigHall} />
         </Modal>
       )}
     </>
