@@ -1,5 +1,5 @@
 import { Svg } from 'components/SvgIcon/SvgIcon';
-import { LinkItem, Links } from './LinkList.styled';
+import { LinkItem, Links } from './SocialLinksList.styled';
 
 const links = [
   {
@@ -29,7 +29,7 @@ const links = [
   }
 ];
 
-const LinkList = () => {
+const SocialLinksList = () => {
   return (
     <Links>
       {links.map(({ link, text, icon }, index) => (
@@ -48,4 +48,4 @@ const LinkList = () => {
   );
 };
 
-export default LinkList;
+export default SocialLinksList;

@@ -5,9 +5,7 @@ import {
   LinkItem,
   LinkPhone,
   List,
-  StyledHeader,
-  Wrapper
-  // WrapperPhone
+  StyledHeader
 } from './Header.styled';
 import { Svg } from 'components/SvgIcon/SvgIcon';
 import { useEffect, useState } from 'react';
