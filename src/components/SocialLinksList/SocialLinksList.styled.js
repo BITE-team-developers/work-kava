@@ -7,8 +7,13 @@ export const Links = styled.ul`
 
 export const LinkItem = styled.li`
   display: flex;
-  border-radius: 50%;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   background-color: ${props => props.theme.colors.primary};
+  transition: ${props => `transform ${props.theme.baseTransition}`};
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
