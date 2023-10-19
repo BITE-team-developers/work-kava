@@ -1,10 +1,10 @@
-import { ContactsLink, ContactsItem, Box } from "./Contacts.styled"
+import { ContactsList, ContactsItem, Box, ContactsLink } from "./Contacts.styled"
 
 export const Contacts = () => {
     
     return (
         <Box>
-            <ul>
+            <ContactsList>
                 <ContactsItem>
                     <ContactsLink href="https://maps.app.goo.gl/JiVWbY7LrwSrAAdD7" target="_blank" rel="noopener nofollow">Kryvyi Rih, st. Nova, 1</ContactsLink>
                 </ContactsItem>
@@ -14,7 +14,7 @@ export const Contacts = () => {
                 <ContactsItem>
                     <ContactsLink href="tel:+380970000000" rel="noopener nofollow">+38 (097) 000 00 00</ContactsLink>
                 </ContactsItem>
-            </ul>
+            </ContactsList>
         </Box>
     )
 }
