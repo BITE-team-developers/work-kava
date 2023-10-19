@@ -44,6 +44,7 @@ export const HeroContainer = styled.div`
 export const TextContainer = styled.div`
   margin-bottom: ${props => (props.page === 'home' ? '120px' : '0')};
   padding: 0 24px;
+  color: ${props => props.theme.colors.white};
 
   @media screen and (${props => props.theme.devices.tablet}) {
     width: 598px;
@@ -61,33 +62,31 @@ export const TextContainer = styled.div`
 `;
 
 export const MainText = styled.p`
-  color: #fff;
+  margin-bottom: 50px;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.5;
   text-align: left;
-  margin-bottom: 50px;
 
   @media screen and (${props => props.theme.devices.tablet}) {
+    margin-bottom: 40px;
     font-size: ${props => (props.page === 'home' ? '60px' : '58px')};
     line-height: normal;
-    margin-bottom: 40px;
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
-    font-size: ${props => (props.page === 'home' ? '70px' : '48px')};
     margin-bottom: ${props => (props.page === 'home' ? '20px' : '40px')};
+    font-size: ${props => (props.page === 'home' ? '70px' : '48px')};
   }
 `;
 
 export const DescrText = styled.p`
   position: relative;
-  color: #fff;
+  padding-left: 40px;
   font-size: ${props => (props.page === 'home' ? '24px' : '20px')};
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
-  padding-left: 40px;
 
   @media screen and (${props => props.theme.devices.tablet}) {
     width: 412px;
@@ -96,13 +95,13 @@ export const DescrText = styled.p`
   }
 
   &::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #fff;
-    content: '';
-    height: 100%;
     width: 5px;
+    height: 100%;
+    background-color: #fff;
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
@@ -111,15 +110,11 @@ export const DescrText = styled.p`
       position: absolute;
       top: 0;
       right: 100%;
-      height: 182px;
       width: 182px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 182px;
       background-image: url('https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/four_zigzags_ffffff.svg');
       background-repeat: no-repeat;
       background-size: cover;
-      z-index: 999;
     }
   }
 `;
