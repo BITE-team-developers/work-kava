@@ -10,11 +10,26 @@ import {
   // WrapperPhone
 } from './Header.styled';
 import { Svg } from 'components/SvgIcon/SvgIcon';
+import { useEffect, useState } from 'react';
 
 export const Header = () => {
-  const flot = window.innerWidth;
-  const sizeLogoWidth = flot >= 1440 ? 201 : 150;
-  const sizeLogoHeight = flot >= 1440 ? 46 : 32;
+  const [windowWidth, setWindowWidth] = useState();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  const sizeLogoWidth = windowWidth >= 1440 ? 201 : 150;
+  const sizeLogoHeight = windowWidth >= 1440 ? 46 : 32;
   const handleOpenModal = () => {
     console.log(sizeLogoWidth);
   };
@@ -29,7 +44,7 @@ export const Header = () => {
             style={{ fill: '#fff' }}
           />
         </Link>
-        {flot > 1044 ? (
+        {windowWidth >= 1024 ? (
           <>
             <nav>
               <List>
