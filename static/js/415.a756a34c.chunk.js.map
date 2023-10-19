@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/415.a756a34c.chunk.js","mappings":"uIAMA,UAJa,WACX,OAAOA,EAAAA,EAAAA,KAACC,EAAAA,EAAI,CAACC,KAAK,QACpB,C","sources":["pages/Main/Main.jsx"],"sourcesContent":["import Hero from 'components/Hero';\n\nconst Main = () => {\n  return <Hero page=\"home\" />;\n};\n\nexport default Main;\n"],"names":["_jsx","Hero","page"],"sourceRoot":""}

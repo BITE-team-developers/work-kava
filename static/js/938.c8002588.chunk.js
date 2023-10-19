@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkwork_kava=self.webpackChunkwork_kava||[]).push([[938],{938:function(a,k,e){e.r(k);var n=e(202),r=e(184);k.default=function(){return(0,r.jsx)(n.Z,{page:"coworking"})}}}]);
-//# sourceMappingURL=938.c8002588.chunk.js.map
