@@ -24,7 +24,7 @@ export const ContainerHeader = styled(Container)`
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   column-gap: 118px;
 `;

@@ -13,17 +13,24 @@ import { Svg } from 'components/SvgIcon/SvgIcon';
 
 export const Header = () => {
   const flot = window.innerWidth;
+  const sizeLogoWidth = flot >= 1440 ? 201 : 150;
+  const sizeLogoHeight = flot >= 1440 ? 46 : 32;
   const handleOpenModal = () => {
-    console.log('modal');
+    console.log(sizeLogoWidth);
   };
   return (
     <StyledHeader>
       <ContainerHeader>
         <Link to="/">
-          <Svg w={201} h={46} icon={'logo'} style={{ fill: '#fff' }} />
+          <Svg
+            w={sizeLogoWidth}
+            h={sizeLogoHeight}
+            icon={'logo'}
+            style={{ fill: '#fff' }}
+          />
         </Link>
         {flot > 1044 ? (
-          <Wrapper>
+          <>
             <nav>
               <List>
                 <Item key="1">
@@ -44,10 +51,10 @@ export const Header = () => {
               <Svg w={32} h={32} icon={'phone'} style={{ fill: '#fff' }} />
               <p>097-000-00-00</p>
             </LinkPhone>
-          </Wrapper>
+          </>
         ) : (
           <button type="button" onClick={handleOpenModal}>
-            <Svg w={201} h={46} icon={'burger'} style={{ fill: '#fff' }} />
+            <Svg w={32} h={32} icon={'burger'} style={{ fill: '#fff' }} />
           </button>
         )}
       </ContainerHeader>
