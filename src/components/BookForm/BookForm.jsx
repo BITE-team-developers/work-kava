@@ -1,7 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { Svg } from 'components/SvgIcon/SvgIcon';
+import { HoursSelector } from './HoursSelector';
 
 import {
+  CloseButton,
   ContentWrapper,
   ErrorText,
   Form,
@@ -9,7 +12,7 @@ import {
   Input,
   PriceText
 } from './BookForm.styled';
-import { HoursSelector } from './HoursSelector';
+
 import { ModalContent } from 'components/Modal/Modal.styled';
 import { FormButton } from 'styles/buttonStyles';
 
@@ -28,6 +31,9 @@ export const BookForm = ({ action }) => {
 
   return (
     <ModalContent>
+      <CloseButton type="button" onClick={action}>
+        <Svg w={32} h={32} icon="close" />
+      </CloseButton>
       <Form
         onSubmit={handleSubmit(data => {
           console.log({ ...data, price });

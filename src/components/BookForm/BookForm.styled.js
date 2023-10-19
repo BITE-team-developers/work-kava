@@ -65,3 +65,21 @@ export const PriceText = styled.p`
 export const ErrorText = styled.p`
   color: ${props => props.theme.colors.validationError};
 `;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  fill: ${props => props.theme.colors.primary};
+  transition: fill ${props => props.theme.baseTransition};
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    right: 24px;
+    top: 24px;
+  }
+
+  &:hover,
+  &:focus {
+    fill: ${props => props.theme.colors.accent};
+  }
+`;
