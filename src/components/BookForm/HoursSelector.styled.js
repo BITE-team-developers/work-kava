@@ -15,8 +15,6 @@ export const DropdownInput = styled.div`
   border-radius: 8px;
   border: 1.5px solid ${props => props.theme.colors.primary};
 
-  /* cursor: pointer; */
-
   &:hover,
   :focus,
   :active {

@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { theme } from 'styles';
-import { InputMask } from '@react-input/mask';
 
 export const Form = styled.form`
   padding: 50px 24px;
