@@ -56,6 +56,10 @@ export const BookForm = ({ action, bookType }) => {
                 required: {
                   value: true,
                   message: 'Please enter your name'
+                },
+                pattern: {
+                  value: /^[^-\s][A-Za-zА-ЯЄIЇа-яєiї' ]+/gm,
+                  message: 'The name must contain only letters and spaces'
                 }
               })}
               placeholder="Enter your name"
