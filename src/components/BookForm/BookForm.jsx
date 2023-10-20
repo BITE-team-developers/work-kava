@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { Svg } from 'components/SvgIcon/SvgIcon';
 import { HoursSelector } from './HoursSelector';
-import { BookType, GetBookPrice } from 'utils/commonUtils';
+import { BookType, GetBookingInfo } from 'utils/commonUtils';
 
 import {
   CloseButton,
@@ -18,28 +18,13 @@ import { ModalContent } from 'components/Modal/Modal.styled';
 import { FormButton } from 'styles/buttonStyles';
 
 export const BookForm = ({ action, bookType }) => {
-  let title = '';
+  const { price, title } = GetBookingInfo(bookType);
 
-  switch (bookType) {
-    case BookType.Workplace:
-      title = 'Book a workplace';
-      break;
-    case BookType.MeetingRoom:
-      title = 'Book a meeting room';
-      break;
-    case BookType.BigHall:
-      title = 'Book a big hall';
-      break;
-    default:
-      throw new Error('Not supported book type');
-  }
-
-  const defaultPrice = GetBookPrice(bookType);
-  const [price, setPrice] = useState(defaultPrice);
-  console.log(defaultPrice);
+  const [bookingPrice, setBookingPrice] = useState(price);
+  console.log(price);
 
   const updatePrice = hours => {
-    setPrice(hours * defaultPrice);
+    setBookingPrice(hours * price);
   };
   const {
     register,
@@ -54,7 +39,7 @@ export const BookForm = ({ action, bookType }) => {
       </CloseButton>
       <Form
         onSubmit={handleSubmit(data => {
-          console.log({ ...data, price });
+          console.log({ ...data, bookingPrice });
           action();
         })}
         autoComplete="off"
@@ -94,7 +79,7 @@ export const BookForm = ({ action, bookType }) => {
             onHoursChanges={updatePrice}
           />
         </ContentWrapper>
-        <PriceText>Price: {price} ₴</PriceText>
+        <PriceText>Price: {bookingPrice} ₴</PriceText>
 
         <FormButton type="submit">Book now</FormButton>
       </Form>

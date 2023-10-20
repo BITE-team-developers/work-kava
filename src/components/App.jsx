@@ -36,7 +36,7 @@ const App = () => {
 
       {isModalOpen && (
         <Modal onClose={closeModal}>
-          <BookForm action={closeModal} bookType={BookType.BigHall} />
+          <BookForm action={closeModal} bookType={BookType.MeetingRoom} />
         </Modal>
       )}
     </>

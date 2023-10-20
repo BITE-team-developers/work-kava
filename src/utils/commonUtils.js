@@ -3,15 +3,24 @@ export const BookType = {
   MeetingRoom: 'MeetingRoom',
   BigHall: 'BigHall'
 };
-export const GetBookPrice = bookType => {
+export const GetBookingInfo = bookType => {
   switch (bookType) {
     case BookType.Workplace:
-      return 50;
+      return {
+        price: 50,
+        title: 'Book a workplace'
+      };
 
     case BookType.MeetingRoom:
-      return 300;
+      return {
+        price: 300,
+        title: 'Book a meeting room'
+      };
     case BookType.BigHall:
-      return 800;
+      return {
+        price: 800,
+        title: 'Book a big hall'
+      };
     default:
       throw new Error('Not supported book type');
   }
