@@ -85,7 +85,6 @@ export const BookForm = ({ action, bookType }) => {
               {...register('phone', {
                 required: {
                   value: true,
-                  // minLength: 10,
                   message: 'Please enter correct phone'
                 }
               })}
