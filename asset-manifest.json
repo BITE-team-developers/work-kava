@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/work-kava/static/css/main.7cda0caf.css",
-    "main.js": "/work-kava/static/js/main.c8909231.js",
+    "main.js": "/work-kava/static/js/main.720c258b.js",
     "static/js/415.c9ef1d0e.chunk.js": "/work-kava/static/js/415.c9ef1d0e.chunk.js",
     "static/js/513.a82ef3ff.chunk.js": "/work-kava/static/js/513.a82ef3ff.chunk.js",
     "static/js/414.cac935f4.chunk.js": "/work-kava/static/js/414.cac935f4.chunk.js",
     "static/js/938.b4a2cb17.chunk.js": "/work-kava/static/js/938.b4a2cb17.chunk.js",
     "static/media/Inter-Bold.ttf": "/work-kava/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
     "static/media/Inter-Regular.ttf": "/work-kava/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
-    "static/media/sprite.svg": "/work-kava/static/media/sprite.7a2b3b9a8c792b5a1499d09c2e0ef442.svg",
+    "static/media/sprite.svg": "/work-kava/static/media/sprite.54818c4c60e81fb0e673fd39c2dad4ae.svg",
     "static/media/points.svg": "/work-kava/static/media/points.5cbb2dafb2a99c36081f8b69979af73b.svg",
     "static/media/fourZigzags.svg": "/work-kava/static/media/fourZigzags.bf5bb311117dcdbea87a0e5e1e1e0064.svg",
     "index.html": "/work-kava/index.html",
     "main.7cda0caf.css.map": "/work-kava/static/css/main.7cda0caf.css.map",
-    "main.c8909231.js.map": "/work-kava/static/js/main.c8909231.js.map",
+    "main.720c258b.js.map": "/work-kava/static/js/main.720c258b.js.map",
     "415.c9ef1d0e.chunk.js.map": "/work-kava/static/js/415.c9ef1d0e.chunk.js.map",
     "513.a82ef3ff.chunk.js.map": "/work-kava/static/js/513.a82ef3ff.chunk.js.map",
     "414.cac935f4.chunk.js.map": "/work-kava/static/js/414.cac935f4.chunk.js.map",
@@ -21,6 +21,6 @@
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.c8909231.js"
+    "static/js/main.720c258b.js"
   ]
 }
