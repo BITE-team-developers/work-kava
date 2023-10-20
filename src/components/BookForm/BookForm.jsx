@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { Svg } from 'components/SvgIcon/SvgIcon';
+import sprite from 'images/sprite.svg';
 import { HoursSelector } from './HoursSelector';
 import { BookType, GetBookingInfo } from 'utils/commonUtils';
 
@@ -11,7 +12,9 @@ import {
   Form,
   FormTitle,
   Input,
-  PriceText
+  InputWrapper,
+  PriceText,
+  UserIcon
 } from './BookForm.styled';
 
 import { ModalContent } from 'components/Modal/Modal.styled';
@@ -46,31 +49,50 @@ export const BookForm = ({ action, bookType }) => {
       >
         <FormTitle>{title}</FormTitle>
         <ContentWrapper>
-          <Input
-            type="text"
-            {...register('name', {
-              required: {
-                value: true,
-                message: 'Please enter your name'
-              }
-            })}
-            placeholder="Enter your name"
-          />
+          <InputWrapper>
+            <Input
+              type="text"
+              {...register('name', {
+                required: {
+                  value: true,
+                  message: 'Please enter your name'
+                }
+              })}
+              placeholder="Enter your name"
+            />
+            <UserIcon
+              width={28}
+              height={28}
+              aria-hidden="true"
+              role="presentation"
+            >
+              <use href={`${sprite}#icon-user`} />
+            </UserIcon>
+          </InputWrapper>
 
           {errors.name?.message && (
             <ErrorText>{errors.name?.message}</ErrorText>
           )}
-
-          <Input
-            type="text"
-            {...register('phone', {
-              required: {
-                value: true,
-                message: 'Please enter correct phone'
-              }
-            })}
-            placeholder="+38 (___) ___ - __ - __"
-          />
+          <InputWrapper>
+            <Input
+              type="text"
+              {...register('phone', {
+                required: {
+                  value: true,
+                  message: 'Please enter correct phone'
+                }
+              })}
+              placeholder="+38 (___) ___ - __ - __"
+            />
+            <UserIcon
+              width={28}
+              height={28}
+              aria-hidden="true"
+              role="presentation"
+            >
+              <use href={`${sprite}#icon-phone`} />
+            </UserIcon>
+          </InputWrapper>
           {errors.phone?.message && (
             <ErrorText>{errors.phone?.message}</ErrorText>
           )}

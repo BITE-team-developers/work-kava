@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { theme } from 'styles';
+import { Svg } from 'components/SvgIcon/SvgIcon';
 
 export const Form = styled.form`
   padding: 50px 24px;
@@ -22,6 +23,7 @@ export const FormTitle = styled.p`
 `;
 
 export const ContentWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -76,4 +78,16 @@ export const CloseButton = styled.button`
   &:focus {
     fill: ${props => props.theme.colors.accent};
   }
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+`;
+
+export const UserIcon = styled.svg`
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  fill: ${props => props.theme.colors.darkGray};
+  transform: translateY(-50%);
 `;
