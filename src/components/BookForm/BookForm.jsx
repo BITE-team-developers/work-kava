@@ -13,13 +13,13 @@ import {
   FormTitle,
   Input,
   InputWrapper,
-  PhoneMask,
   PriceText,
   UserIcon
 } from './BookForm.styled';
 
 import { ModalContent } from 'components/Modal/Modal.styled';
 import { FormButton } from 'styles/buttonStyles';
+import { InputMask } from '@react-input/mask';
 
 export const BookForm = ({ action, bookType }) => {
   const { price, title } = GetBookingInfo(bookType);
@@ -78,15 +78,20 @@ export const BookForm = ({ action, bookType }) => {
             <ErrorText>{errors.name?.message}</ErrorText>
           )}
           <InputWrapper>
-            <PhoneMask
+            <Input
               mask="+38 (___) ___-__-__"
               replacement={{ _: /\d/ }}
+              as={InputMask}
               type="text"
               {...register('phone', {
                 required: {
                   value: true,
                   message: 'Please enter correct phone'
                 }
+                // pattern: {
+                //   value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/,
+                //   message: 'Please enter correct phone'
+                // }
               })}
               placeholder="+38 (___) ___ - __ - __"
             />

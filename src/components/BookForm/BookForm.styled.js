@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { theme } from 'styles';
-import { Svg } from 'components/SvgIcon/SvgIcon';
 import { InputMask } from '@react-input/mask';
 
 export const Form = styled.form`
@@ -49,24 +48,6 @@ export const Input = styled.input`
     outline: none;
   }
 `;
-export const PhoneMask = styled(InputMask)`
-  display: block;
-  width: 100%;
-  font-size: 28px;
-  line-height: 1;
-  color: ${props => props.theme.colors.primary};
-
-  padding: 16px 16px 16px 60px;
-  border-radius: 8px;
-  border: 1.5px solid ${props => props.theme.colors.primary};
-
-  &:hover,
-  :focus,
-  :active {
-    border-color: ${props => props.theme.colors.accent};
-    outline: none;
-  }
-`;
 
 export const PriceText = styled.p`
   margin-bottom: 40px;
@@ -83,14 +64,14 @@ export const ErrorText = styled.p`
 
 export const CloseButton = styled.button`
   position: absolute;
-  right: 14px;
-  top: 14px;
+  right: 10px;
+  top: 10px;
   fill: ${props => props.theme.colors.primary};
   transition: fill ${props => props.theme.baseTransition};
 
   @media screen and (${props => props.theme.devices.tablet}) {
-    right: 24px;
-    top: 24px;
+    right: 14px;
+    top: 14px;
   }
 
   &:hover,
