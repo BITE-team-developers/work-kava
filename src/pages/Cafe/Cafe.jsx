@@ -86,6 +86,7 @@ const Cafe = () => {
         title="Coffee classic"
         dishes={CoffeeClassicMenu}
         styles="light"
+        firstDishes={true}
       />
       <Dishes title="Coffee with milk" dishes={CoffeeWithMilk} styles="light" />
       <Dishes title="Desserts" dishes={Desserts} styles="dark" />

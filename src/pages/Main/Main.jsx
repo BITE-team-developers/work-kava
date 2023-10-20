@@ -1,5 +1,7 @@
+import Hero from 'components/Hero';
+
 const Main = () => {
-  return <div>Main</div>;
+  return <Hero page="home" />;
 };
 
 export default Main;

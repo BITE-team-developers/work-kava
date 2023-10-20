@@ -2,12 +2,12 @@ import { Container, Section } from 'components/App.styled';
 import Dish from './Components/Dish';
 import { Title, Wrapper, DishesList } from './Dishes.styled';
 
-const Dishes = ({ title, dishes, styles }) => {
+const Dishes = ({ title, dishes, styles, firstDishes }) => {
   return (
     <Wrapper name={title}>
-      <Section>
+      <Section page="cafe" firstDishes={firstDishes}>
         <Container>
-          <Title styles={styles}>{title}</Title>
+         <Title styles={styles}>{title}</Title>
           <DishesList>
             {dishes.map(dish => (
               <Dish
