@@ -13,6 +13,7 @@ import {
   FormTitle,
   Input,
   InputWrapper,
+  PhoneMask,
   PriceText,
   UserIcon
 } from './BookForm.styled';
@@ -24,7 +25,6 @@ export const BookForm = ({ action, bookType }) => {
   const { price, title } = GetBookingInfo(bookType);
 
   const [bookingPrice, setBookingPrice] = useState(price);
-  console.log(price);
 
   const updatePrice = hours => {
     setBookingPrice(hours * price);
@@ -78,16 +78,20 @@ export const BookForm = ({ action, bookType }) => {
             <ErrorText>{errors.name?.message}</ErrorText>
           )}
           <InputWrapper>
-            <Input
+            <PhoneMask
+              mask="+38 (___) ___-__-__"
+              replacement={{ _: /\d/ }}
               type="text"
               {...register('phone', {
                 required: {
                   value: true,
+                  // minLength: 10,
                   message: 'Please enter correct phone'
                 }
               })}
               placeholder="+38 (___) ___ - __ - __"
             />
+
             <UserIcon
               width={28}
               height={28}

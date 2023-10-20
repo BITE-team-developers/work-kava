@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { theme } from 'styles';
 import { Svg } from 'components/SvgIcon/SvgIcon';
+import { InputMask } from '@react-input/mask';
 
 export const Form = styled.form`
   padding: 50px 24px;
@@ -31,6 +32,24 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Input = styled.input`
+  display: block;
+  width: 100%;
+  font-size: 28px;
+  line-height: 1;
+  color: ${props => props.theme.colors.primary};
+
+  padding: 16px 16px 16px 60px;
+  border-radius: 8px;
+  border: 1.5px solid ${props => props.theme.colors.primary};
+
+  &:hover,
+  :focus,
+  :active {
+    border-color: ${props => props.theme.colors.accent};
+    outline: none;
+  }
+`;
+export const PhoneMask = styled(InputMask)`
   display: block;
   width: 100%;
   font-size: 28px;
