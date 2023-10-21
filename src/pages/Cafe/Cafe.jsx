@@ -1,4 +1,5 @@
 import Dishes from 'components/Cafe/Dishes';
+import { Main } from 'pages/Coworking/Coworking.styled';
 
 const CoffeeClassicMenu = [
   {
@@ -53,35 +54,35 @@ const CoffeeWithMilk = [
   }
 ];
 const Desserts = [
-    {
-      id: 1,
-      name: 'Tiramisu',
-      ingredients: { Weight: '55 g'},
-      price: '60'
-    },
-    {
-      id: 2,
-      name: 'Brownie',
-      ingredients:  { Weight: '55 g'},
-      price: '45'
-    },
-    {
-      id: 3,
-      name: 'Eclairs',
-      ingredients:  { Weight: '55 g'},
-      price: '60'
-    },
-    {
-      id: 4,
-      name: 'Banoffee',
-      ingredients:  { Weight: '55 g'},
-      price: '45'
-    }
-  ];
+  {
+    id: 1,
+    name: 'Tiramisu',
+    ingredients: { Weight: '55 g' },
+    price: '60'
+  },
+  {
+    id: 2,
+    name: 'Brownie',
+    ingredients: { Weight: '55 g' },
+    price: '45'
+  },
+  {
+    id: 3,
+    name: 'Eclairs',
+    ingredients: { Weight: '55 g' },
+    price: '60'
+  },
+  {
+    id: 4,
+    name: 'Banoffee',
+    ingredients: { Weight: '55 g' },
+    price: '45'
+  }
+];
 
 const Cafe = () => {
   return (
-    <>
+    <Main>
       <Dishes
         title="Coffee classic"
         dishes={CoffeeClassicMenu}
@@ -90,7 +91,7 @@ const Cafe = () => {
       />
       <Dishes title="Coffee with milk" dishes={CoffeeWithMilk} styles="light" />
       <Dishes title="Desserts" dishes={Desserts} styles="dark" />
-    </>
+    </Main>
   );
 };
 
