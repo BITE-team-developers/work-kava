@@ -1,11 +1,11 @@
 // import { Svg } from 'components/SvgIcon/SvgIcon';
 import { Container } from 'components/App.styled';
 import FastfoodList from './FastfoodList';
-import { FastfoodSection, Title } from './FastfoodCategories.styled';
+import { FastfoodSection, Main, Title } from './FastfoodCategories.styled';
 
 const FastfoodCategories = ({ data }) => {
   return (
-    <>
+    <Main>
       {data.map(({ category, id, backgroundImage, dishes }, index) => (
         <FastfoodSection key={id} bgImage={backgroundImage}>
           <Container>
@@ -14,7 +14,7 @@ const FastfoodCategories = ({ data }) => {
           </Container>
         </FastfoodSection>
       ))}
-    </>
+    </Main>
   );
 };
 

@@ -5,6 +5,11 @@ const getUrl = (imageName, type = '') => {
   return `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${imageName}${type}.jpg`;
 };
 
+export const Main = styled.main`
+  padding-top: 80px;
+  background-image: linear-gradient(${props => props.theme.darklinerGradient});
+`;
+
 export const FastfoodSection = styled(Section)`
   position: relative;
   z-index: 1;
@@ -40,7 +45,7 @@ export const FastfoodSection = styled(Section)`
     &::after {
       content: '';
       position: absolute;
-      top: 50px;
+      top: 100px;
       right: 4px;
       z-index: -1;
       width: 202px;
