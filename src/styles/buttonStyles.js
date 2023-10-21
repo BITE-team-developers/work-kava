@@ -62,6 +62,7 @@ export const FormButton = styled(BlueButton)`
 export const FooterButton = styled(WhiteButton)`
   padding: 22px 123px;
   font-size: 24px;
+  max-width: 100%;
 
   @media screen and (${props => props.theme.devices.tablet}) {
     padding: 22px 84px;
