@@ -1,5 +1,6 @@
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { IMaskInput } from 'react-imask';
 import { Svg } from 'components/SvgIcon/SvgIcon';
 import sprite from 'images/sprite.svg';
 import { HoursSelector } from './HoursSelector';
@@ -19,10 +20,11 @@ import {
 
 import { ModalContent } from 'components/Modal/Modal.styled';
 import { FormButton } from 'styles/buttonStyles';
-import { InputMask } from '@react-input/mask';
 
 export const BookForm = ({ action, bookType }) => {
   const { price, title } = GetBookingInfo(bookType);
+
+  const [phoneNumber, setphoneNumber] = useState('');
 
   const [bookingPrice, setBookingPrice] = useState(price);
 
@@ -32,6 +34,7 @@ export const BookForm = ({ action, bookType }) => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors }
   } = useForm();
 
@@ -78,24 +81,25 @@ export const BookForm = ({ action, bookType }) => {
             <ErrorText>{errors.name?.message}</ErrorText>
           )}
           <InputWrapper>
-            <Input
-              mask="+38 (___) ___-__-__"
-              replacement={{ _: /\d/ }}
-              as={InputMask}
-              type="text"
-              {...register('phone', {
-                required: {
-                  value: true,
-                  message: 'Please enter correct phone'
+            <Controller
+              control={control}
+              name="phone"
+              rules={{
+                validate: value => {
+                  return value?.length === 19;
                 }
-                // pattern: {
-                //   value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/,
-                //   message: 'Please enter correct phone'
-                // }
-              })}
-              placeholder="+38 (___) ___ - __ - __"
+              }}
+              render={({ field: { ref, ...field } }) => (
+                <Input
+                  as={IMaskInput}
+                  {...field}
+                  mask={'+{38} (000) 000-00-00'}
+                  placeholder="+38 (___) ___ - __ - __"
+                  value={phoneNumber}
+                  onAccept={(value, mask) => setphoneNumber(value)}
+                />
+              )}
             />
-
             <UserIcon
               width={28}
               height={28}
@@ -105,9 +109,7 @@ export const BookForm = ({ action, bookType }) => {
               <use href={`${sprite}#icon-phone`} />
             </UserIcon>
           </InputWrapper>
-          {errors.phone?.message && (
-            <ErrorText>{errors.phone?.message}</ErrorText>
-          )}
+          {errors.phone && <ErrorText>Please enter correct phone</ErrorText>}
           <HoursSelector
             bookType={BookType.MeetingRoom}
             onHoursChanges={updatePrice}
