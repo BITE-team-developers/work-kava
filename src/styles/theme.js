@@ -53,7 +53,7 @@ export const theme = Object.freeze({
   blueRadialGradient:
     'radial-gradient(92.89% 118.32% at 0% -1.02%, #1b253f 0%, #3c4f82 100%)', // cafe page
   beigeRadialGradient:
-    'radial-gradient(148.54% 120.77% at 100% 0%, #656b7d 0%, #857661 100%)', // cafe page
+    'radial-gradient(148.54% 120.77% at 100% 0%, #5E4943 0%, #857661 100%)', // cafe page
   lightBeigeRadialGradient:
     'radial-gradient(258.19% 141.42% at 0% 0%, #e2d0ae 0%, rgba(226, 208, 174, 0) 100%)', // cafe page
   darklinerGradient: 'rgba(27, 37, 63,0.80), rgba(27, 37, 63, 0.80)',

@@ -397,10 +397,4 @@ export const Img = styled.img`
   }
 `;
 
-// @media screen and (${props => props.theme.devices.tablet}) {
 
-//  }
-
-// @media screen and (${props => props.theme.devices.desktop}) {
-
-//  }

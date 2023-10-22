@@ -73,18 +73,18 @@ export const Wrapper = styled.div`
     content: '';
     position: absolute;
     z-index: 1;
-    right: 0;
-    top: -20px;
+    right: 10px;
+    top: 94px;
 
     background-size: contain;
     background-repeat: no-repeat;
     ${props => {
       if (props.name === 'Coffee classic') {
-        return ` width: 148px; height: 141px; fill: ${props.theme.colors.darkBeige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/coffee_bean_7E7262.svg);`;
+        return ` width: 94px; height: 85px; fill: ${props.theme.colors.darkBeige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/coffee_bean_7E7262.svg);`;
       } else if (props.name === 'Coffee with milk') {
-        return ` width: 148px; height: 141px; fill: ${props.theme.colors.beige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/coffee_bean_E2D0AE.svg);`;
+        return ` width: 94px; height: 85px; right: 10px; top: 14px; fill: ${props.theme.colors.beige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/coffee_bean_E2D0AE.svg);`;
       } else if (props.name === 'Desserts') {
-        return ` width: 130px; height: 130px;   right: 0; top: 50px; fill: ${props.theme.colors.darkBeige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/dots_7E7262.svg);`;
+        return ` width: 94px; height: 95px;   right: 10px; top: 14px; fill: ${props.theme.colors.darkBeige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/dots_7E7262.svg);`;
       } else {
         return;
       }
@@ -93,11 +93,11 @@ export const Wrapper = styled.div`
     @media screen and (${props => props.theme.devices.tablet}) {
       ${props => {
         if (props.name === 'Coffee classic') {
-          return ` width: 264px; height: 252px; top: -30px; `;
+          return ` width: 186px; height: 166px; right: 24px; top: 104px `;
         } else if (props.name === 'Coffee with milk') {
-          return ` width: 264px; height: 252px; top: -30px; `;
+          return ` width: 186px; height: 166px; right: 24px; top: 24px `;
         } else if (props.name === 'Desserts') {
-          return ` width: 190px; height: 190px;  top: 30px; right: 30px;`;
+          return ` width: 190px; height: 190px;  right: 24px; top: 24px`;
         } else {
           return;
         }
@@ -107,11 +107,11 @@ export const Wrapper = styled.div`
     @media screen and (${props => props.theme.devices.desktop}) {
       ${props => {
         if (props.name === 'Coffee classic') {
-          return ` width: 441px; height: 369px; top: -70px; `;
+          return ` width: 313px; height: 281px; `;
         } else if (props.name === 'Coffee with milk') {
-          return ` width: 441px; height: 369px; top: -70px; `;
+          return ` width: 313px; height: 281px; `;
         } else if (props.name === 'Desserts') {
-          return ` width: 250px; height: 250px;  top: 30px; right: 30px;`;
+          return ` width: 250px; height: 250px; `;
         } else {
           return;
         }
