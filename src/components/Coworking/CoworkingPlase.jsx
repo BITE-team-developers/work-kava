@@ -13,7 +13,14 @@ import {
 } from './CoworkingPlase.styled';
 import { CoworkingBlueButton, CoworkingWhiteButton } from 'styles/buttonStyles';
 
-const CoworkingPlase = ({ title, description, styles, id }) => {
+const CoworkingPlase = ({
+  title,
+  description,
+  styles,
+  id,
+  bookType,
+  showBookForm
+}) => {
   const imageName = title.toLowerCase().replace(/ /g, '-');
 
   return (
@@ -52,9 +59,13 @@ const CoworkingPlase = ({ title, description, styles, id }) => {
               <Number styles={styles}>{id}</Number>
               <Description styles={styles}>{description}</Description>
               {styles !== 'dark' ? (
-                <CoworkingBlueButton>Book now</CoworkingBlueButton>
+                <CoworkingBlueButton onClick={() => showBookForm(bookType)}>
+                  Book now
+                </CoworkingBlueButton>
               ) : (
-                <CoworkingWhiteButton>Book now</CoworkingWhiteButton>
+                <CoworkingWhiteButton onClick={() => showBookForm(bookType)}>
+                  Book now
+                </CoworkingWhiteButton>
               )}
             </InfoBox>
           </Box>
