@@ -12,10 +12,12 @@ const Ingredients = ({ ingredients, isEven, styles }) => {
     <IngredientsList isEven={isEven} styles={styles}>
       {gridList.map((item, index) => (
         <IngredientItem key={index}>
-          {index % 2 === 0 && item}
-          {index % 2 === 0 && item !== 'Milk*' && (
-            <Dots> ................................</Dots>
-          )}
+          <p>
+            {index % 2 === 0 && item}
+            {index % 2 === 0 && item !== 'Milk*' && (
+              <Dots> ................................</Dots>
+            )}
+          </p>
           {index % 2 !== 0 && <Amount>{item}</Amount>}
         </IngredientItem>
       ))}
@@ -24,5 +26,3 @@ const Ingredients = ({ ingredients, isEven, styles }) => {
 };
 
 export default Ingredients;
-
-

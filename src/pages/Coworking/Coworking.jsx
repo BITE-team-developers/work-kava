@@ -42,8 +42,8 @@ const Coworking = () => {
 
   return (
     <>
-      <Hero page="coworking" />
       <Main>
+        <Hero page="coworking" />
         {coworkings.map((coworking, index) => (
           <CoworkingPlase
             title={coworking.title}
