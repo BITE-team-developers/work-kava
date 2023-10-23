@@ -166,6 +166,7 @@ export const IngredientsList = styled.ul`
   color: ${props => props.theme.colors.primary};
 
   @media screen and (${props => props.theme.devices.tablet}) {
+    max-width: 244px;
     width: 100%;
     font-size: 24px;
     height: 171px;
@@ -177,6 +178,7 @@ export const IngredientsList = styled.ul`
   }
   @media screen and (${props => props.theme.devices.desktop}) {
     grid-template-columns: calc(100% - 95px) 95px;
+    max-width: 282px;
     height: 210px;
     font-size: 30px;
   }
@@ -186,6 +188,8 @@ export const Price = styled.p`
   position: absolute;
   bottom: 0;
   z-index: 2;
+  display: flex;
+  align-items: baseline;
   ${props =>
     props.isEven
       ? 'left: 0; padding-right: 29px; border-radius: 0px 35px 0px 0px;'
@@ -201,8 +205,6 @@ export const Price = styled.p`
 
   @media screen and (${props => props.theme.devices.tablet}) {
     position: static;
-    display: flex;
-    align-items: center;
     justify-content: center;
     height: 240px;
     font-size: 100px;
@@ -249,7 +251,15 @@ export const Price = styled.p`
 export const Currency = styled.span`
   font-size: 35px;
   font-weight: 400;
-  line-height: 35px;
+  line-height: 1;
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    font-size: 50px;
+  }
+
+  @media screen and (${props => props.theme.devices.desktop}) {
+    font-size: 60px;
+  }
 `;
 
 export const IngredientItem = styled.div`
@@ -397,4 +407,10 @@ export const Img = styled.img`
   }
 `;
 
+// @media screen and (${props => props.theme.devices.tablet}) {
 
+//  }
+
+// @media screen and (${props => props.theme.devices.desktop}) {
+
+//  }

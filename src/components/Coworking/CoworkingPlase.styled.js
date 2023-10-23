@@ -1,17 +1,5 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
-  background: ${props =>
-    props.styles === 'dark'
-      ? props.theme.colors.primary
-      : props.theme.colors.white};
-
-  color: ${props =>
-    props.styles === 'dark'
-      ? props.theme.colors.white
-      : props.theme.colors.primary};
-`;
-
 export const Title = styled.h2`
   position: relative;
   margin-bottom: 320px;
@@ -20,6 +8,11 @@ export const Title = styled.h2`
   font-weight: 700;
   line-height: 1;
   text-align: left;
+
+  color: ${props =>
+    props.styles === 'dark'
+      ? props.theme.colors.white
+      : props.theme.colors.primary};
 
   @media screen and (${props => props.theme.devices.tablet}) {
     margin-bottom: 70px;
@@ -65,7 +58,12 @@ export const Box = styled.div`
   }
 `;
 
-export const InfoBox = styled.div``;
+export const InfoBox = styled.div`
+  color: ${props =>
+    props.styles === 'dark'
+      ? props.theme.colors.white
+      : props.theme.colors.primary};
+`;
 
 export const Number = styled.p`
   position: absolute;
@@ -225,10 +223,4 @@ export const Img = styled.img`
   }
 `;
 
-// @media screen and (${props => props.theme.devices.tablet}) {
 
-//  }
-
-// @media screen and (${props => props.theme.devices.desktop}) {
-
-//  }
