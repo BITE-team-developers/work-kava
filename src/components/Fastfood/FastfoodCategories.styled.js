@@ -7,14 +7,13 @@ const getUrl = (imageName, type = '') => {
 
 export const Main = styled.main`
   padding-top: 80px;
-  background-image: linear-gradient(${props => props.theme.darklinerGradient});
+  background-color: ${props => props.theme.colors.primary};
 `;
 
 export const FastfoodSection = styled(Section)`
   position: relative;
   z-index: 1;
   margin: 0 auto;
-  /* max-width: ${props => props.theme.sizes.desktop}px; */
 
   background-image: linear-gradient(${props => props.theme.darklinerGradient}),
     url(${props => getUrl(props.bgImage, '-mobil')});
