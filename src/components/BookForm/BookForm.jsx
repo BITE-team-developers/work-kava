@@ -45,7 +45,7 @@ export const BookForm = ({ action, bookType }) => {
       </CloseButton>
       <Form
         onSubmit={handleSubmit(data => {
-          console.log({ ...data, bookingPrice });
+          console.log({ ...data, bookType, bookingPrice });
           action();
         })}
         autoComplete="off"
