@@ -60,9 +60,9 @@ export const Header = () => {
                 </Item>
               </List>
             </nav>
-            <LinkPhone href="tel:+380970000000">
+            <LinkPhone className="phone" href="tel:+380970000000">
               <Svg w={32} h={32} icon={'phone'} style={{ fill: '#fff' }} />
-              <p>097-000-00-00</p>
+              097-000-00-00
             </LinkPhone>
           </>
         ) : (

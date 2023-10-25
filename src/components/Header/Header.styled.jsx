@@ -20,13 +20,7 @@ export const ContainerHeader = styled(Container)`
   justify-content: space-between;
 
   align-items: center;
-`;
-
-export const Wrapper = styled.div`
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  column-gap: 118px;
+  width: ${props => props.theme.sizes.mobile}px;
 `;
 
 export const List = styled.ul`
@@ -68,7 +62,7 @@ export const LinkItem = styled(NavLink)`
   }
 `;
 
-export const LinkPhone = styled(NavLink)`
+export const LinkPhone = styled.a`
   display: flex;
   justify-content: space-between;
   align-items: center;
