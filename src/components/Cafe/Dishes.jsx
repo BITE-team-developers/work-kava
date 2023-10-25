@@ -1,27 +1,27 @@
-import { Container, Section } from 'components/App.styled';
+import { Container, CafeSection } from 'components/App.styled';
 import Dish from './Components/Dish';
-import { Title, Wrapper, DishesList } from './Dishes.styled';
+import { Title, DishesList } from './Dishes.styled';
 
-const Dishes = ({ title, dishes, styles }) => {
+const Dishes = ({ title, dishes, styles, firstDishes }) => {
+  const titleName = title.toLowerCase().replace(/ /g, '-');
+
   return (
-    <Wrapper name={title}>
-      <Section>
-        <Container>
-         <Title styles={styles}>{title}</Title>
-          <DishesList>
-            {dishes.map(dish => (
-              <Dish
-                title={title}
-                data={dish}
-                key={dish.id}
-                index={dish.id}
-                styles={styles}
-              />
-            ))}
-          </DishesList>
-        </Container>
-      </Section>
-    </Wrapper>
+    <CafeSection page="cafe" firstDishes={firstDishes} name={titleName}>
+      <Container>
+        <Title styles={styles}>{title}</Title>
+        <DishesList>
+          {dishes.map(dish => (
+            <Dish
+              title={title}
+              data={dish}
+              key={dish.id}
+              index={dish.id}
+              styles={styles}
+            />
+          ))}
+        </DishesList>
+      </Container>
+    </CafeSection>
   );
 };
 
