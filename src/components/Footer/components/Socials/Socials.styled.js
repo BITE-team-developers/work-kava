@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 
 export const Icons = styled.div`
     display: block;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 
     @media screen and (${props => props.theme.devices.tablet}){
         display: flex;
         flex-direction: column;
-        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
 `

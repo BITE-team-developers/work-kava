@@ -17,7 +17,7 @@ export const FormTitle = styled.p`
 export const FormBox = styled.div`
     @media screen and (${props => props.theme.devices.tablet}){
         padding-left: 26px;
-        margin-top: 36px;
+        margin-top: 39px;
         border-left: 5px solid ${props => props.theme.colors.white};
     }
 `
@@ -39,10 +39,12 @@ export const FormInput = styled.input`
 
     @media screen and (${props => props.theme.devices.tablet}){
         max-width: 288px;
+        margin: 0 0 40px 0;
     }
 
     @media screen and (${props => props.theme.devices.desktop}){
         max-width: 402px;
+        margin-bottom: 38px;
     }
 
     &::placeholder {
