@@ -25,7 +25,6 @@ export const ContainerHeader = styled(Container)`
 
 export const List = styled.ul`
   display: flex;
-
   column-gap: 40px;
 `;
 

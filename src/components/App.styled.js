@@ -28,7 +28,7 @@ export const DarkSection = styled(Section)`
 
 export const Container = styled.div`
   padding: 0 24px;
-  margin: auto;
+  margin: auto 0;
   text-align: center;
 
   @media screen and (${props => props.theme.devices.mobile}) {

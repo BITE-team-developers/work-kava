@@ -26,6 +26,7 @@ export const Header = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
   const sizeLogoWidth = windowWidth >= 1440 ? 201 : 150;
   const sizeLogoHeight = windowWidth >= 1440 ? 46 : 32;
   const handleOpenModal = () => {
