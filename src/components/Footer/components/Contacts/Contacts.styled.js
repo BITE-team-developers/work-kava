@@ -1,15 +1,21 @@
 import styled from '@emotion/styled';
 
 export const Box = styled.address`
-    
+    width: 267px;
+
     @media screen and (${props => props.theme.devices.tablet}){
-        border-left: 5px solid ${props => props.theme.colors.white};
+        border-left: 5px solid ${props => props.theme.colors.white
+    };
 `
 export const ContactsList = styled.ul`
-    padding-bottom: 28px;
+    padding-bottom: 50px;
     gap: 10px;
     display: flex;
     flex-direction: column;
+
+    @media screen and (${props => props.theme.devices.tablet}){
+        padding-bottom: 28px;
+    }
 
     @media screen and (${props => props.theme.devices.desktop}){
         gap: 20px;
