@@ -1,21 +1,47 @@
 import { Link } from 'react-router-dom';
 import {
+  ButtonStyled,
   ContainerHeader,
-  Item,
-  LinkItem,
   LinkPhone,
-  List,
   StyledHeader
 } from './Header.styled';
 import { Svg } from 'components/SvgIcon/SvgIcon';
+import { useEffect, useState } from 'react';
+import { ModalNav } from './ModalNav';
+import { Navigation } from './Navigation';
 
 export const Header = () => {
-  const flot = window.innerWidth;
-  const sizeLogoWidth = flot >= 1440 ? 201 : 150;
-  const sizeLogoHeight = flot >= 1440 ? 46 : 32;
+  const [windowWidth, setWindowWidth] = useState();
+  const [modalHeader, setModalHeader] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const sizeLogoWidth = windowWidth >= 1440 ? 201 : 150;
+  const sizeLogoHeight = windowWidth >= 1440 ? 46 : 32;
   const handleOpenModal = () => {
-    console.log(sizeLogoWidth);
+    setModalHeader(true);
+    console.log(modalHeader);
   };
+  const handleClosedModal = () => {
+    setModalHeader(false);
+    console.log(modalHeader);
+  };
+
+  if (modalHeader) {
+    return <ModalNav action={handleClosedModal} />;
+  }
   return (
     <StyledHeader>
       <ContainerHeader>
@@ -27,33 +53,18 @@ export const Header = () => {
             style={{ fill: '#fff' }}
           />
         </Link>
-        {flot > 1044 ? (
+        {windowWidth >= 1024 ? (
           <>
-            <nav>
-              <List>
-                <Item key="1">
-                  <LinkItem to="/">Home</LinkItem>
-                </Item>
-                <Item key="2">
-                  <LinkItem to="/cafe">Cafe</LinkItem>
-                </Item>
-                <Item key="3">
-                  <LinkItem to="/fastfood">Fastfood</LinkItem>
-                </Item>
-                <Item key="4">
-                  <LinkItem to="/coworking">Coworking</LinkItem>
-                </Item>
-              </List>
-            </nav>
-            <LinkPhone href="tel:+380970000000">
+            <Navigation />
+            <LinkPhone className="phone" href="tel:+380970000000">
               <Svg w={32} h={32} icon={'phone'} style={{ fill: '#fff' }} />
-              <p>097-000-00-00</p>
+              097-000-00-00
             </LinkPhone>
           </>
         ) : (
-          <button type="button" onClick={handleOpenModal}>
-            <Svg w={32} h={32} icon={'burger'} style={{ fill: '#fff' }} />
-          </button>
+          <ButtonStyled type="button" onClick={handleOpenModal}>
+            <Svg w={32} h={32} icon={'burger'} />
+          </ButtonStyled>
         )}
       </ContainerHeader>
     </StyledHeader>
