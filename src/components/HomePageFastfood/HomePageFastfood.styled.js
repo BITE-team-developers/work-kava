@@ -2,13 +2,20 @@ import styled from '@emotion/styled';
 import fastfoodFries from '../../images/fastfood/frenchFries.svg';
 import fastfoodFriesTablet from '../../images/fastfood/frenchFriesTablet.svg';
 import zigzag from '../../images/fastfood/zigzag.svg';
-import fastfoodHeroDesktop from '../../images/fastfood/food.png';
-import fastfoodHeroTablet from '../../images/fastfood/foodTablet.png';
 import { Section } from 'components/App.styled';
 import { WhiteButton } from 'styles/buttonStyles';
 
 export const SectionFastfood = styled(Section)`
+  padding-bottom: 100px;
   background: ${props => props.theme.colors.primary};
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    padding-bottom: 120px;
+  }
+
+  @media screen and (${props => props.theme.devices.onlymobile}) {
+    padding-bottom: 140px;
+  }
 `;
 
 export const Container = styled.div`
@@ -86,7 +93,7 @@ export const FastfoodContainer = styled.div`
     &::before {
       content: '';
       position: absolute;
-      top: 297px;
+      top: 315px;
       width: 452px;
       height: 400px;
       background-image: url(${fastfoodFries});
@@ -94,30 +101,26 @@ export const FastfoodContainer = styled.div`
   }
 `;
 
-export const FastfoodImg = styled.div`
+export const FastfoodImg = styled.img`
   margin-top: 70px;
   width: 800px;
-  background-image: url(${fastfoodHeroDesktop});
-  background-size: cover;
 
   @media screen and (${props => props.theme.devices.onlymobile}) {
     margin-right: 44px;
     margin-top: 20px;
     width: 100%;
-    height: 249px;
+    height: 218px;
     border-radius: 0px 134px 134px 0px;
   }
 
   @media screen and (${props => props.theme.devices.tablet}) {
-    padding-left: 465px;
-    height: 480px;
-    background-image: url(${fastfoodHeroTablet});
+    height: 410px;
+    width: 516px;
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
-    padding-left: 800px;
     height: 528px;
-    background-image: url(${fastfoodHeroDesktop});
+    width: 816px;
   }
 `;
 
@@ -126,6 +129,10 @@ export const Title = styled.h2`
   text-align: right;
   font-size: 60px;
   color: ${props => props.theme.colors.white};
+
+  @media screen and (${props => props.theme.devices.onlymobile}) {
+    text-align: center;
+  }
 
   @media screen and (${props => props.theme.devices.tablet}) {
     margin-right: 24px;
@@ -168,7 +175,7 @@ export const Text = styled.p`
 
   @media screen and (${props => props.theme.devices.tablet}) {
     margin-right: 50px;
-    margin-left: 40px;
+    margin-left: 10px;
     &::before {
       height: 216px;
     }
@@ -176,7 +183,7 @@ export const Text = styled.p`
 
   @media screen and (${props => props.theme.devices.desktop}) {
     margin-right: 178px;
-    margin-left: 55px;
+    margin-left: -205px;
   }
 `;
 
@@ -184,8 +191,10 @@ export const CustomStyledButton = styled(WhiteButton)`
   margin-top: -23px;
   width: 100%;
   margin-top: 24px;
-  padding: 25px 0px;
   text-align: center;
+  color: ${props => props.theme.colors.black};
+  position: absolute;
+
   @media screen and (${props => props.theme.devices.tablet}) {
     position: absolute;
     bottom: 0;
@@ -198,5 +207,20 @@ export const CustomStyledButton = styled(WhiteButton)`
     right: 0;
     bottom: 0;
     z-index: 1;
+  }
+`;
+
+export const Picture = styled.picture`
+  width: 356px;
+  height: 218px;
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    width: 3031px;
+    height: 480px;
+  }
+  @media screen and (${props => props.theme.devices.desktop}) {
+    width: 5761px;
+    height: 563px;
+    margin-top: 36px;
   }
 `;

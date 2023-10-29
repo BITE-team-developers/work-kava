@@ -1,21 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import coworkingImg from '../../images/cafe-coworking/HomePageCoworking.png';
+import coworkingImgTablet from '../../images/cafe-coworking/coworkingPeople.png';
 
 import {
+  SectionCafe,
   Container,
   Title,
   Text,
   CoffeContainer,
   CoffeeImg,
-  CustomStyledButton
+  CustomStyledButton,
+  Picture
 } from './HomePageCoworking.style';
-import { Section } from 'components/App.styled';
 
 const HomePageCoworking = () => {
   return (
-    <Section>
+    <SectionCafe>
       <Container>
-        <Title>Cafe</Title>
+        <Title>Coworking</Title>
         <CoffeContainer>
           <Text>
             Work with taste! Delicious aromatic coffee for every taste prepared
@@ -23,13 +26,21 @@ const HomePageCoworking = () => {
             love by our confectioners. It's all waiting for you in our coffee
             shop.
           </Text>
-          <CoffeeImg />
+          {/* <CoffeeImg /> */}
+          <Picture>
+            <source srcSet={`${coworkingImg} 1x`} media="(min-width: 1440px)" />
+            <source
+              srcSet={`${coworkingImgTablet} 1x`}
+              media="(min-width: 1024px)"
+            />
+            <CoffeeImg src={coworkingImg} alt="People" />
+          </Picture>
         </CoffeContainer>
-        <Link to="/coworking">
-          <CustomStyledButton>Details</CustomStyledButton>
-        </Link>
+        <CustomStyledButton as={Link} to="/coworking">
+          Details
+        </CustomStyledButton>
       </Container>
-    </Section>
+    </SectionCafe>
   );
 };
 
