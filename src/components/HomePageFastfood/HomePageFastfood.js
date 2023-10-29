@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import fastfoodHeroDesktop from '../../images/fastfood/food.png';
+import fastfoodHeroTablet from '../../images/fastfood/foodTablet.png';
 
 import {
   Container,
@@ -8,7 +10,8 @@ import {
   FastfoodContainer,
   FastfoodImg,
   CustomStyledButton,
-  SectionFastfood
+  SectionFastfood,
+  Picture
 } from './HomePageFastfood.styled';
 
 const HomePageFastfood = () => {
@@ -22,11 +25,23 @@ const HomePageFastfood = () => {
             Fast, high quality, tasty. Own baking and certified products. Great
             choice for every taste.
           </Text>
-          <FastfoodImg />
+          {/* <FastfoodImg /> */}
+
+          <Picture>
+            <source
+              srcSet={`${fastfoodHeroDesktop} 1x`}
+              media="(min-width: 1440px)"
+            />
+            <source
+              srcSet={`${fastfoodHeroTablet} 1x`}
+              media="(min-width: 1024px)"
+            />
+            <FastfoodImg src={fastfoodHeroDesktop} alt="Coffee" />
+          </Picture>
         </FastfoodContainer>
-        <Link to="/fastfood">
-          <CustomStyledButton>Details</CustomStyledButton>
-        </Link>
+        <CustomStyledButton as={Link} to="/fastfood">
+          Details
+        </CustomStyledButton>
       </Container>
     </SectionFastfood>
   );

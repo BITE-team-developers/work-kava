@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import coffeeCapsDesktop from '../../images/cafe-coworking/Cafe_caps.png';
+import coffeeCapsTablet from '../../images/cafe-coworking/coffeeCapsTablet.png';
 
 import {
+  SectionCafe,
   Container,
   Title,
   Text,
   CoffeContainer,
   CoffeeImg,
-  CustomStyledButton
+  CustomStyledButton,
+  Picture
 } from './HomePageCafe.style';
-import { Section } from 'components/App.styled';
 
 const HomePageCafe = () => {
   return (
-    <Section>
+    <SectionCafe>
       <Container>
         <Title>Cafe</Title>
         <CoffeContainer>
@@ -23,13 +26,24 @@ const HomePageCafe = () => {
             love by our confectioners. It's all waiting for you in our coffee
             shop.
           </Text>
-          <CoffeeImg />
+          <Picture>
+            <source
+              srcSet={`${coffeeCapsDesktop} 1x`}
+              media="(min-width: 1440px)"
+            />
+            <source
+              srcSet={`${coffeeCapsTablet} 1x`}
+              media="(min-width: 1024px)"
+            />
+
+            <CoffeeImg src={coffeeCapsDesktop} alt="Coffee" />
+          </Picture>
         </CoffeContainer>
-        <Link to="/cafe">
-          <CustomStyledButton>Details</CustomStyledButton>
-        </Link>
+        <CustomStyledButton as={Link} to="/cafe">
+          Details
+        </CustomStyledButton>
       </Container>
-    </Section>
+    </SectionCafe>
   );
 };
 

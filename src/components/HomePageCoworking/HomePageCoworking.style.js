@@ -3,7 +3,15 @@ import coffee from '../../images/cafe-coworking/coffee.svg';
 import coffeeTablet from '../../images/cafe-coworking/Coffee_tablet.png';
 import zigzag from '../../images/cafe-coworking/two_zigzags.svg';
 import { BlueButton } from 'styles/buttonStyles';
-import coworkingImg from '../../images/cafe-coworking/HomePageCoworking.png';
+import { Section } from 'components/App.styled';
+
+export const SectionCafe = styled(Section)`
+  margin-bottom: -100px;
+
+  @media screen and (${props => props.theme.devices.onlymobile}) {
+    padding-bottom: 140px;
+  }
+`;
 
 export const Container = styled.div`
   position: relative;
@@ -64,7 +72,7 @@ export const CoffeContainer = styled.div`
     &::before {
       content: '';
       position: absolute;
-      top: 300px;
+      top: 250px;
       width: 394px;
       height: 297px;
       background-image: url(${coffeeTablet});
@@ -79,7 +87,7 @@ export const CoffeContainer = styled.div`
     &::before {
       content: '';
       position: absolute;
-      top: 260px;
+      top: 266px;
       width: 544px;
       height: 431px;
       background-image: url(${coffee});
@@ -88,28 +96,25 @@ export const CoffeContainer = styled.div`
   }
 `;
 
-export const CoffeeImg = styled.div`
+export const CoffeeImg = styled.img`
   margin-top: 70px;
   width: 800px;
-  background-image: url(${coworkingImg});
-  background-size: cover;
 
   @media screen and (${props => props.theme.devices.onlymobile}) {
     margin-left: 44px;
     margin-top: 20px;
     width: 100%;
-    height: 249px;
+    height: 218px;
     border-radius: 134px 0px 0px 134px;
   }
 
   @media screen and (${props => props.theme.devices.tablet}) {
-    padding-right: 465px;
-    height: 480px;
+    height: 415px;
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
-    padding-right: 800px;
     height: 528px;
+    margin-top: 35px;
   }
 `;
 
@@ -174,9 +179,9 @@ export const CustomStyledButton = styled(BlueButton)`
   margin-top: -23px;
   width: 100%;
   margin-top: 24px;
-  padding: 25px 0px;
   text-align: center;
   color: white;
+  position: absolute;
 
   @media screen and (${props => props.theme.devices.tablet}) {
     position: absolute;
@@ -187,5 +192,20 @@ export const CustomStyledButton = styled(BlueButton)`
 
   @media screen and (${props => props.theme.devices.desktop}) {
     margin-left: 145px;
+  }
+`;
+
+export const Picture = styled.picture`
+  width: 356px;
+  height: 218px;
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    width: 3031px;
+    height: 480px;
+  }
+  @media screen and (${props => props.theme.devices.desktop}) {
+    width: 5761px;
+    height: 563px;
+    margin-top: 36px;
   }
 `;
