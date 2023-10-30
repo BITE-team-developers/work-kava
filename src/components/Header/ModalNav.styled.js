@@ -8,7 +8,6 @@ export const BackdropHeader = styled(Backdrop)`
   flex-direction: column;
   padding: 180px 0 50px 0;
   background-color: ${props => props.theme.colors.primary};
-  overflow: hidden;
   &::before {
     content: '';
     background-image: url('https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/coffee_bean_7E7262.svg');
