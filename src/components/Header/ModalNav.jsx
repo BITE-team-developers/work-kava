@@ -2,8 +2,16 @@ import SocialLinksList from 'components/SocialLinksList';
 import { BackdropHeader, CloseButton } from './ModalNav.styled';
 import { Navigation } from './Navigation';
 import { Svg } from 'components/SvgIcon/SvgIcon';
+import { useEffect } from 'react';
 
 export const ModalNav = ({ action }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, []);
+
   return (
     <BackdropHeader>
       <CloseButton type="button" onClick={action}>

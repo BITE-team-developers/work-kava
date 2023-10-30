@@ -32,11 +32,9 @@ export const Header = () => {
   const sizeLogoHeight = windowWidth >= 1440 ? 46 : 32;
   const handleOpenModal = () => {
     setModalHeader(true);
-    console.log(modalHeader);
   };
   const handleClosedModal = () => {
     setModalHeader(false);
-    console.log(modalHeader);
   };
 
   if (modalHeader) {

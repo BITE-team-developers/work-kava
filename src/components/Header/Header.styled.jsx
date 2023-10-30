@@ -4,35 +4,37 @@ import { NavLink } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
   position: fixed;
+  z-index: 5;
 
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 80px;
-  z-index: 5;
+
   background-color: ${props => props.theme.colors.headerBackground};
 `;
 
 export const ContainerHeader = styled(Container)`
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   width: ${props => props.theme.sizes.mobile}px;
 `;
 
 export const List = styled.ul`
+  @media screen and (${props => props.theme.devices.onlymobile}) {
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 30px;
+  }
+
   display: flex;
   column-gap: 40px;
   row-gap: 16px;
-  font-size: 24px;
 
-  @media screen and (${props => props.theme.devices.onlymobile}) {
-    flex-direction: column;
-    font-size: 30px;
-    align-items: center;
-  }
+  font-size: 24px;
 `;
 
 export const Item = styled.li`
@@ -42,11 +44,13 @@ export const Item = styled.li`
 
 export const LinkItem = styled(NavLink)`
   position: relative;
+
   display: flex;
   align-items: center;
   height: 45px;
 
   color: ${props => props.theme.colors.white};
+
   transition: ${props => `transform ${props.theme.baseTransition}`};
 
   :hover,
@@ -56,8 +60,9 @@ export const LinkItem = styled(NavLink)`
 
   &.active {
     @media screen and (${props => props.theme.devices.tablet}) {
-      color: ${props => props.theme.colors.accent};
       height: 56px;
+
+      color: ${props => props.theme.colors.accent};
 
       &::before {
         content: '';
@@ -66,6 +71,7 @@ export const LinkItem = styled(NavLink)`
         bottom: 0;
 
         width: 100%;
+
         border-radius: 2px;
         border-bottom: 4px solid ${props => props.theme.colors.accent};
       }
@@ -79,8 +85,8 @@ export const LinkPhone = styled.a`
   align-items: center;
   column-gap: 10px;
 
-  color: ${props => props.theme.colors.white};
   font-size: 24px;
+  color: ${props => props.theme.colors.white};
 
   transition: ${props => `transform ${props.theme.baseTransition}`};
 
