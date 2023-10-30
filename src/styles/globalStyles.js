@@ -10,6 +10,7 @@ export const GlobalStyles = css`
     font-weight: 400;
     font-style: normal;
     src: url('${ttfRegular}') format('truetype');
+    font-display: swap;
   }
 
   @font-face {
@@ -17,6 +18,7 @@ export const GlobalStyles = css`
     font-weight: 700;
     font-style: normal;
     src: url('${ttfBold}') format('truetype');
+    font-display: swap;
   }
 
   html {

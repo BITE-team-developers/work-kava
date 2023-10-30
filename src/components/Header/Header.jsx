@@ -43,7 +43,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <ContainerHeader>
-        <Link to="/">
+        <Link to="/" aria-label="Home">
           <Svg
             w={sizeLogoWidth}
             h={sizeLogoHeight}
