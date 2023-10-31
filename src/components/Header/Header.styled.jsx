@@ -51,11 +51,11 @@ export const LinkItem = styled(NavLink)`
 
   color: ${props => props.theme.colors.white};
 
-  transition: ${props => `transform ${props.theme.baseTransition}`};
+  transition: ${props => `color ${props.theme.baseTransition}`};
 
   :hover,
   :focus {
-    transform: scale(1.1);
+    color: ${props => props.theme.colors.whiteButtonHover};
   }
 
   &.active {
@@ -87,12 +87,15 @@ export const LinkPhone = styled.a`
 
   font-size: 24px;
   color: ${props => props.theme.colors.white};
+  fill: ${props => props.theme.colors.white};
 
-  transition: ${props => `transform ${props.theme.baseTransition}`};
+  transition: ${props => `color ${props.theme.baseTransition}`};
+  transition: ${props => `fill ${props.theme.baseTransition}`};
 
   :hover,
   :focus {
-    transform: scale(1.1);
+    color: ${props => props.theme.colors.whiteButtonHover};
+    fill: ${props => props.theme.colors.whiteButtonHover};
   }
 `;
 export const ButtonStyled = styled.button`
@@ -101,6 +104,6 @@ export const ButtonStyled = styled.button`
 
   &:hover,
   &:focus {
-    fill: ${props => props.theme.colors.accent};
+    fill: ${props => props.theme.colors.whiteButtonHover};
   }
 `;

@@ -36,6 +36,6 @@ export const CloseButton = styled.button`
 
   &:hover,
   &:focus {
-    fill: ${props => props.theme.colors.accent};
+    fill: ${props => props.theme.colors.whiteButtonHover};
   }
 `;

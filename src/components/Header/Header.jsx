@@ -48,19 +48,23 @@ export const Header = () => {
             w={sizeLogoWidth}
             h={sizeLogoHeight}
             icon={'logo'}
-            style={{ fill: '#fff' }}
+            aria-label="logotype work kava, go home"
           />
         </Link>
         {windowWidth >= 1024 ? (
           <>
             <Navigation />
             <LinkPhone className="phone" href="tel:+380970000000">
-              <Svg w={32} h={32} icon={'phone'} style={{ fill: '#fff' }} />
+              <Svg w={32} h={32} icon={'phone'} />
               097-000-00-00
             </LinkPhone>
           </>
         ) : (
-          <ButtonStyled type="button" onClick={handleOpenModal}>
+          <ButtonStyled
+            type="button"
+            onClick={handleOpenModal}
+            aria-label="menu"
+          >
             <Svg w={32} h={32} icon={'burger'} />
           </ButtonStyled>
         )}
