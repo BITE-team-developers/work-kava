@@ -17,6 +17,7 @@ export const DishItem = styled.li`
   @media screen and (${props => props.theme.devices.tablet}) {
     gap: 30px;
     align-items: center;
+    justify-content: space-between;
 
     ${props =>
       props.isEven
@@ -43,7 +44,7 @@ export const DishItem = styled.li`
     content: '';
     position: absolute;
     z-index: 1;
-    height: 50%;
+    height: 120px;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -78,12 +79,14 @@ export const DishItem = styled.li`
       `};
 
     @media screen and (${props => props.theme.devices.tablet}) {
+      height: 170px;
       ${props =>
         props.isEven
           ? `border-radius: 0px 0px 170px 0px;`
           : `border-radius: 0px 0px 0px 170px;`}
     }
     @media screen and (${props => props.theme.devices.desktop}) {
+      height: 194px;
       ${props =>
         props.isEven
           ? `border-radius: 0px 0px 194px 0px;`
@@ -356,7 +359,6 @@ export const Picture = styled.picture`
   position: relative;
   display: flex;
   z-index: 0;
-  padding: 15px;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -371,7 +373,6 @@ export const Picture = styled.picture`
   @media screen and (${props => props.theme.devices.tablet}) {
     width: 100%;
     height: 260px;
-    padding: 0;
     border-radius: ${props =>
       props.isEven ? '0px 130px 130px 0px' : '130px 0px 0px 130px'};
     justify-content: ${props =>
@@ -395,15 +396,20 @@ export const Img = styled.img`
   ${props =>
     props.title === 'Desserts'
       ? 'width: 148px; height: 140px;'
-      : `width: 170px;
-  height: 100%;`};
+      : `width: 178px; height: 100%;`};
 
   @media screen and (${props => props.theme.devices.tablet}) {
     ${props =>
       props.title === 'Desserts'
         ? 'width: 329px; height: 220px;'
-        : `width: 274px;
-  height: 100%;`};
+        : `width: 274px; height: 100%;`};
+  }
+
+  @media screen and (${props => props.theme.devices.desktop}) {
+    ${props =>
+      props.title === 'Desserts'
+        ? 'width: 378px; height: 236px;'
+        : `width: 316px; height: 100%;`};
   }
 `;
 

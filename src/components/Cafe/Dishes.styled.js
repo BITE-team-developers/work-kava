@@ -48,7 +48,14 @@ export const Title = styled.h2`
         : props.styles === 'dark'
         ? props.theme.colors.lightBlue
         : 'inherit'};
+  @media screen and (${props => props.theme.devices.tablet}) {
+    width: 45px;
   }
+  @media screen and (${props => props.theme.devices.desktop}) {
+    width: 53px;
+  }
+  }
+
 `;
 
 export const DishesList = styled.ul`
