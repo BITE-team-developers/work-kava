@@ -2,7 +2,6 @@ import { useState } from 'react';
 import CoworkingPlase from 'components/Coworking/CoworkingPlase';
 import Hero from 'components/Hero';
 import { BookType } from 'utils/commonUtils';
-import { Main } from './Coworking.styled';
 import { Modal } from 'components/Modal/Modal';
 import { useModal } from 'hooks/useModal';
 import { BookForm } from 'components/BookForm/BookForm';
@@ -42,20 +41,18 @@ const Coworking = () => {
 
   return (
     <>
-      <Main>
-        <Hero page="coworking" />
-        {coworkings.map((coworking, index) => (
-          <CoworkingPlase
-            title={coworking.title}
-            description={coworking.description}
-            key={coworking.id}
-            id={coworking.id}
-            styles={index % 2 !== 0 ? 'dark' : 'light'}
-            bookType={coworking.bookType}
-            showBookForm={showBookForm}
-          />
-        ))}
-      </Main>
+      <Hero page="coworking" />
+      {coworkings.map((coworking, index) => (
+        <CoworkingPlase
+          title={coworking.title}
+          description={coworking.description}
+          key={coworking.id}
+          id={coworking.id}
+          styles={index % 2 !== 0 ? 'dark' : 'light'}
+          bookType={coworking.bookType}
+          showBookForm={showBookForm}
+        />
+      ))}
       {isModalOpen && (
         <Modal onClose={closeModal}>
           <BookForm action={closeModal} bookType={selectedBookType} />
