@@ -1,7 +1,7 @@
-import FastfoodItem from './FastfoodItem';
+import { FastfoodItem } from './FastfoodItem';
 import { Item, ItemsList } from './FastfoodList.styled';
 
-const FastfoodList = ({ items }) => {
+export const FastfoodList = ({ items }) => {
   return (
     <ItemsList>
       {items.map(fastfood => (
@@ -12,5 +12,3 @@ const FastfoodList = ({ items }) => {
     </ItemsList>
   );
 };
-
-export default FastfoodList;

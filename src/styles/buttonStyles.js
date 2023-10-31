@@ -1,14 +1,13 @@
 import styled from '@emotion/styled';
 
 const Button = styled.button`
-  padding: 25px 131px;
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  padding: 25px;
   font-weight: 700;
   line-height: 1;
   border-radius: 8px;
-
-  @media screen and (${props => props.theme.devices.tablet}) {
-    padding: 25px 171px;
-  }
 `;
 
 export const BlueButton = styled(Button)`
@@ -35,41 +34,13 @@ export const WhiteButton = styled(Button)`
   }
 `;
 
-export const CoworkingBlueButton = styled(BlueButton)`
-  padding: 25px 111px;
-
-  @media screen and (${props => props.theme.devices.tablet}) {
-    padding: 25px 150px;
-  }
-`;
-
-export const CoworkingWhiteButton = styled(WhiteButton)`
-  padding: 25px 111px;
-
-  @media screen and (${props => props.theme.devices.tablet}) {
-    padding: 25px 150px;
-  }
-`;
-
-export const FormButton = styled(BlueButton)`
-  padding: 25px 87px;
-
-  @media screen and (${props => props.theme.devices.tablet}) {
-    padding: 25px 128px;
-  }
-`;
-
 export const FooterButton = styled(WhiteButton)`
-  padding: 22px 123px;
+  padding: 22px;
   font-size: 24px;
   max-width: 100%;
 
-  @media screen and (${props => props.theme.devices.tablet}) {
-    padding: 22px 84px;
-  }
-
   @media screen and (${props => props.theme.devices.desktop}) {
-    padding: 12px 126px;
+    padding: 12px;
     font-size: 30px;
     line-height: 1.5;
   }

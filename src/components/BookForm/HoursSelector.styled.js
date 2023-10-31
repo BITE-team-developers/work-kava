@@ -15,6 +15,10 @@ export const DropdownInput = styled.div`
   border-radius: 8px;
   border: 1.5px solid ${props => props.theme.colors.primary};
 
+  cursor: pointer;
+
+  transition: border-color ${props => props.theme.baseTransition};
+
   &:hover,
   :focus,
   :active {
@@ -69,6 +73,6 @@ export const DropdownButton = styled.span`
 
   &:hover,
   &:focus {
-    fill: ${props => props.theme.colors.darkButtonHover};
+    fill: ${props => props.theme.colors.accent};
   }
 `;

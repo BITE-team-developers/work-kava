@@ -19,7 +19,7 @@ import {
 } from './BookForm.styled';
 
 import { ModalContent } from 'components/Modal/Modal.styled';
-import { FormButton } from 'styles/buttonStyles';
+import { BlueButton } from 'styles/buttonStyles';
 
 export const BookForm = ({ action, bookType }) => {
   const { price, title } = GetBookingInfo(bookType);
@@ -40,7 +40,7 @@ export const BookForm = ({ action, bookType }) => {
 
   return (
     <ModalContent>
-      <CloseButton type="button" onClick={action}>
+      <CloseButton type="button" aria-label="close" onClick={action}>
         <Svg w={36} h={36} icon="close" />
       </CloseButton>
       <Form
@@ -117,7 +117,7 @@ export const BookForm = ({ action, bookType }) => {
         </ContentWrapper>
         <PriceText>Price: {bookingPrice} ₴</PriceText>
 
-        <FormButton type="submit">Book now</FormButton>
+        <BlueButton type="submit">Book now</BlueButton>
       </Form>
     </ModalContent>
   );

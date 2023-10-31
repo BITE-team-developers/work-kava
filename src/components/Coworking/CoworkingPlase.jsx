@@ -10,7 +10,7 @@ import {
   Box,
   InfoBox
 } from './CoworkingPlase.styled';
-import { CoworkingBlueButton, CoworkingWhiteButton } from 'styles/buttonStyles';
+import { BlueButton, WhiteButton } from 'styles/buttonStyles';
 
 const CoworkingPlase = ({
   title,
@@ -57,13 +57,13 @@ const CoworkingPlase = ({
             <Number styles={styles}>{id}</Number>
             <Description styles={styles}>{description}</Description>
             {styles !== 'dark' ? (
-              <CoworkingBlueButton onClick={() => showBookForm(bookType)}>
+              <BlueButton onClick={() => showBookForm(bookType)}>
                 Book now
-              </CoworkingBlueButton>
+              </BlueButton>
             ) : (
-              <CoworkingWhiteButton onClick={() => showBookForm(bookType)}>
+              <WhiteButton onClick={() => showBookForm(bookType)}>
                 Book now
-              </CoworkingWhiteButton>
+              </WhiteButton>
             )}
           </InfoBox>
         </Box>

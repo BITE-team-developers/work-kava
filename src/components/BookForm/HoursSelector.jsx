@@ -46,13 +46,13 @@ export const HoursSelector = ({ onHoursChanges }) => {
     onHoursChanges(selectedValue);
   };
   return (
-    <DropdownInput>
+    <DropdownInput
+      onClick={e => {
+        setIsActive(!isActive);
+      }}
+    >
       {selected.text}
-      <DropdownButton
-        onClick={e => {
-          setIsActive(!isActive);
-        }}
-      >
+      <DropdownButton aria-label="select period">
         <Svg w={28} h={28} icon="arrow" />
       </DropdownButton>
       <DropdownContent className={isActive ? '' : 'hidden'}>

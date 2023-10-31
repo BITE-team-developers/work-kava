@@ -1,4 +1,4 @@
-import FastfoodCategories from 'components/Fastfood/FastfoodCategories';
+import { FastfoodCategories } from 'components/Fastfood/FastfoodCategories';
 
 const data = [
   {
