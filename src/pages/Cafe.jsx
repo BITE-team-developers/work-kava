@@ -1,5 +1,4 @@
 import Dishes from 'components/Cafe/Dishes';
-import { Main } from 'pages/Coworking/Coworking.styled';
 
 const CoffeeClassicMenu = [
   {
@@ -82,7 +81,7 @@ const Desserts = [
 
 const Cafe = () => {
   return (
-    <Main>
+    <>
       <Dishes
         title="Coffee classic"
         dishes={CoffeeClassicMenu}
@@ -91,7 +90,7 @@ const Cafe = () => {
       />
       <Dishes title="Coffee with milk" dishes={CoffeeWithMilk} styles="light" />
       <Dishes title="Desserts" dishes={Desserts} styles="dark" />
-    </Main>
+    </>
   );
 };
 

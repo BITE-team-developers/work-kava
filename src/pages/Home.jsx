@@ -4,15 +4,15 @@ import HomePageCafe from 'components/HomePageCafe/HomePageCafe';
 import HomePageCoworking from 'components/HomePageCoworking/HomePageCoworking';
 import HomePageFastfood from 'components/HomePageFastfood/HomePageFastfood';
 
-const Main = () => {
+const Home = () => {
   return (
     <>
       <Hero page="home" />
       <HomePageCafe />
-      <HomePageFastfood/>
-      <HomePageCoworking/>
+      <HomePageFastfood />
+      <HomePageCoworking />
     </>
-  )
+  );
 };
 
-export default Main;
+export default Home;

@@ -5,15 +5,14 @@ const getUrl = (imageName, type = '') => {
   return `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${imageName}${type}.jpg`;
 };
 
-export const Main = styled.main`
-  padding-top: 80px;
-  background-color: ${props => props.theme.colors.primary};
-`;
-
 export const FastfoodSection = styled(Section)`
   position: relative;
   z-index: 1;
   margin: 0 auto;
+
+  &:first-child {
+    padding-top: 180px;
+  }
 
   background-image: linear-gradient(${props => props.theme.darklinerGradient}),
     url(${props => getUrl(props.bgImage, '-mobil')});
