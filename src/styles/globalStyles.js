@@ -3,6 +3,7 @@ import { theme } from './theme';
 
 import ttfRegular from '../fonts/Inter-Regular.ttf';
 import ttfBold from '../fonts/Inter-Bold.ttf';
+import ttfImpact from '../fonts/impact.ttf';
 
 export const GlobalStyles = css`
   @font-face {
@@ -18,6 +19,14 @@ export const GlobalStyles = css`
     font-weight: 700;
     font-style: normal;
     src: url('${ttfBold}') format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Impact';
+    font-weight: 400;
+    font-style: normal;
+    src: url('${ttfImpact}') format('truetype');
     font-display: swap;
   }
 
