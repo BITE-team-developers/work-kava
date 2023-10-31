@@ -40,7 +40,7 @@ export const BookForm = ({ action, bookType }) => {
 
   return (
     <ModalContent>
-      <CloseButton type="button" onClick={action}>
+      <CloseButton type="button" aria-label="close" onClick={action}>
         <Svg w={36} h={36} icon="close" />
       </CloseButton>
       <Form
