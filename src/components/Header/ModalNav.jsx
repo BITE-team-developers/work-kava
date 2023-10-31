@@ -14,7 +14,7 @@ export const ModalNav = ({ action }) => {
 
   return (
     <BackdropHeader>
-      <CloseButton type="button" onClick={action}>
+      <CloseButton type="button" onClick={action} aria-label="close">
         <Svg w={36} h={36} icon="close" />
       </CloseButton>
       <Navigation action={action} />
