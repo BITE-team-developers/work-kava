@@ -9,7 +9,7 @@ import {
   PriceWrapper
 } from './FastfoodItem.styled';
 
-const FastfoodItem = ({
+export const FastfoodItem = ({
   item: {
     name,
     title,
@@ -72,5 +72,3 @@ const FastfoodItem = ({
     </>
   );
 };
-
-export default FastfoodItem;
