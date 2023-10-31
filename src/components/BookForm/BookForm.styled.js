@@ -40,6 +40,8 @@ export const Input = styled.input`
   border-radius: 8px;
   border: 1.5px solid ${props => props.theme.colors.primary};
 
+  transition: border-color ${props => props.theme.baseTransition};
+
   &:hover,
   :focus,
   :active {

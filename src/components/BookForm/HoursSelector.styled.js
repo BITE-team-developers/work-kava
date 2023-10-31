@@ -17,6 +17,8 @@ export const DropdownInput = styled.div`
 
   cursor: pointer;
 
+  transition: border-color ${props => props.theme.baseTransition};
+
   &:hover,
   :focus,
   :active {
