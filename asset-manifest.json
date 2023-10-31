@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/work-kava/static/css/main.7cda0caf.css",
-    "main.js": "/work-kava/static/js/main.e764f531.js",
+    "main.js": "/work-kava/static/js/main.1fcbefa5.js",
     "static/js/637.70e8df60.chunk.js": "/work-kava/static/js/637.70e8df60.chunk.js",
     "static/js/724.6508b665.chunk.js": "/work-kava/static/js/724.6508b665.chunk.js",
     "static/js/481.0ede0328.chunk.js": "/work-kava/static/js/481.0ede0328.chunk.js",
-    "static/js/76.eba2a0a7.chunk.js": "/work-kava/static/js/76.eba2a0a7.chunk.js",
+    "static/js/76.3982cba6.chunk.js": "/work-kava/static/js/76.3982cba6.chunk.js",
     "static/js/888.f363c257.chunk.js": "/work-kava/static/js/888.f363c257.chunk.js",
     "static/media/food.png": "/work-kava/static/media/food.d1de661adbc8f97693f8.png",
     "static/media/HomePageCoworking.png": "/work-kava/static/media/HomePageCoworking.7806975e7ba81607a83e.png",
@@ -15,6 +15,7 @@
     "static/media/coffeeCapsTablet.png": "/work-kava/static/media/coffeeCapsTablet.bb82825c0119564509ff.png",
     "static/media/Inter-Bold.ttf": "/work-kava/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
     "static/media/Inter-Regular.ttf": "/work-kava/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
+    "static/media/impact.ttf": "/work-kava/static/media/impact.0294f8285a2493417c09.ttf",
     "static/media/sprite.svg": "/work-kava/static/media/sprite.54818c4c60e81fb0e673fd39c2dad4ae.svg",
     "static/media/frenchFries.svg": "/work-kava/static/media/frenchFries.5be5fd396de9abef34ce19631155ff8e.svg",
     "static/media/frenchFriesTablet.svg": "/work-kava/static/media/frenchFriesTablet.5900b986963dbf6729f595fa46daaf2d.svg",
@@ -23,15 +24,15 @@
     "static/media/zigzag.svg": "/work-kava/static/media/zigzag.2dda4fb386d1d07f3e838d729e25185e.svg",
     "static/media/two_zigzags.svg": "/work-kava/static/media/two_zigzags.db42e7406b57fd32e8a76c95ae57f763.svg",
     "main.7cda0caf.css.map": "/work-kava/static/css/main.7cda0caf.css.map",
-    "main.e764f531.js.map": "/work-kava/static/js/main.e764f531.js.map",
+    "main.1fcbefa5.js.map": "/work-kava/static/js/main.1fcbefa5.js.map",
     "637.70e8df60.chunk.js.map": "/work-kava/static/js/637.70e8df60.chunk.js.map",
     "724.6508b665.chunk.js.map": "/work-kava/static/js/724.6508b665.chunk.js.map",
     "481.0ede0328.chunk.js.map": "/work-kava/static/js/481.0ede0328.chunk.js.map",
-    "76.eba2a0a7.chunk.js.map": "/work-kava/static/js/76.eba2a0a7.chunk.js.map",
+    "76.3982cba6.chunk.js.map": "/work-kava/static/js/76.3982cba6.chunk.js.map",
     "888.f363c257.chunk.js.map": "/work-kava/static/js/888.f363c257.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.e764f531.js"
+    "static/js/main.1fcbefa5.js"
   ]
 }
