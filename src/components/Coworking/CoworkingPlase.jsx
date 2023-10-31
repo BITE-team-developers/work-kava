@@ -54,7 +54,7 @@ const CoworkingPlase = ({
             </Picture>
           </ImageBox>
           <InfoBox styles={styles}>
-            <Number styles={styles}>{id}</Number>
+            <Number styles={styles} id={id}>{id}</Number>
             <Description styles={styles}>{description}</Description>
             {styles !== 'dark' ? (
               <CoworkingBlueButton onClick={() => showBookForm(bookType)}>

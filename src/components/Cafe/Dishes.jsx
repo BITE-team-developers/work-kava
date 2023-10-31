@@ -8,7 +8,7 @@ const Dishes = ({ title, dishes, styles, firstDishes }) => {
   return (
     <CafeSection page="cafe" firstDishes={firstDishes} name={titleName}>
       <Container>
-        <Title styles={styles}>{title}</Title>
+        <Title styles={styles} name={titleName}>{title}</Title>
         <DishesList>
           {dishes.map(dish => (
             <Dish

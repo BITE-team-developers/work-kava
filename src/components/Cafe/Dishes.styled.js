@@ -56,6 +56,59 @@ export const Title = styled.h2`
   }
   }
 
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: -66px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    ${props => {
+      if (props.name === 'coffee-classic') {
+        return ` width: 94px; height: 85px; fill: ${props.theme.colors.darkBeige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/coffee_bean_7E7262.svg);`;
+      } else if (props.name === 'coffee-with-milk') {
+        return ` width: 94px; height: 85px; fill: ${props.theme.colors.beige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/coffee_bean_E2D0AE.svg);`;
+      } else if (props.name === 'desserts') {
+        return ` width: 94px; height: 95px;  fill: ${props.theme.colors.darkBeige}; background-image: url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/dots_7E7262.svg);`;
+      } else {
+        return;
+      }
+    }};
+
+    @media screen and (${props => props.theme.devices.tablet}) {
+      top: -56px;
+      ${props => {
+        if (props.name === 'coffee-classic') {
+          return ` width: 186px; height: 166px; `;
+        } else if (props.name === 'coffee-with-milk') {
+          return ` width: 186px; height: 166px; `;
+        } else if (props.name === 'desserts') {
+          return ` width: 190px; height: 190px; `;
+        } else {
+          return;
+        }
+      }};
+    }
+
+    @media screen and (${props => props.theme.devices.desktop}) {
+      top: -96px;
+      right: -125px;
+      ${props => {
+        if (props.name === 'coffee-classic') {
+          return ` width: 313px; height: 281px; `;
+        } else if (props.name === 'coffee-with-milk') {
+          return ` width: 313px; height: 281px; `;
+        } else if (props.name === 'desserts') {
+          return ` width: 250px; height: 250px; `;
+        } else {
+          return;
+        }
+      }};
+    }
+  }
+
 `;
 
 export const DishesList = styled.ul`
