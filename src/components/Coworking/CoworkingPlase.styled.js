@@ -98,7 +98,7 @@ export const Number = styled.p`
     z-index: -1;
     width: 125px;
     height: 45px;
-    left: -16px;
+
     bottom: 0;
     background: ${props =>
       props.styles === 'dark'
@@ -108,16 +108,34 @@ export const Number = styled.p`
       props.styles === 'dark'
         ? '-webkit-box-shadow: 7px -6px 0px 0px rgba(126,114,98,1); -moz-box-shadow: 7px -6px 0px 0px rgba(126,114,98,1); box-shadow: 7px -6px 0px 0px rgba(126,114,98,1);'
         : '-webkit-box-shadow: 7px -6px 0px 0px rgba(206, 206, 206, 1); -moz-box-shadow: 7px -6px 0px 0px rgba(206, 206, 206, 1); box-shadow: 7px -6px 0px 0px rgba(206, 206, 206, 1);'}
-
+    ${props => {
+      if (props.id === '01') {
+        return ` left: -16px;`;
+      } else if (props.id === '02') {
+        return ` left: -11px;`;
+      } else if (props.id === '03') {
+        return ` left: -9px;`;
+      } else {
+        return;
+      }
+    }};
     @media screen and (${props => props.theme.devices.tablet}) {
-      left: -40px;
       width: 250px;
       height: 89px;
       bottom: 0;
+      ${props => {
+        if (props.id === '01') {
+          return ` left: -40px;`;
+        } else if (props.id === '03') {
+          return ` left: -25px;`;
+        } else {
+          return;
+        }
+      }};
 
       ${props =>
         props.styles === 'dark'
-          ? 'left: 141px; -webkit-box-shadow: 13px -11px 0px 0px rgba(126,114,98,1);-moz-box-shadow: 13px -11px 0px 0px rgba(126,114,98,1);box-shadow: 13px -11px 0px 0px rgba(126,114,98,1);'
+          ? 'left: 150px; -webkit-box-shadow: 13px -11px 0px 0px rgba(126,114,98,1);-moz-box-shadow: 13px -11px 0px 0px rgba(126,114,98,1);box-shadow: 13px -11px 0px 0px rgba(126,114,98,1);'
           : '-webkit-box-shadow: 13px -11px 0px 0px rgba(206,206,206,1);-moz-box-shadow: 13px -11px 0px 0px rgba(206,206,206,1);box-shadow: 13px -11px 0px 0px rgba(206,206,206,1);'}
     }
 
@@ -222,5 +240,3 @@ export const Img = styled.img`
     height: 540px;
   }
 `;
-
-
