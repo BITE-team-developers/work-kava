@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/work-kava/static/css/main.7cda0caf.css",
-    "main.js": "/work-kava/static/js/main.6fbea06b.js",
+    "main.js": "/work-kava/static/js/main.a1622b3f.js",
     "static/js/637.70e8df60.chunk.js": "/work-kava/static/js/637.70e8df60.chunk.js",
     "static/js/724.eef0f027.chunk.js": "/work-kava/static/js/724.eef0f027.chunk.js",
     "static/js/481.3669660d.chunk.js": "/work-kava/static/js/481.3669660d.chunk.js",
@@ -24,7 +24,7 @@
     "static/media/zigzag.svg": "/work-kava/static/media/zigzag.2dda4fb386d1d07f3e838d729e25185e.svg",
     "static/media/two_zigzags.svg": "/work-kava/static/media/two_zigzags.db42e7406b57fd32e8a76c95ae57f763.svg",
     "main.7cda0caf.css.map": "/work-kava/static/css/main.7cda0caf.css.map",
-    "main.6fbea06b.js.map": "/work-kava/static/js/main.6fbea06b.js.map",
+    "main.a1622b3f.js.map": "/work-kava/static/js/main.a1622b3f.js.map",
     "637.70e8df60.chunk.js.map": "/work-kava/static/js/637.70e8df60.chunk.js.map",
     "724.eef0f027.chunk.js.map": "/work-kava/static/js/724.eef0f027.chunk.js.map",
     "481.3669660d.chunk.js.map": "/work-kava/static/js/481.3669660d.chunk.js.map",
@@ -33,6 +33,6 @@
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.6fbea06b.js"
+    "static/js/main.a1622b3f.js"
   ]
 }
