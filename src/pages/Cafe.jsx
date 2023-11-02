@@ -1,4 +1,4 @@
-import Dishes from 'components/Cafe/Dishes';
+import {Dishes} from 'components/Cafe/Dishes';
 
 const CoffeeClassicMenu = [
   {

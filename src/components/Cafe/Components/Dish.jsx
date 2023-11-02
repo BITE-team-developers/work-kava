@@ -8,9 +8,14 @@ import {
   ImageBox,
   Img
 } from './Dish.styled';
-import Ingredients from './Ingredients';
+import { Ingredients } from './Ingredients';
 
-const Dish = ({ data: { name, ingredients, price }, index, title, styles }) => {
+export const Dish = ({
+  data: { name, ingredients, price },
+  index,
+  title,
+  styles
+}) => {
   const imageName = name.toLowerCase().replace(/ /g, '-');
   const isEven = index % 2 === 0;
 
@@ -19,24 +24,24 @@ const Dish = ({ data: { name, ingredients, price }, index, title, styles }) => {
       <ImageBox isEven={isEven} styles={styles}>
         <Picture isEven={isEven} styles={styles} title={title}>
           <source
-            srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}.png 1x,
-                        https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}@2x.png 2x`}
+            srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe-webp/${imageName}.webp 1x,
+                        https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe-webp/${imageName}_2x.webp 2x`}
             media="(min-width: 1440px)"
           />
           <source
-            srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}-table.png 1x,
-                        https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}-table@2x.png 2x`}
+            srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe-webp/${imageName}-table.webp 1x,
+                        https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe-webp/${imageName}-table_2x.webp 2x`}
             media="(min-width: 1024px)"
           />
           <source
-            srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}-mobil.png 1x,
-                        https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}-mobil@2x.png 2x`}
+            srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe-webp/${imageName}-mobil.webp 1x,
+                        https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe-webp/${imageName}-mobil_2x.webp 2x`}
             media="(max-width: 1024px)"
           />
 
           <Img
             title={title}
-            src={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe/${imageName}.png`}
+            src={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/cafe-webp/${imageName}.webp`}
             alt={name}
           />
         </Picture>
@@ -58,5 +63,3 @@ const Dish = ({ data: { name, ingredients, price }, index, title, styles }) => {
     </DishItem>
   );
 };
-
-export default Dish;

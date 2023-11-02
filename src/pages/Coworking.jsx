@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CoworkingPlase from 'components/Coworking/CoworkingPlase';
+import { CoworkingPlase } from 'components/Coworking/CoworkingPlase';
 import Hero from 'components/Hero';
 import { BookType } from 'utils/commonUtils';
 import { Modal } from 'components/Modal/Modal';
