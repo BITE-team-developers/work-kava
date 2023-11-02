@@ -1,8 +1,10 @@
 import styled from '@emotion/styled';
 import { Section, Container } from 'components/App.styled';
 
-const getUrl = (imageName, type = '') => {
-  return `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${imageName}${type}.jpg`;
+const getUrl = (props, type = '') => {
+  return props.theme.useWebp
+    ? `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood-webp/${props.bgImage}${type}.webp`
+    : `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${props.bgImage}${type}.jpg`;
 };
 
 export const FastfoodContainer = styled(Container)`
@@ -61,12 +63,12 @@ export const FastfoodSection = styled(Section)`
   }
 
   background-image: linear-gradient(${props => props.theme.darklinerGradient}),
-    url(${props => getUrl(props.bgImage, '-mobil')});
+    url(${props => getUrl(props, '-mobil')});
   &:nth-of-type(even) {
     background-image: linear-gradient(
         ${props => props.theme.lightlinerGradient}
       ),
-      url(${props => getUrl(props.bgImage, '-mobil')});
+      url(${props => getUrl(props, '-mobil')});
   }
   background-repeat: no-repeat;
   background-size: cover;
@@ -76,23 +78,23 @@ export const FastfoodSection = styled(Section)`
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     background-image: linear-gradient(${props => props.theme.darklinerGradient}),
-      url(${props => getUrl(props.bgImage, '-mobil@2x')});
+      url(${props => getUrl(props, '-mobil@2x')});
     &:nth-of-type(even) {
       background-image: linear-gradient(
           ${props => props.theme.lightlinerGradient}
         ),
-        url(${props => getUrl(props.bgImage, '-mobil@2x')});
+        url(${props => getUrl(props, '-mobil@2x')});
     }
   }
 
   @media screen and (${props => props.theme.devices.tablet}) {
     background-image: linear-gradient(${props => props.theme.darklinerGradient}),
-      url(${props => getUrl(props.bgImage, '-table')});
+      url(${props => getUrl(props, '-table')});
     &:nth-of-type(even) {
       background-image: linear-gradient(
           ${props => props.theme.lightlinerGradient}
         ),
-        url(${props => getUrl(props.bgImage, '-table')});
+        url(${props => getUrl(props, '-table')});
     }
 
     @media screen and (${props => props.theme.devices.retina}),
@@ -101,12 +103,12 @@ export const FastfoodSection = styled(Section)`
       background-image: linear-gradient(
           ${props => props.theme.darklinerGradient}
         ),
-        url(${props => getUrl(props.bgImage, '-table@2x')});
+        url(${props => getUrl(props, '-table@2x')});
       &:nth-of-type(even) {
         background-image: linear-gradient(
             ${props => props.theme.lightlinerGradient}
           ),
-          url(${props => getUrl(props.bgImage, '-table@2x')});
+          url(${props => getUrl(props, '-table@2x')});
       }
     }
   }
@@ -117,12 +119,12 @@ export const FastfoodSection = styled(Section)`
     }
 
     background-image: linear-gradient(${props => props.theme.darklinerGradient}),
-      url(${props => getUrl(props.bgImage)});
+      url(${props => getUrl(props)});
     &:nth-of-type(even) {
       background-image: linear-gradient(
           ${props => props.theme.lightlinerGradient}
         ),
-        url(${props => getUrl(props.bgImage)});
+        url(${props => getUrl(props)});
     }
 
     @media screen and (${props => props.theme.devices.retina}),
@@ -131,12 +133,12 @@ export const FastfoodSection = styled(Section)`
       background-image: linear-gradient(
           ${props => props.theme.darklinerGradient}
         ),
-        url(${props => getUrl(props.bgImage, '@2x')});
+        url(${props => getUrl(props, '@2x')});
       &:nth-of-type(even) {
         background-image: linear-gradient(
             ${props => props.theme.lightlinerGradient}
           ),
-          url(${props => getUrl(props.bgImage, '@2x')});
+          url(${props => getUrl(props, '@2x')});
       }
     }
   }
