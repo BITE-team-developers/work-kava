@@ -1,41 +1,34 @@
 import styled from '@emotion/styled';
-import { Section } from 'components/App.styled';
+import { Section, Container } from 'components/App.styled';
 
-const getUrl = (imageName, type = '') => {
-  return `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${imageName}${type}.jpg`;
+const getUrl = (props, type = '') => {
+  return props.theme.useWebp
+    ? `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood-webp/${props.bgImage}${type}.webp`
+    : `https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${props.bgImage}${type}.jpg`;
 };
 
-export const FastfoodSection = styled(Section)`
+export const FastfoodContainer = styled(Container)`
   position: relative;
   z-index: 1;
-  margin: 0 auto;
 
-  &:first-child {
-    padding-top: 180px;
-  }
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0px;
+    display: block;
+    width: 51px;
+    height: 40px;
+    background-color: ${props => props.theme.colors.accent};
 
-  background-image: linear-gradient(${props => props.theme.darklinerGradient}),
-    url(${props => getUrl(props.bgImage, '-mobil')});
-  &:nth-of-type(even) {
-    background-image: linear-gradient(
-        ${props => props.theme.lightlinerGradient}
-      ),
-      url(${props => getUrl(props.bgImage, '-mobil')});
-  }
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+    @media screen and (${props => props.theme.devices.tablet}) {
+      width: 68px;
+      height: 60px;
+    }
 
-  @media screen and (${props => props.theme.devices.retina}),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: linear-gradient(${props => props.theme.darklinerGradient}),
-      url(${props => getUrl(props.bgImage, '-mobil@2x')});
-    &:nth-of-type(even) {
-      background-image: linear-gradient(
-          ${props => props.theme.lightlinerGradient}
-        ),
-        url(${props => getUrl(props.bgImage, '-mobil@2x')});
+    @media screen and (${props => props.theme.devices.desktop}) {
+      width: 186px;
+      height: 70px;
     }
   }
 
@@ -43,7 +36,7 @@ export const FastfoodSection = styled(Section)`
     &::after {
       content: '';
       position: absolute;
-      top: 100px;
+      top: 0px;
       right: 4px;
       z-index: -1;
       width: 202px;
@@ -53,16 +46,55 @@ export const FastfoodSection = styled(Section)`
       background-size: cover;
     }
 
-    background-image: linear-gradient(${props => props.theme.darklinerGradient}),
-      url(${props => getUrl(props.bgImage, '-table')});
-    &:nth-of-type(even) {
+    &.odd {
       &::after {
         background-image: url('https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/dots_1B253F.svg');
       }
+    }
+  }
+`;
+
+export const FastfoodSection = styled(Section)`
+  z-index: 2;
+  margin: 0 auto;
+
+  &:first-of-type {
+    padding-top: 130px;
+  }
+
+  background-image: linear-gradient(${props => props.theme.darklinerGradient}),
+    url(${props => getUrl(props, '-mobil')});
+  &:nth-of-type(even) {
+    background-image: linear-gradient(
+        ${props => props.theme.lightlinerGradient}
+      ),
+      url(${props => getUrl(props, '-mobil')});
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media screen and (${props => props.theme.devices.retina}),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(${props => props.theme.darklinerGradient}),
+      url(${props => getUrl(props, '-mobil@2x')});
+    &:nth-of-type(even) {
       background-image: linear-gradient(
           ${props => props.theme.lightlinerGradient}
         ),
-        url(${props => getUrl(props.bgImage, '-table')});
+        url(${props => getUrl(props, '-mobil@2x')});
+    }
+  }
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    background-image: linear-gradient(${props => props.theme.darklinerGradient}),
+      url(${props => getUrl(props, '-table')});
+    &:nth-of-type(even) {
+      background-image: linear-gradient(
+          ${props => props.theme.lightlinerGradient}
+        ),
+        url(${props => getUrl(props, '-table')});
     }
 
     @media screen and (${props => props.theme.devices.retina}),
@@ -71,24 +103,28 @@ export const FastfoodSection = styled(Section)`
       background-image: linear-gradient(
           ${props => props.theme.darklinerGradient}
         ),
-        url(${props => getUrl(props.bgImage, '-table@2x')});
+        url(${props => getUrl(props, '-table@2x')});
       &:nth-of-type(even) {
         background-image: linear-gradient(
             ${props => props.theme.lightlinerGradient}
           ),
-          url(${props => getUrl(props.bgImage, '-table@2x')});
+          url(${props => getUrl(props, '-table@2x')});
       }
     }
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
+    &:first-of-type {
+      padding-top: 180px;
+    }
+
     background-image: linear-gradient(${props => props.theme.darklinerGradient}),
-      url(${props => getUrl(props.bgImage)});
+      url(${props => getUrl(props)});
     &:nth-of-type(even) {
       background-image: linear-gradient(
           ${props => props.theme.lightlinerGradient}
         ),
-        url(${props => getUrl(props.bgImage)});
+        url(${props => getUrl(props)});
     }
 
     @media screen and (${props => props.theme.devices.retina}),
@@ -97,12 +133,12 @@ export const FastfoodSection = styled(Section)`
       background-image: linear-gradient(
           ${props => props.theme.darklinerGradient}
         ),
-        url(${props => getUrl(props.bgImage, '@2x')});
+        url(${props => getUrl(props, '@2x')});
       &:nth-of-type(even) {
         background-image: linear-gradient(
             ${props => props.theme.lightlinerGradient}
           ),
-          url(${props => getUrl(props.bgImage, '@2x')});
+          url(${props => getUrl(props, '@2x')});
       }
     }
   }
@@ -127,23 +163,11 @@ export const Title = styled.h2`
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
-    margin-bottom: 100px;
     font-size: 70px;
   }
 
   &::first-letter {
     color: ${props =>
       props.isEven ? props.theme.colors.primary : props.theme.colors.white};
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    right: calc(100% - 0.7em);
-    display: block;
-    width: 100%;
-    height: 1em;
-    background-color: ${props => props.theme.colors.accent};
   }
 `;
