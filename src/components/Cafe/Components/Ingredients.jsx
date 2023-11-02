@@ -1,7 +1,7 @@
 import React from 'react';
 import { IngredientsList, Dots, IngredientItem, Amount } from './Dish.styled';
 
-const Ingredients = ({ ingredients, isEven, styles }) => {
+export const Ingredients = ({ ingredients, isEven, styles }) => {
   const gridList = [];
 
   for (const i in ingredients) {
@@ -24,5 +24,3 @@ const Ingredients = ({ ingredients, isEven, styles }) => {
     </IngredientsList>
   );
 };
-
-export default Ingredients;

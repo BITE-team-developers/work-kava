@@ -1,8 +1,8 @@
 import { Container, CafeSection } from 'components/App.styled';
-import Dish from './Components/Dish';
+import {Dish} from './Components/Dish';
 import { Title, DishesList } from './Dishes.styled';
 
-const Dishes = ({ title, dishes, styles, firstDishes }) => {
+export const Dishes = ({ title, dishes, styles, firstDishes }) => {
   const titleName = title.toLowerCase().replace(/ /g, '-');
 
   return (
@@ -25,4 +25,4 @@ const Dishes = ({ title, dishes, styles, firstDishes }) => {
   );
 };
 
-export default Dishes;
+
