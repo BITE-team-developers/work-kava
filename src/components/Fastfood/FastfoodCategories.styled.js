@@ -9,6 +9,27 @@ export const FastfoodContainer = styled(Container)`
   position: relative;
   z-index: 1;
 
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0px;
+    display: block;
+    width: 51px;
+    height: 40px;
+    background-color: ${props => props.theme.colors.accent};
+
+    @media screen and (${props => props.theme.devices.tablet}) {
+      width: 68px;
+      height: 60px;
+    }
+
+    @media screen and (${props => props.theme.devices.desktop}) {
+      width: 186px;
+      height: 70px;
+    }
+  }
+
   @media screen and (${props => props.theme.devices.tablet}) {
     &::after {
       content: '';
@@ -35,8 +56,8 @@ export const FastfoodSection = styled(Section)`
   z-index: 2;
   margin: 0 auto;
 
-  &:first-child {
-    padding-top: 180px;
+  &:first-of-type {
+    padding-top: 130px;
   }
 
   background-image: linear-gradient(${props => props.theme.darklinerGradient}),
@@ -91,6 +112,10 @@ export const FastfoodSection = styled(Section)`
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
+    &:first-of-type {
+      padding-top: 180px;
+    }
+
     background-image: linear-gradient(${props => props.theme.darklinerGradient}),
       url(${props => getUrl(props.bgImage)});
     &:nth-of-type(even) {
@@ -142,16 +167,5 @@ export const Title = styled.h2`
   &::first-letter {
     color: ${props =>
       props.isEven ? props.theme.colors.primary : props.theme.colors.white};
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    right: calc(100% - 0.7em);
-    display: block;
-    width: 100%;
-    height: 1em;
-    background-color: ${props => props.theme.colors.accent};
   }
 `;
