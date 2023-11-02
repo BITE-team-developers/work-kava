@@ -36,7 +36,7 @@ export const FastfoodItem = ({
           <source
             srcSet={`https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${image}-table.png 1x,
                         https://res.cloudinary.com/dm3dq4juf/image/upload/v1697007040/WorkKava/fastfood/${image}-table@2x.png 2x`}
-            media="(min-width: 1024x)"
+            media="(min-width: 1024px)"
             width="402"
             height="186"
           />
