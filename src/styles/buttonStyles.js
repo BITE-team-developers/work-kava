@@ -8,6 +8,7 @@ const Button = styled.button`
   font-weight: 700;
   line-height: 1;
   border-radius: 8px;
+  z-index: 15;
 `;
 
 export const BlueButton = styled(Button)`

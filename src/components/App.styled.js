@@ -45,6 +45,18 @@ export const Container = styled.div`
   }
 `;
 
+export const HomeSection = styled(Section)`
+  background: ${props =>
+    props.styles === 'dark'
+      ? props.theme.colors.primary
+      : props.theme.colors.white};
+
+  color: ${props =>
+    props.styles === 'dark'
+      ? props.theme.colors.white
+      : props.theme.colors.primary};
+`;
+
 export const CoworkingSection = styled(Section)`
   background: ${props =>
     props.Coworkingstyles === 'dark'
@@ -75,10 +87,6 @@ export const CafeSection = styled(Section)`
   @media screen and (${props => props.theme.devices.tablet}) {
     overflow: visible;
   }
-
 `;
 
-
-export const CafeContainer = styled(Container)`
-  
-`
+export const CafeContainer = styled(Container)``;
