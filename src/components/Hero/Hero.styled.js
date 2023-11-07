@@ -1,27 +1,80 @@
 import styled from '@emotion/styled';
 import { DarkSection } from 'components/App.styled';
 
+const url =
+  'https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/';
+
 export const SectionHero = styled(DarkSection)`
   padding-top: 180px;
   padding-bottom: ${({ page }) => (page === 'home' ? '50px' : '210px')};
   background-repeat: no-repeat;
   background-color: #1b253f;
   background-position: 50% top;
+  background-size: 414px;
   background-image: ${({ page }) =>
-    `linear-gradient(90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0) 100%), url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/${page}/hero-mobil.png)`};
+    props =>
+      props.theme.useWebp
+        ? `linear-gradient(90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0) 100%), url(${
+            url + page
+          }-webp/hero-mobil.webp)`
+        : `linear-gradient(90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0) 100%), url(${
+            url + page
+          }/hero-mobil.png)`};
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: ${({ page }) =>
+      props =>
+        props.theme.useWebp
+          ? `linear-gradient(90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0) 100%), url(${
+              url + page
+            }-webp/hero-mobil@2x.webp)`
+          : `linear-gradient(90deg, rgba(27, 37, 63, 0.67) 56.77%, rgba(27, 37, 63, 0) 100%), url(${
+              url + page
+            }/hero-mobil@2x.png)`};
+  }
 
   @media screen and (${props => props.theme.devices.tablet}) {
     padding-top: 130px;
     padding-bottom: ${({ page }) => (page === 'home' ? '50px' : '159px')};
+    background-size: 1024px;
     background-image: ${({ page }) =>
-      `url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/${page}/hero-table.png)`};
+      props =>
+        props.theme.useWebp
+          ? `url(${url + page}-webp/hero-table.webp)`
+          : `url(${url + page}/hero-table.png)`};
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: ${({ page }) =>
+        props =>
+          props.theme.useWebp
+            ? `url(${url + page}-webp/hero-table@2x.webp)`
+            : `url(${url + page}/hero-table@2x.png)`};
+    }
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
     padding-top: 180px;
     padding-bottom: ${({ page }) => (page === 'home' ? '50px' : '258px')};
+    background-size: 1440px;
     background-image: ${({ page }) =>
-      `url(https://res.cloudinary.com/dm3dq4juf/image/upload/v1697012573/WorkKava/${page}/hero.png)`};
+      props =>
+        props.theme.useWebp
+          ? `url(${url + page}-webp/hero.webp)`
+          : `url(${url + page}/hero.png)`};
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: ${({ page }) =>
+        props =>
+          props.theme.useWebp
+            ? `url(${url + page}-webp/hero@2x.webp)`
+            : `url(${url + page}/hero@2x.png)`};
+    }
   }
 `;
 
@@ -112,7 +165,7 @@ export const DescrText = styled.p`
       right: 100%;
       width: 182px;
       height: 182px;
-      background-image: url('https://res.cloudinary.com/dm3dq4juf/image/upload/v1697531015/WorkKava/dcors/four_zigzags_ffffff.svg');
+      background-image: url('${url}dcors/four_zigzags_ffffff.svg');
       background-repeat: no-repeat;
       background-size: cover;
     }

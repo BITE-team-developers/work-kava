@@ -11,6 +11,7 @@ export const Section = styled.footer`
     }
 ` 
 export const FooterContainer = styled.div`
+   
     @media screen and (${props => props.theme.devices.tablet}) {
         display: flex; 
         flex-direction: row;

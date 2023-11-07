@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Box = styled.address`
-  width: 267px;
+export const Box = styled.div`
 
   @media screen and (${props => props.theme.devices.tablet}) {
     border-left: 5px solid ${props => props.theme.colors.white};
@@ -24,15 +23,17 @@ export const ContactsList = styled.ul`
   }
 `;
 
-export const ContactsItem = styled.li``;
+export const ContactsItem = styled.li`
+  
+`;
 
 export const ContactsLink = styled.a`
   color: ${props => props.theme.colors.white};
   font-size: 22px;
   line-height: 1.5;
   font-style: normal;
-  text-align: center;
-  justify-content: center;
+  // text-align: center;
+  // justify-content: center;
   display: flex;
   flex-direction: column;
 

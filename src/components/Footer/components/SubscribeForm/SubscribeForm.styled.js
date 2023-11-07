@@ -15,9 +15,15 @@ export const FormTitle = styled.p`
     }
 `
 export const FormBox = styled.div`
+    gap: 38px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+
     @media screen and (${props => props.theme.devices.tablet}){
         padding-left: 26px;
-        margin-top: 39px;
+        margin-top: 36px;
+        gap: 40px;
         border-left: 5px solid ${props => props.theme.colors.white};
     }
 `
@@ -31,7 +37,6 @@ export const FormInput = styled.input`
     max-width: 366px;
     width: 100%;
     padding: 3px 16px;
-    margin: 27px 0 38px 0;
     align-items: center;
     border-radius: 4px;
     border: 1px solid ${props => props.theme.colors.white};
@@ -39,12 +44,10 @@ export const FormInput = styled.input`
 
     @media screen and (${props => props.theme.devices.tablet}){
         max-width: 288px;
-        margin: 0 0 40px 0;
     }
 
     @media screen and (${props => props.theme.devices.desktop}){
         max-width: 402px;
-        margin-bottom: 38px;
     }
 
     &::placeholder {
