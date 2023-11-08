@@ -8,13 +8,14 @@ import zigzag from '../../images/fastfood/zigzag.svg';
 import { Container } from 'components/App.styled';
 
 export const ContainerHome = styled(Container)`
-@media screen and (${props => props.theme.devices.tablet}) {
-margin-bottom: ${props => (props.styles === 'dark' ? '-28px' : '1px')};
-}
+  @media screen and (${props => props.theme.devices.tablet}) {
+    margin-bottom: ${props => (props.styles === 'dark' ? '-28px' : '1px')};
+  }
 
-@media screen and (${props => props.theme.devices.desktop}) {
-  padding: 0;
-  z-index: -5;
+  @media screen and (${props => props.theme.devices.desktop}) {
+    padding: 0;
+    z-index: -5;
+  }
 `;
 
 export const CoffeContainer = styled.div`
@@ -189,7 +190,6 @@ export const PicturesStyle = styled.div`
   display: flex;
   width: 516px;
 
-
   @media screen and (${props => props.theme.devices.tablet}) {
     width: 516px;
     height: 480px;
@@ -198,14 +198,13 @@ export const PicturesStyle = styled.div`
       position: absolute;
       ${props => (props.styles === 'dark' ? 'right: 0' : 'left: -25px;')};
       top: ${props => (props.styles === 'dark' ? '285px' : '314px')};
-      
+
       width: 382px;
       height: 297px;
       background-image: ${props =>
         props.styles === 'dark'
           ? `url(${fastfoodFriesTablet});`
           : `url(${coffeeTablet});`};
-      
     }
   }
   @media screen and (${props => props.theme.devices.desktop}) {
@@ -221,6 +220,6 @@ export const PicturesStyle = styled.div`
       height: ${props => (props.styles === 'dark' ? '400px' : '431px')};
       background-image: ${props =>
         props.styles === 'dark' ? `url(${fastfoodFries});` : `url(${coffee});`};
-    }}
+    }
   }
 `;
