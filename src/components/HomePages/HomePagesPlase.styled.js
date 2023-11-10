@@ -47,6 +47,7 @@ export const CoffeeImg = styled.img`
     width: 818px;
     height: 540px;
     margin-top: 50px;
+    margin-left: ${props => (props.styles === 'dark' ? '-24px ' : '0')};
   }
 `;
 
@@ -64,7 +65,7 @@ export const Title = styled.h2`
     &::before {
       content: '';
       position: absolute;
-      ${props => (props.styles === 'dark' ? 'left: 15px;' : 'right: 15px; ')};
+      ${props => (props.styles === 'dark' ? 'left: 0' : 'right: 15px; ')};
       width: ${props => (props.styles === 'dark' ? '180px' : '149px')};
       height: 88px;
       background-image: ${props =>
@@ -74,13 +75,15 @@ export const Title = styled.h2`
 
   @media screen and (${props => props.theme.devices.desktop}) {
     margin-left: 138px;
+    margin-right: ${props => (props.styles === 'dark' ? '138px' : '')};
     text-align: ${props => (props.styles === 'dark' ? 'right' : 'left')};
+
     font-size: 70px;
     &::before {
       content: '';
       position: absolute;
       top: 0px;
-      ${props => (props.styles === 'dark' ? 'left: -160px;' : 'right: 0; ')};
+      ${props => (props.styles === 'dark' ? 'left: -140px;' : 'right: 0; ')};
       width: ${props => (props.styles === 'dark' ? '185px' : '149px')};
       height: 92px;
       background-image: ${props =>
@@ -103,7 +106,7 @@ export const Text = styled.p`
     content: '';
     position: absolute;
     top: 0px;
-    ${props => (props.styles === 'dark' ? 'right: -11px;  ' : 'left: -44px;')};
+    ${props => (props.styles === 'dark' ? 'right: -30px;  ' : 'left: -44px;')};
     width: 5px;
     height: 100%;
 
@@ -138,8 +141,8 @@ export const Text = styled.p`
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
-    margin-left: ${props => (props.styles === 'dark' ? '165px  ' : '178px')};
-    margin-right: 40px;
+    margin-left: ${props => (props.styles === 'dark' ? '40px  ' : '178px')};
+    margin-right: ${props => (props.styles === 'dark' ? '168px  ' : '40px')};
 
     &::before {
       height: ${props => (props.styles === 'dark' ? '216px  ' : '288px')};
@@ -164,7 +167,7 @@ export const StyleContainerBtn = styled.div`
     width: 414px;
     ${props =>
       props.styles === 'dark'
-        ? 'padding-bottom: 25px; margin-right:1px '
+        ? 'padding-bottom: 25px; margin-right:140px '
         : 'margin-left:138px'};
   }
 `;
@@ -196,7 +199,7 @@ export const PicturesStyle = styled.div`
     &::before {
       content: '';
       position: absolute;
-      ${props => (props.styles === 'dark' ? 'right: 0' : 'left: -25px;')};
+      ${props => (props.styles === 'dark' ? 'right: -20px' : 'left: -25px;')};
       top: ${props => (props.styles === 'dark' ? '285px' : '314px')};
 
       width: 382px;
@@ -215,7 +218,7 @@ export const PicturesStyle = styled.div`
       content: '';
       position: absolute;
       top: ${props => (props.styles === 'dark' ? '317px' : '289px')};
-      ${props => (props.styles === 'dark' ? 'right:-117px' : 'left:0')};
+      ${props => (props.styles === 'dark' ? 'right:0' : 'left:0')};
       width: ${props => (props.styles === 'dark' ? '453px' : '544px')};
       height: ${props => (props.styles === 'dark' ? '400px' : '431px')};
       background-image: ${props =>
