@@ -265,7 +265,7 @@ export const Currency = styled.span`
   }
 `;
 
-export const IngredientItem = styled.div`
+export const IngredientItem = styled.li`
   white-space: nowrap;
   overflow: hidden;
 `;
