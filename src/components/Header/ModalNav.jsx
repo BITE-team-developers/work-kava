@@ -1,4 +1,4 @@
-import SocialLinksList from 'components/SocialLinksList';
+import { SocialLinksList } from 'components/SocialLinksList/SocialLinksList';
 import { BackdropHeader, CloseButton } from './ModalNav.styled';
 import { Navigation } from './Navigation';
 import { Svg } from 'components/SvgIcon/SvgIcon';

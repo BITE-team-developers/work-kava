@@ -29,7 +29,7 @@ const links = [
   }
 ];
 
-const SocialLinksList = () => {
+export const SocialLinksList = () => {
   return (
     <Links>
       {links.map(({ link, text, icon }, index) => (
@@ -47,5 +47,3 @@ const SocialLinksList = () => {
     </Links>
   );
 };
-
-export default SocialLinksList;

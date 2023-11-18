@@ -5,108 +5,108 @@ import twoZigzag from '../../images/cafe-coworking/two_zigzags.svg';
 import fastfoodFries from '../../images/fastfood/frenchFries.svg';
 import fastfoodFriesTablet from '../../images/fastfood/frenchFriesTablet.svg';
 import zigzag from '../../images/fastfood/zigzag.svg';
-import { Container } from 'components/App.styled';
-
-export const ContainerHome = styled(Container)`
-  @media screen and (${props => props.theme.devices.tablet}) {
-    margin-bottom: ${props => (props.styles === 'dark' ? '-28px' : '1px')};
-  }
-
-  @media screen and (${props => props.theme.devices.desktop}) {
-    padding: 0;
-    z-index: -5;
-  }
-`;
-
-export const CoffeContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: ${props => (props.styles === 'dark' ? 'row-reverse' : 'row')};
-
-  @media screen and (${props => props.theme.devices.onlymobile}) {
-    margin: 0 auto;
-    padding-bottom: 24px;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-export const CoffeeImg = styled.img`
-  width: 356px;
-  height: 218px;
-  margin-top: 24px;
-
-  @media screen and (${props => props.theme.devices.tablet}) {
-    width: 516px;
-    height: 480px;
-    margin-left: ${props => (props.styles === 'dark' ? '-24px ' : '24px')};
-  }
-  @media screen and (${props => props.theme.devices.desktop}) {
-    width: 818px;
-    height: 540px;
-    margin-top: 50px;
-    margin-left: ${props => (props.styles === 'dark' ? '-24px ' : '0')};
-  }
-`;
 
 export const Title = styled.h2`
-  text-align: ${props => (props.styles === 'dark' ? 'right' : 'left')};
+  margin-bottom: 24px;
+  ${props =>
+    props.styles === 'dark' ? 'text-align: right' : 'text-align: left'};
   font-size: 60px;
   position: relative;
 
-  @media screen and (${props => props.theme.devices.onlymobile}) {
-    text-align: ${props => (props.styles === 'dark' ? 'center' : 'left')};
-  }
-
   @media screen and (${props => props.theme.devices.tablet}) {
-    margin-left: 0;
-    &::before {
-      content: '';
-      position: absolute;
-      ${props => (props.styles === 'dark' ? 'left: 0' : 'right: 15px; ')};
-      width: ${props => (props.styles === 'dark' ? '180px' : '149px')};
-      height: 88px;
-      background-image: ${props =>
-        props.styles === 'dark' ? `url(${zigzag});` : `url(${twoZigzag});`};
-    }
-  }
-
-  @media screen and (${props => props.theme.devices.desktop}) {
-    margin-left: 138px;
-    margin-right: ${props => (props.styles === 'dark' ? '138px' : '')};
-    text-align: ${props => (props.styles === 'dark' ? 'right' : 'left')};
-
+    margin-bottom: 70px;
     font-size: 70px;
     &::before {
       content: '';
       position: absolute;
       top: 0px;
-      ${props => (props.styles === 'dark' ? 'left: -140px;' : 'right: 0; ')};
-      width: ${props => (props.styles === 'dark' ? '185px' : '149px')};
-      height: 92px;
+      ${props => (props.styles === 'dark' ? 'left: -7px' : 'right: -7px; ')};
+      width: 188px;
+      height: 102px;
       background-image: ${props =>
         props.styles === 'dark' ? `url(${zigzag});` : `url(${twoZigzag});`};
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  @media screen and (${props => props.theme.devices.desktop}) {
+    &::before {
+      ${props =>
+        props.styles === 'dark' ? 'left: -138px;' : 'right: -138px; '};
+    }
+  }
+`;
+
+export const CoffeContainer = styled.div`
+  position: relative;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 0 24px;
+  @media screen and (${props => props.theme.devices.tablet}) {
+    display: grid;
+    gap: 40px;
+    ${props =>
+      props.styles === 'dark'
+        ? 'grid-template-columns: 516px 1fr; margin-left: -24px; margin-right: 0'
+        : 'grid-template-columns: 1fr 516px; margin-left: 0; margin-right: -24px;'};
+    padding: 0;
+  }
+  @media screen and (${props => props.theme.devices.desktop}) {
+    ${props =>
+      props.styles === 'dark'
+        ? 'grid-template-columns: 818px 1fr; margin-left: -138px;'
+        : 'grid-template-columns: 1fr 818px; margin-right: -138px;'};
+  }
+
+  &::before {
+    @media screen and (${props => props.theme.devices.onlymobile}) {
+      display: none;
+    }
+    content: '';
+    position: absolute;
+    ${props => (props.styles === 'dark' ? 'right: -24px' : 'left: -24px;')};
+    bottom: -50px;
+    ${props =>
+      props.styles === 'dark'
+        ? 'width: 387px; height: 334px;'
+        : 'width: 390px; height: 296px;'};
+    background-image: ${props =>
+      props.styles === 'dark'
+        ? `url(${fastfoodFriesTablet});`
+        : `url(${coffeeTablet});`};
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and (${props => props.theme.devices.desktop}) {
+      bottom: -100px;
+      ${props => (props.styles === 'dark' ? 'right: -138px' : 'left: -138px;')};
+      ${props =>
+        props.styles === 'dark'
+          ? 'width: 454px; height: 401px;'
+          : 'width: 540px; height: 430px;'};
+      background-image: ${props =>
+        props.styles === 'dark' ? `url(${fastfoodFries});` : `url(${coffee});`};
     }
   }
 `;
 
 export const Text = styled.p`
   position: relative;
-  margin-top: 70px;
+
+  margin-bottom: 24px;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
   ${props =>
     props.styles === 'dark'
-      ? '  text-align:right;  padding-right: 10px; '
-      : '  text-align:left;'};
-
-  z-index: 3;
+      ? 'margin-right: 40px; text-align:right;'
+      : 'margin-left: 40px; text-align:left;'};
 
   &::before {
     content: '';
     position: absolute;
     top: 0px;
-    ${props => (props.styles === 'dark' ? 'right: -30px;  ' : 'left: -44px;')};
+    ${props => (props.styles === 'dark' ? 'right: -39px;  ' : 'left: -39px;')};
     width: 5px;
     height: 100%;
 
@@ -116,37 +116,54 @@ export const Text = styled.p`
         : props.theme.colors.primary};
   }
 
-  @media screen and (${props => props.theme.devices.onlymobile}) {
-    ${props =>
-      props.styles === 'dark' ? '   padding-right:35px ' : 'padding-right:5px'};
-    margin-left: ${props => (props.styles === 'dark' ? '10px' : '44px')};
-    margin-right: 11px;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-top: 24px;
-
-    &::before {
-      height: 100%;
-    }
-  }
-
   @media screen and (${props => props.theme.devices.tablet}) {
-    margin-left: ${props => (props.styles === 'dark' ? '24px  ' : '35px')};
-    margin-right: 22px;
-
+    grid-column-start: ${props => (props.styles === 'dark' ? '2' : '1')};
+    font-size: 30px;
+    line-height: 1.2;
     &::before {
       height: ${props => (props.styles === 'dark' ? '216px  ' : '288px')};
     }
   }
 
   @media screen and (${props => props.theme.devices.desktop}) {
-    margin-left: ${props => (props.styles === 'dark' ? '40px  ' : '178px')};
-    margin-right: ${props => (props.styles === 'dark' ? '168px  ' : '40px')};
-
     &::before {
       height: ${props => (props.styles === 'dark' ? '216px  ' : '288px')};
     }
+  }
+`;
+
+export const Picture = styled.picture`
+  display: block;
+  margin-bottom: 24px;
+  &::before {
+    display: none;
+  }
+  @media screen and (${props => props.theme.devices.tablet}) {
+    grid-row-end: 3;
+    grid-row-start: 1;
+    grid-column-start: ${props => (props.styles === 'dark' ? '1' : '2')};
+    margin-bottom: 0;
+  }
+`;
+
+export const CoffeeImg = styled.img`
+  ${props =>
+    props.styles === 'dark'
+      ? 'border-top-right-radius: 109px;  border-bottom-right-radius: 109px;'
+      : 'border-top-left-radius: 109px;  border-bottom-left-radius: 109px;'}
+  @media screen and (${props => props.theme.devices.onlymobile}) {
+    ${props =>
+      props.styles === 'dark'
+        ? 'margin: 0 auto 0 -24px'
+        : 'margin: 0 -24px 0 auto'};
+  }
+
+  @media screen and (${props => props.theme.devices.tablet}) {
+    margin: 0;
+    ${props =>
+      props.styles === 'dark'
+        ? 'border-top-right-radius: 134px;  border-bottom-right-radius: 134px;'
+        : 'border-top-left-radius: 134px;  border-bottom-left-radius: 134px;'}
   }
 `;
 
@@ -156,73 +173,11 @@ export const StyleContainerBtn = styled.div`
   margin: 0 auto;
 
   @media screen and (${props => props.theme.devices.tablet}) {
-    width: 414px;
+    grid-column-start: ${props => (props.styles === 'dark' ? '2' : '1')};
     ${props =>
       props.styles === 'dark'
         ? 'margin-right: 0; margin-top: -29px '
         : 'margin-left: 0;'};
-  }
-
-  @media screen and (${props => props.theme.devices.desktop}) {
-    width: 414px;
-    ${props =>
-      props.styles === 'dark'
-        ? 'padding-bottom: 25px; margin-right:140px '
-        : 'margin-left:138px'};
-  }
-`;
-
-export const Picture = styled.picture`
-  width: 516px;
-  &::before {
-    display: none;
-  }
-
-  @media screen and (${props => props.theme.devices.tablet}) {
-    width: 516px;
-    height: 480px;
-    margin-top: 29px;
-  }
-  @media screen and (${props => props.theme.devices.desktop}) {
-    width: 818px;
-    height: 540px;
-  }
-`;
-
-export const PicturesStyle = styled.div`
-  display: flex;
-  width: 516px;
-
-  @media screen and (${props => props.theme.devices.tablet}) {
-    width: 516px;
-    height: 480px;
-    &::before {
-      content: '';
-      position: absolute;
-      ${props => (props.styles === 'dark' ? 'right: -20px' : 'left: -25px;')};
-      top: ${props => (props.styles === 'dark' ? '285px' : '314px')};
-
-      width: 382px;
-      height: 297px;
-      background-image: ${props =>
-        props.styles === 'dark'
-          ? `url(${fastfoodFriesTablet});`
-          : `url(${coffeeTablet});`};
-    }
-  }
-  @media screen and (${props => props.theme.devices.desktop}) {
-    width: 818px;
-    height: 540px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: ${props => (props.styles === 'dark' ? '317px' : '289px')};
-      ${props => (props.styles === 'dark' ? 'right:0' : 'left:0')};
-      width: ${props => (props.styles === 'dark' ? '453px' : '544px')};
-      height: ${props => (props.styles === 'dark' ? '400px' : '431px')};
-      background-image: ${props =>
-        props.styles === 'dark' ? `url(${fastfoodFries});` : `url(${coffee});`};
-    }
+    margin-top: auto;
   }
 `;

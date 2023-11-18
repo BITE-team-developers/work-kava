@@ -1,5 +1,5 @@
-import Hero from 'components/Hero';
-import HomePagePlase from 'components/HomePages/HomePagePlase';
+import { Hero } from 'components/Hero/Hero';
+import { HomePagePlase } from 'components/HomePages/HomePagePlase';
 
 const homePages = [
   {
@@ -8,9 +8,9 @@ const homePages = [
     description:
       'Work with taste! Delicious aromatic coffee for every taste prepared ' +
       'by an experienced barista, as well as elegant desserts made with ' +
-      'love by our confectioners. It\'s all waiting for you in our coffee ' +
+      "love by our confectioners. It's all waiting for you in our coffee " +
       'shop.',
-      linkTo: '/cafe',
+    linkTo: '/cafe'
   },
   {
     id: '2',
@@ -19,8 +19,7 @@ const homePages = [
       'Time for lunch, but not much time? Our fast food is at your service. ' +
       'Fast, high quality, tasty. Own baking and certified products. Great ' +
       'choice for every taste.',
-      linkTo: '/fastfood',
-     
+    linkTo: '/fastfood'
   },
   {
     id: '3',
@@ -28,9 +27,9 @@ const homePages = [
     description:
       'Work with taste! Delicious aromatic coffee for every taste prepared ' +
       'by an experienced barista, as well as elegant desserts made with ' +
-      'love by our confectioners. It\'s all waiting for you in our coffee ' +
+      "love by our confectioners. It's all waiting for you in our coffee " +
       'shop.',
-      linkTo: '/coworking',
+    linkTo: '/coworking'
   }
 ];
 
@@ -40,14 +39,14 @@ const Home = () => {
       <Hero page="home" />
       {homePages.map((section, index) => (
         <HomePagePlase
-        key={section.id}
-        id={section.id}
-        title={section.title}
-        description={section.description}
-        linkTo={section.linkTo}
-        styles={index % 2 !== 0 ? 'dark' : 'light'}
+          key={section.id}
+          id={section.id}
+          title={section.title}
+          description={section.description}
+          linkTo={section.linkTo}
+          styles={index % 2 !== 0 ? 'dark' : 'light'}
         />
-        ))}
+      ))}
     </>
   );
 };

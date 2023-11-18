@@ -1,5 +1,4 @@
 import { Container } from 'components/App.styled';
-import SocialLinksList from 'components/SocialLinksList';
 import {
   SectionHero,
   MainText,
@@ -7,8 +6,9 @@ import {
   TextContainer,
   HeroContainer
 } from './Hero.styled';
+import { SocialLinksList } from 'components/SocialLinksList/SocialLinksList';
 
-const Hero = ({ page }) => {
+export const Hero = ({ page }) => {
   return (
     <SectionHero page={page}>
       <HeroContainer>
@@ -33,5 +33,3 @@ const Hero = ({ page }) => {
     </SectionHero>
   );
 };
-
-export default Hero;
